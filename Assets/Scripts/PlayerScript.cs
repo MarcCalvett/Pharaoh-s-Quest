@@ -30,7 +30,7 @@ public class PlayerScript : MonoBehaviour
     void Update()
     {
         CheckInputs();
-        UpdateAnimations();
+        UpdateAnimations();       
        
     }
 
