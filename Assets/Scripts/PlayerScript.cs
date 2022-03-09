@@ -57,12 +57,12 @@ public class PlayerScript : MonoBehaviour
             }
         }        
 
-        if (Input.GetKey(KeyCode.Space) && grounded && Time.time > lastJump + 0.5)
+        if (Input.GetKey(KeyCode.Space) && grounded && Time.time > lastJump + 0.5 && animator.GetBool("scroll") == false && cancelMovement != 0)
         {
             Jump();
             lastJump = Time.time;
         }
-        if (Input.GetKey(KeyCode.E) && Time.time > lastDefaultAttack + 1.2 && grounded)
+        if (Input.GetKey(KeyCode.E) && Time.time > lastDefaultAttack + 1.2 && grounded && animator.GetBool("scroll") == false)
         {
             animator.SetBool("defaultAttack", true);
             cancelMovement = 0;
