@@ -5,15 +5,18 @@ using UnityEngine;
 
 public class PlayerScript : MonoBehaviour
 {
+    public GameObject tornadoPrefab;
     public float jumpForce;
     public float speed;
-    public Rigidbody2D rigidbody2D;
+    private Rigidbody2D Rigidbody2D;
     private Animator animator;
     private float horizontal;    
     private float lastJump;
     private float lastParry;
     private float lastDefaultAttack;
     private float lastSPANS;
+    private float lastDefaultAttackWind;
+    private float lastSPAWS;
     private float lastScroll;
     private float timeSwitchSword;
     private int cancelMovement = 1;
@@ -22,18 +25,22 @@ public class PlayerScript : MonoBehaviour
     private bool windSwordInHand;
     private bool windSwordTaken;
     private bool spaNormalSword;
+    private bool attackingWind;
+    private bool spaWindSword;
     [HideInInspector]public bool grounded;
 
     // Start is called before the first frame update
     void Start()
     {
-        rigidbody2D = GetComponent<Rigidbody2D>();
+        Rigidbody2D = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
-        dodging = false;
-        attacking = false;
+        dodging = false;       
         windSwordInHand = false;
         windSwordTaken = true;
+        attacking = false;
         spaNormalSword = false;
+        attackingWind = false;
+        spaWindSword = false;
     }
 
     // Update is called once per frame
@@ -46,7 +53,7 @@ public class PlayerScript : MonoBehaviour
 
     private void FixedUpdate()
     {
-        rigidbody2D.velocity = new Vector2(horizontal*speed*cancelMovement, rigidbody2D.velocity.y);
+        Rigidbody2D.velocity = new Vector2(horizontal*speed*cancelMovement, Rigidbody2D.velocity.y);
     }
 
     private void CheckInputs()
@@ -114,11 +121,24 @@ public class PlayerScript : MonoBehaviour
                 lastSPANS = Time.time;
             }
         }
+        else
+        {
+            if (Input.GetKey(KeyCode.E) && Time.time > lastDefaultAttackWind + 1.6 && grounded && animator.GetBool("scroll") == false)
+            {
+                animator.SetBool("defaultAttackWind", true);
+                cancelMovement = 0;
+                lastDefaultAttackWind = Time.time;
+            }
+            if (Input.GetKey(KeyCode.R) && Time.time > lastSPANS + 1.4 && grounded && animator.GetBool("scroll") == false)
+            {
+                
+            }
+        }
 
     }
     private void Jump()
     {
-        rigidbody2D.AddForce(Vector2.up * jumpForce);
+        Rigidbody2D.AddForce(Vector2.up * jumpForce);
     }
 
     private void Orientation()
@@ -167,12 +187,12 @@ public class PlayerScript : MonoBehaviour
         }
         else
         {
-            if (rigidbody2D.velocity.y > 0)
+            if (Rigidbody2D.velocity.y > 0)
             {
                 animator.SetBool("jump", true);
                 animator.SetBool("fall", false);
             }
-            else if (rigidbody2D.velocity.y < 0)
+            else if (Rigidbody2D.velocity.y < 0)
             {
                 animator.SetBool("fall", true);
                 animator.SetBool("jump", false);
@@ -189,6 +209,17 @@ public class PlayerScript : MonoBehaviour
         attacking = false;
         cancelMovement = 1;
     }
+    public void EndDefaultAttackWind()
+    {
+        attackingWind = false;
+        cancelMovement = 1;
+        ThrowTornado();
+    }
+    public void EndSPAttackWindSword()
+    {
+        spaWindSword = false;
+        cancelMovement = 1;
+    }
     public void EndParry()
     {
         dodging = false;
@@ -199,10 +230,20 @@ public class PlayerScript : MonoBehaviour
         attacking = true;
         animator.SetBool("defaultAttack", false);
     }
+    public void DefaultAttackWindStarted()
+    {
+        attackingWind = true;
+        animator.SetBool("defaultAttackWind", false);
+    }
     public void SPAttackNormalSwordStarted()
     {
         spaNormalSword = true;
         animator.SetBool("spaNS", false);
+    }
+    public void SPAttackWindSwordStarted()
+    {
+        spaWindSword = true;
+        animator.SetBool("spaWS", false);
     }
     public void EndSPAttackNormalSword()
     {
@@ -218,5 +259,30 @@ public class PlayerScript : MonoBehaviour
     {
         horizontal = 0;
     }
+    public void ThrowTornado()
+    {
+        Vector3 _direction;
+        Vector3 origin;
 
+        if (transform.localScale.x > 0.0f)
+        {
+            origin.x = 2f;
+            origin.y = 0;
+            origin.z = 0;
+            _direction = Vector3.right;
+            GameObject tornado = Instantiate(tornadoPrefab, transform.position + origin, Quaternion.identity);
+            tornado.GetComponent<TornadoScript>().SetDirection(_direction);
+        }
+        else
+        {
+            origin.x = -2f;
+            origin.y = 0;
+            origin.z = 0;
+            _direction = Vector3.left;
+            GameObject tornado = Instantiate(tornadoPrefab, transform.position + origin, Quaternion.identity);
+            tornado.GetComponent<TornadoScript>().SetDirection(_direction);
+        }
+        
+        
+    }
 }
