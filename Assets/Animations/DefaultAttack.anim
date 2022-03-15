@@ -88,7 +88,7 @@ AnimationClip:
   m_HasMotionFloatCurves: 0
   m_Events:
   - time: 0
-    functionName: DefaultAttackBegun
+    functionName: DefaultAttackStarted
     data: 
     objectReferenceParameter: {fileID: 11500000, guid: dd534f7f15f4dfa4a839a4403f9f2cd0,
       type: 3}

@@ -7,23 +7,33 @@ public class PlayerScript : MonoBehaviour
 {
     public float jumpForce;
     public float speed;
-
-    private Rigidbody2D rigidbody2D;
+    public Rigidbody2D rigidbody2D;
     private Animator animator;
-    private float horizontal;
-    private bool grounded;
+    private float horizontal;    
     private float lastJump;
+    private float lastParry;
     private float lastDefaultAttack;
+    private float lastSPANS;
     private float lastScroll;
-    private int cancelMovement = 1; 
-    
+    private float timeSwitchSword;
+    private int cancelMovement = 1;
+    private bool attacking;
+    private bool dodging;
+    private bool windSwordInHand;
+    private bool windSwordTaken;
+    private bool spaNormalSword;
+    [HideInInspector]public bool grounded;
 
     // Start is called before the first frame update
     void Start()
     {
         rigidbody2D = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
-        
+        dodging = false;
+        attacking = false;
+        windSwordInHand = false;
+        windSwordTaken = true;
+        spaNormalSword = false;
     }
 
     // Update is called once per frame
@@ -61,19 +71,50 @@ public class PlayerScript : MonoBehaviour
         {
             Jump();
             lastJump = Time.time;
-        }
-        if (Input.GetKey(KeyCode.E) && Time.time > lastDefaultAttack + 1.2 && grounded && animator.GetBool("scroll") == false)
-        {
-            animator.SetBool("defaultAttack", true);
-            cancelMovement = 0;
-            lastDefaultAttack = Time.time;
         }        
-        if(Input.GetKey(KeyCode.S) && grounded && animator.GetBool("running") && Time.time > lastScroll + 0.7f){
+        if (Input.GetKey(KeyCode.F) && Time.time > lastParry + 0.9f && grounded && animator.GetBool("scroll") == false)
+        {
+            animator.SetBool("parry", true);
+            cancelMovement = 0;
+            lastParry = Time.time;
+        }
+        if (Input.GetKey(KeyCode.S) && grounded && animator.GetBool("running") && Time.time > lastScroll + 0.7f){
             animator.SetBool("scroll", true);
             animator.SetBool("running", false);
             lastScroll = Time.time;
 
         }
+        if (Input.GetKey(KeyCode.Q))
+        {
+            if (windSwordTaken && Time.time > timeSwitchSword + 0.5f)
+            {
+                if (windSwordInHand)
+                {
+                    windSwordInHand = false;
+                }
+                else
+                {
+                    windSwordInHand = true;
+                }
+                timeSwitchSword = Time.time;
+            }
+        }
+        if (!windSwordInHand)
+        {
+            if (Input.GetKey(KeyCode.E) && Time.time > lastDefaultAttack + 1.2 && grounded && animator.GetBool("scroll") == false)
+            {
+                animator.SetBool("defaultAttack", true);
+                cancelMovement = 0;
+                lastDefaultAttack = Time.time;
+            }
+            if(Input.GetKey(KeyCode.R) && Time.time > lastSPANS + 1.4 && grounded && animator.GetBool("scroll") == false)
+            {
+                animator.SetBool("spaNS", true);
+                cancelMovement = 0;
+                lastSPANS = Time.time;
+            }
+        }
+
     }
     private void Jump()
     {
@@ -98,13 +139,14 @@ public class PlayerScript : MonoBehaviour
     private void CheckLanding()
     {
         Debug.DrawRay(transform.position, Vector3.down * 0.9f, Color.red);
-        if (Physics2D.Raycast(transform.position, Vector3.down, 0.9f))
+        if (Physics2D.Raycast(transform.position, Vector3.down, 0.9f, LayerMask.GetMask("Ground")))
         {
             grounded = true;
 
         }
         else
         {
+            
             grounded = false;
         }
     }
@@ -143,17 +185,38 @@ public class PlayerScript : MonoBehaviour
         }
     }
     public void EndDefaultAttack()
-    {        
+    {
+        attacking = false;
         cancelMovement = 1;
     }
-    public void DefaultAttackBegun()
+    public void EndParry()
     {
+        dodging = false;
+        cancelMovement = 1;
+    }
+    public void DefaultAttackStarted()
+    {
+        attacking = true;
         animator.SetBool("defaultAttack", false);
+    }
+    public void SPAttackNormalSwordStarted()
+    {
+        spaNormalSword = true;
+        animator.SetBool("spaNS", false);
+    }
+    public void EndSPAttackNormalSword()
+    {
+        spaNormalSword = false;
+        cancelMovement = 1;
+    }
+    public void ParryStarted()
+    {
+        dodging = true;
+        animator.SetBool("parry", false);
     }
     public void EndScroll()
     {
         horizontal = 0;
     }
-
 
 }

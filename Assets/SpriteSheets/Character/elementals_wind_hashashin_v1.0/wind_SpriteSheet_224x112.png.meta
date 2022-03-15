@@ -121,61 +121,61 @@ TextureImporter:
     second: wind_SpriteSheet_224x112_38
   - first:
       213: 21841914017864001
-    second: wind_SpriteSheet_224x112_39
+    second: spnwattack
   - first:
       213: 5197367373696236094
-    second: wind_SpriteSheet_224x112_40
+    second: spnwattack1
   - first:
       213: 585419036474204667
-    second: wind_SpriteSheet_224x112_41
+    second: spnwattack2
   - first:
       213: 7792372049961558239
-    second: wind_SpriteSheet_224x112_42
+    second: spnwattack3
   - first:
       213: 1434762983506047992
-    second: wind_SpriteSheet_224x112_43
+    second: spnwattack4
   - first:
       213: 5624196870598328025
     second: wind_SpriteSheet_224x112_44
   - first:
       213: -1589572292445509575
-    second: wind_SpriteSheet_224x112_45
+    second: spnwattack5
   - first:
       213: 1980209250310630017
     second: wind_SpriteSheet_224x112_46
   - first:
       213: 2696942298746572655
-    second: wind_SpriteSheet_224x112_47
+    second: spnwattack6
   - first:
       213: -5463135960324245406
     second: wind_SpriteSheet_224x112_48
   - first:
       213: -8921792524975254290
-    second: wind_SpriteSheet_224x112_49
+    second: spnwattack7
   - first:
       213: 9038756054387132865
     second: wind_SpriteSheet_224x112_50
   - first:
       213: 874233915257524782
-    second: wind_SpriteSheet_224x112_51
+    second: spnwattack8
   - first:
       213: -2030731631946889812
-    second: wind_SpriteSheet_224x112_52
+    second: spnwattack9
   - first:
       213: 5836827910728686367
-    second: wind_SpriteSheet_224x112_53
+    second: spnwattack10
   - first:
       213: 2229623505703160135
-    second: wind_SpriteSheet_224x112_54
+    second: spnwattack11
   - first:
       213: -295360145540509825
-    second: wind_SpriteSheet_224x112_55
+    second: spnwattack12
   - first:
       213: 5737590775595259829
-    second: wind_SpriteSheet_224x112_56
+    second: spnwattack13
   - first:
       213: -622659961597536029
-    second: wind_SpriteSheet_224x112_57
+    second: spnwattack14
   - first:
       213: 2876140008216653922
     second: wind_SpriteSheet_224x112_58
@@ -1348,61 +1348,61 @@ TextureImporter:
     second: wind_SpriteSheet_224x112_38
   - first:
       213: 4591082337054865858
-    second: wind_SpriteSheet_224x112_39
+    second: spnwattack
   - first:
       213: 3412352348564324611
-    second: wind_SpriteSheet_224x112_40
+    second: spnwattack1
   - first:
       213: -2724517530054133758
-    second: wind_SpriteSheet_224x112_41
+    second: spnwattack2
   - first:
       213: 5077204095521729812
-    second: wind_SpriteSheet_224x112_42
+    second: spnwattack3
   - first:
       213: 7757200411916230747
-    second: wind_SpriteSheet_224x112_43
+    second: spnwattack4
   - first:
       213: -3458912283165508970
     second: wind_SpriteSheet_224x112_44
   - first:
       213: -2709020060795032204
-    second: wind_SpriteSheet_224x112_45
+    second: spnwattack5
   - first:
       213: 1513007001657891963
     second: wind_SpriteSheet_224x112_46
   - first:
       213: 6715648847135302285
-    second: wind_SpriteSheet_224x112_47
+    second: spnwattack6
   - first:
       213: -8631930741875860709
     second: wind_SpriteSheet_224x112_48
   - first:
       213: 6108609251187061912
-    second: wind_SpriteSheet_224x112_49
+    second: spnwattack7
   - first:
       213: -1651146373980711282
     second: wind_SpriteSheet_224x112_50
   - first:
       213: 776991483973831618
-    second: wind_SpriteSheet_224x112_51
+    second: spnwattack8
   - first:
       213: -2851639723379700764
-    second: wind_SpriteSheet_224x112_52
+    second: spnwattack9
   - first:
       213: -6157571847719844840
-    second: wind_SpriteSheet_224x112_53
+    second: spnwattack10
   - first:
       213: 3604087508341024507
-    second: wind_SpriteSheet_224x112_54
+    second: spnwattack11
   - first:
       213: 22834676403252286
-    second: wind_SpriteSheet_224x112_55
+    second: spnwattack12
   - first:
       213: 7968327350876666352
-    second: wind_SpriteSheet_224x112_56
+    second: spnwattack13
   - first:
       213: 4749515813857250011
-    second: wind_SpriteSheet_224x112_57
+    second: spnwattack14
   - first:
       213: 3979234935311230753
     second: wind_SpriteSheet_224x112_58
@@ -2940,15 +2940,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: wind_SpriteSheet_224x112_39
+      name: spnwattack
       rect:
         serializedVersion: 2
         x: 754
         y: 560
         width: 45
         height: 38
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.46666667, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -2961,15 +2961,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: wind_SpriteSheet_224x112_40
+      name: spnwattack1
       rect:
         serializedVersion: 2
         x: 978
         y: 560
         width: 47
         height: 38
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.44680852, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -2982,15 +2982,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: wind_SpriteSheet_224x112_41
+      name: spnwattack2
       rect:
         serializedVersion: 2
         x: 1202
         y: 560
         width: 47
         height: 38
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.44680852, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -3003,15 +3003,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: wind_SpriteSheet_224x112_42
+      name: spnwattack3
       rect:
         serializedVersion: 2
         x: 1426
         y: 560
         width: 51
         height: 38
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.4117647, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -3024,15 +3024,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: wind_SpriteSheet_224x112_43
+      name: spnwattack4
       rect:
         serializedVersion: 2
         x: 1654
         y: 560
-        width: 48
-        height: 40
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        width: 75
+        height: 51
+      alignment: 9
+      pivot: {x: 0.22666667, y: 0.37254903}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -3045,36 +3045,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: wind_SpriteSheet_224x112_44
-      rect:
-        serializedVersion: 2
-        x: 1695
-        y: 584
-        width: 34
-        height: 26
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 69a3fa4ca997fffc0800000000000000
-      internalID: -3458912283165508970
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: wind_SpriteSheet_224x112_45
+      name: spnwattack5
       rect:
         serializedVersion: 2
         x: 1889
         y: 560
         width: 74
-        height: 42
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        height: 45
+      alignment: 9
+      pivot: {x: 0.08108108, y: 0.42222223}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -3087,36 +3066,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: wind_SpriteSheet_224x112_46
-      rect:
-        serializedVersion: 2
-        x: 1924
-        y: 596
-        width: 24
-        height: 9
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: b7c5f7c0ad74ff410800000000000000
-      internalID: 1513007001657891963
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: wind_SpriteSheet_224x112_47
+      name: spnwattack6
       rect:
         serializedVersion: 2
         x: 2112
         y: 560
-        width: 39
-        height: 37
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        width: 64
+        height: 47
+      alignment: 9
+      pivot: {x: 0.109375, y: 0.40425533}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -3129,36 +3087,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: wind_SpriteSheet_224x112_48
-      rect:
-        serializedVersion: 2
-        x: 2143
-        y: 586
-        width: 29
-        height: 21
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: b1b17b469b8353880800000000000000
-      internalID: -8631930741875860709
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: wind_SpriteSheet_224x112_49
+      name: spnwattack7
       rect:
         serializedVersion: 2
         x: 2338
         y: 560
-        width: 47
-        height: 44
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        width: 66
+        height: 46
+      alignment: 9
+      pivot: {x: 0.07575758, y: 0.41304347}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -3171,36 +3108,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: wind_SpriteSheet_224x112_50
-      rect:
-        serializedVersion: 2
-        x: 2371
-        y: 589
-        width: 25
-        height: 17
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: e8694bafe13f519e0800000000000000
-      internalID: -1651146373980711282
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: wind_SpriteSheet_224x112_51
+      name: spnwattack8
       rect:
         serializedVersion: 2
         x: 2546
         y: 560
         width: 73
         height: 46
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.28767124, y: 0.41304347}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -3213,15 +3129,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: wind_SpriteSheet_224x112_52
+      name: spnwattack9
       rect:
         serializedVersion: 2
         x: 2770
         y: 560
         width: 60
         height: 38
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.35, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -3234,15 +3150,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: wind_SpriteSheet_224x112_53
+      name: spnwattack10
       rect:
         serializedVersion: 2
         x: 3007
         y: 560
         width: 34
         height: 44
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.2647059, y: 0.4318182}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -3255,15 +3171,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: wind_SpriteSheet_224x112_54
+      name: spnwattack11
       rect:
         serializedVersion: 2
         x: 3228
         y: 560
         width: 41
         height: 38
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.29268292, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -3276,15 +3192,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: wind_SpriteSheet_224x112_55
+      name: spnwattack12
       rect:
         serializedVersion: 2
         x: 3460
         y: 560
         width: 29
         height: 38
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.13793103, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -3297,15 +3213,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: wind_SpriteSheet_224x112_56
+      name: spnwattack13
       rect:
         serializedVersion: 2
         x: 3684
         y: 560
         width: 33
         height: 38
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.121212125, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -3318,15 +3234,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: wind_SpriteSheet_224x112_57
+      name: spnwattack14
       rect:
         serializedVersion: 2
         x: 3908
         y: 560
         width: 33
         height: 38
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.121212125, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -3334,153 +3250,6 @@ TextureImporter:
       bones: []
       spriteID: bdacf0cf77ba9e140800000000000000
       internalID: 4749515813857250011
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: wind_SpriteSheet_224x112_58
-      rect:
-        serializedVersion: 2
-        x: 2147
-        y: 578
-        width: 29
-        height: 10
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 127ec0d3715193730800000000000000
-      internalID: 3979234935311230753
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: wind_SpriteSheet_224x112_59
-      rect:
-        serializedVersion: 2
-        x: 2386
-        y: 586
-        width: 16
-        height: 9
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: a86fa049bedd22330800000000000000
-      internalID: 3684751449013286538
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: wind_SpriteSheet_224x112_60
-      rect:
-        serializedVersion: 2
-        x: 1689
-        y: 567
-        width: 22
-        height: 12
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 91e35e1fb25e64b30800000000000000
-      internalID: 4271353273512181273
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: wind_SpriteSheet_224x112_61
-      rect:
-        serializedVersion: 2
-        x: 1705
-        y: 576
-        width: 24
-        height: 9
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: ddc2e5f9ae4bd7b60800000000000000
-      internalID: 7745545853936217309
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: wind_SpriteSheet_224x112_62
-      rect:
-        serializedVersion: 2
-        x: 2373
-        y: 569
-        width: 25
-        height: 12
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 116644cf6144376a0800000000000000
-      internalID: -6452738975579478511
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: wind_SpriteSheet_224x112_63
-      rect:
-        serializedVersion: 2
-        x: 2392
-        y: 578
-        width: 12
-        height: 7
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: c006dea58cefa8df0800000000000000
-      internalID: -177049098855292916
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: wind_SpriteSheet_224x112_64
-      rect:
-        serializedVersion: 2
-        x: 2152
-        y: 566
-        width: 19
-        height: 12
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 7391e6cc4940ecc80800000000000000
-      internalID: -8300692026065807049
       vertices: []
       indices: 
       edges: []
@@ -4270,8 +4039,8 @@ TextureImporter:
         y: 224
         width: 38
         height: 40
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.05263158, y: 0.475}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -4291,8 +4060,8 @@ TextureImporter:
         y: 224
         width: 34
         height: 44
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.2647059, y: 0.4318182}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -6076,8 +5845,8 @@ TextureImporter:
         y: 224
         width: 34
         height: 38
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.11764706, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -6097,8 +5866,8 @@ TextureImporter:
         y: 224
         width: 35
         height: 40
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.057142857, y: 0.475}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -6118,8 +5887,8 @@ TextureImporter:
         y: 224
         width: 35
         height: 40
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.057142857, y: 0.475}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -6139,8 +5908,8 @@ TextureImporter:
         y: 224
         width: 35
         height: 40
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.057142857, y: 0.475}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -6160,8 +5929,8 @@ TextureImporter:
         y: 224
         width: 41
         height: 38
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.29268292, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -6181,8 +5950,8 @@ TextureImporter:
         y: 224
         width: 33
         height: 38
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.121212125, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
