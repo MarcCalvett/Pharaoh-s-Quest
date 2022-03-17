@@ -17,12 +17,16 @@ public class CameraScript : MonoBehaviour
 
     // Update is called once per frame
     void Update()
-    {       
-        Vector3 position = transform.position;
-        position.x = player.transform.position.x;
-        position.y = player.transform.position.y;
+    {
+        if (!player.GetComponent<PlayerScript>().spaWindSword)
+        {
+            Vector3 position = transform.position;
+            position.x = player.transform.position.x;
+            position.y = player.transform.position.y;
 
-        transform.position = position;        
+            transform.position = position;
+        }    
+                
 
     }
 

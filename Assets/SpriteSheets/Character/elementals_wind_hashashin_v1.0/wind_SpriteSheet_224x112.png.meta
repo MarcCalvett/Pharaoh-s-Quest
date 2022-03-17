@@ -271,7 +271,7 @@ TextureImporter:
     second: wind_SpriteSheet_224x112_88
   - first:
       213: -4928757637753670289
-    second: wind_SpriteSheet_224x112_89
+    second: spaw7
   - first:
       213: 1656212044817529164
     second: wind_SpriteSheet_224x112_90
@@ -367,13 +367,13 @@ TextureImporter:
     second: wind_SpriteSheet_224x112_120
   - first:
       213: -3069168719965931269
-    second: wind_SpriteSheet_224x112_121
+    second: spaw8
   - first:
       213: -604417160947542792
     second: wind_SpriteSheet_224x112_122
   - first:
       213: 9063450574888485700
-    second: wind_SpriteSheet_224x112_123
+    second: spaw9
   - first:
       213: -890148613594021403
     second: wind_SpriteSheet_224x112_124
@@ -382,85 +382,85 @@ TextureImporter:
     second: wind_SpriteSheet_224x112_125
   - first:
       213: -2761323010839717309
-    second: wind_SpriteSheet_224x112_126
+    second: spaw
   - first:
       213: 3227444203762620758
-    second: wind_SpriteSheet_224x112_127
+    second: spaw1
   - first:
       213: 7420964942415483829
-    second: wind_SpriteSheet_224x112_128
+    second: spaw2
   - first:
       213: 2399742655751926521
-    second: wind_SpriteSheet_224x112_129
+    second: spaw3
   - first:
       213: -6332603566090839766
-    second: wind_SpriteSheet_224x112_130
+    second: spaw4
   - first:
       213: 2370187345678206647
-    second: wind_SpriteSheet_224x112_131
+    second: spaw5
   - first:
       213: 6283063298742611720
-    second: wind_SpriteSheet_224x112_132
+    second: spaw6
   - first:
       213: -1691194774390370211
-    second: wind_SpriteSheet_224x112_133
+    second: spaw10
   - first:
       213: -9052568245551214528
-    second: wind_SpriteSheet_224x112_134
+    second: spaw11
   - first:
       213: 9031244366812497154
-    second: wind_SpriteSheet_224x112_135
+    second: spaw12
   - first:
       213: -7682012075476236695
-    second: wind_SpriteSheet_224x112_136
+    second: spaw13
   - first:
       213: -576470571931080554
     second: wind_SpriteSheet_224x112_137
   - first:
       213: -8842711873665058386
-    second: wind_SpriteSheet_224x112_138
+    second: spaw14
   - first:
       213: -2666953299097846090
-    second: wind_SpriteSheet_224x112_139
+    second: spaw15
   - first:
       213: -8631703752929442579
-    second: wind_SpriteSheet_224x112_140
+    second: spaw16
   - first:
       213: -7689512258171914777
     second: wind_SpriteSheet_224x112_141
   - first:
       213: -1830558107027734178
-    second: wind_SpriteSheet_224x112_142
+    second: spaw17
   - first:
       213: -5197068293662430820
     second: wind_SpriteSheet_224x112_143
   - first:
       213: 2716280318490404122
-    second: wind_SpriteSheet_224x112_144
+    second: spaw18
   - first:
       213: -629750446971014961
-    second: wind_SpriteSheet_224x112_145
+    second: spaw19
   - first:
       213: 7028607627148187193
-    second: wind_SpriteSheet_224x112_146
+    second: spaw20
   - first:
       213: -3996487572612268289
-    second: wind_SpriteSheet_224x112_147
+    second: spaw21
   - first:
       213: 8959720737132747442
-    second: wind_SpriteSheet_224x112_148
+    second: spaw22
   - first:
       213: 4671105033788997544
-    second: wind_SpriteSheet_224x112_149
+    second: spaw23
   - first:
       213: -4200348941931388455
-    second: wind_SpriteSheet_224x112_150
+    second: spaw25
   - first:
       213: 1625857075543598056
-    second: wind_SpriteSheet_224x112_151
+    second: spaw26
   - first:
       213: -245704722725833610
-    second: wind_SpriteSheet_224x112_152
+    second: spaw30
   - first:
       213: -3971936995997545028
     second: wind_SpriteSheet_224x112_153
@@ -1474,7 +1474,7 @@ TextureImporter:
     second: wind_SpriteSheet_224x112_86
   - first:
       213: -5746918251467427088
-    second: wind_SpriteSheet_224x112_89
+    second: spaw7
   - first:
       213: 1833262559633002026
     second: wind_SpriteSheet_224x112_91
@@ -1513,7 +1513,7 @@ TextureImporter:
     second: wind_SpriteSheet_224x112_119
   - first:
       213: -3603080924676666948
-    second: wind_SpriteSheet_224x112_121
+    second: spaw8
   - first:
       213: 4279279328495182790
     second: wind_SpriteSheet_224x112_122
@@ -1525,13 +1525,13 @@ TextureImporter:
     second: wind_SpriteSheet_224x112_125
   - first:
       213: -67653118409702835
-    second: wind_SpriteSheet_224x112_127
+    second: spaw1
   - first:
       213: 5209827180755171953
-    second: wind_SpriteSheet_224x112_129
+    second: spaw3
   - first:
       213: -1605342965088421154
-    second: wind_SpriteSheet_224x112_132
+    second: spaw6
   - first:
       213: 9040708399216023964
     second: wind_SpriteSheet_224x112_168
@@ -1672,79 +1672,79 @@ TextureImporter:
     second: wind_SpriteSheet_224x112_120
   - first:
       213: 308234813014451128
-    second: wind_SpriteSheet_224x112_123
+    second: spaw9
   - first:
       213: -2462771373521716704
-    second: wind_SpriteSheet_224x112_126
+    second: spaw
   - first:
       213: -7033732293341073238
-    second: wind_SpriteSheet_224x112_128
+    second: spaw2
   - first:
       213: 4828362660010168224
-    second: wind_SpriteSheet_224x112_130
+    second: spaw4
   - first:
       213: -7208230823450545870
-    second: wind_SpriteSheet_224x112_131
+    second: spaw5
   - first:
       213: 673322818168670688
-    second: wind_SpriteSheet_224x112_133
+    second: spaw10
   - first:
       213: -2302774097839415129
-    second: wind_SpriteSheet_224x112_134
+    second: spaw11
   - first:
       213: 8987244171502450159
-    second: wind_SpriteSheet_224x112_135
+    second: spaw12
   - first:
       213: -2301801678764470712
-    second: wind_SpriteSheet_224x112_136
+    second: spaw13
   - first:
       213: 5601356819640886409
     second: wind_SpriteSheet_224x112_137
   - first:
       213: 3348943662972190114
-    second: wind_SpriteSheet_224x112_138
+    second: spaw14
   - first:
       213: -4384854525676178383
-    second: wind_SpriteSheet_224x112_139
+    second: spaw15
   - first:
       213: 1633100776780221306
-    second: wind_SpriteSheet_224x112_140
+    second: spaw16
   - first:
       213: 5857379640714652392
     second: wind_SpriteSheet_224x112_141
   - first:
       213: -8598682770135323709
-    second: wind_SpriteSheet_224x112_142
+    second: spaw17
   - first:
       213: 3096199464472964161
     second: wind_SpriteSheet_224x112_143
   - first:
       213: 4063053112023371061
-    second: wind_SpriteSheet_224x112_144
+    second: spaw18
   - first:
       213: 5212481518844469051
-    second: wind_SpriteSheet_224x112_145
+    second: spaw19
   - first:
       213: -1476318440010350010
-    second: wind_SpriteSheet_224x112_146
+    second: spaw20
   - first:
       213: -3360030851749029768
-    second: wind_SpriteSheet_224x112_147
+    second: spaw21
   - first:
       213: -1615742953344075819
-    second: wind_SpriteSheet_224x112_148
+    second: spaw22
   - first:
       213: 4340134552767866147
-    second: wind_SpriteSheet_224x112_149
+    second: spaw23
   - first:
       213: -4423404253316989559
-    second: wind_SpriteSheet_224x112_150
+    second: spaw25
   - first:
       213: 3618897436386413918
-    second: wind_SpriteSheet_224x112_151
+    second: spaw26
   - first:
       213: 4696828088131253536
-    second: wind_SpriteSheet_224x112_152
+    second: spaw30
   - first:
       213: 9159463132134622261
     second: wind_SpriteSheet_224x112_153
@@ -2036,6 +2036,9 @@ TextureImporter:
   - first:
       213: 6886477787697402028
     second: wind_SpriteSheet_224x112_447
+  - first:
+      213: 4591082337054865858
+    second: spaw24
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -2940,27 +2943,6 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spnwattack
-      rect:
-        serializedVersion: 2
-        x: 754
-        y: 560
-        width: 45
-        height: 38
-      alignment: 9
-      pivot: {x: 0.46666667, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 2c9b9ba9f0dc6bf30800000000000000
-      internalID: 4591082337054865858
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
       name: spnwattack1
       rect:
         serializedVersion: 2
@@ -3549,15 +3531,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: wind_SpriteSheet_224x112_89
+      name: spaw7
       rect:
         serializedVersion: 2
         x: 1873
-        y: 402
-        width: 90
-        height: 88
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        y: 337
+        width: 53
+        height: 109
+      alignment: 9
+      pivot: {x: 0.33962265, y: 0.17431192}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -3738,15 +3720,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: wind_SpriteSheet_224x112_121
+      name: spaw8
       rect:
         serializedVersion: 2
         x: 2092
-        y: 418
-        width: 50
-        height: 26
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        y: 337
+        width: 52
+        height: 107
+      alignment: 9
+      pivot: {x: 0.34615386, y: 0.17757009}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -3759,78 +3741,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: wind_SpriteSheet_224x112_122
-      rect:
-        serializedVersion: 2
-        x: 2114
-        y: 405
-        width: 14
-        height: 14
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 6c3a0ad60ed036b30800000000000000
-      internalID: 4279279328495182790
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: wind_SpriteSheet_224x112_124
-      rect:
-        serializedVersion: 2
-        x: 2138
-        y: 407
-        width: 6
-        height: 10
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 1cd7f313bb06ec4c0800000000000000
-      internalID: -4265365439971885631
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: wind_SpriteSheet_224x112_125
-      rect:
-        serializedVersion: 2
-        x: 2123
-        y: 397
-        width: 4
-        height: 4
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: c98ab15a2d622e1b0800000000000000
-      internalID: -5628893898104657764
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: wind_SpriteSheet_224x112_127
+      name: spaw1
       rect:
         serializedVersion: 2
         x: 306
         y: 336
         width: 60
         height: 38
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.35, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -3843,15 +3762,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: wind_SpriteSheet_224x112_129
+      name: spaw3
       rect:
         serializedVersion: 2
         x: 752
         y: 336
         width: 59
         height: 36
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.3898305, y: 0.5277778}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -3864,15 +3783,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: wind_SpriteSheet_224x112_132
+      name: spaw6
       rect:
         serializedVersion: 2
         x: 1504
         y: 337
         width: 46
         height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.39130434, y: 0.59375}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -3880,27 +3799,6 @@ TextureImporter:
       bones: []
       spriteID: eda7b37241da8b9e0800000000000000
       internalID: -1605342965088421154
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: wind_SpriteSheet_224x112_168
-      rect:
-        serializedVersion: 2
-        x: 4062
-        y: 337
-        width: 30
-        height: 12
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: c99592da36c077d70800000000000000
-      internalID: 9040708399216023964
       vertices: []
       indices: 
       edges: []
@@ -4683,15 +4581,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: wind_SpriteSheet_224x112_123
+      name: spaw9
       rect:
         serializedVersion: 2
         x: 2316
-        y: 387
+        y: 337
         width: 52
-        height: 44
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        height: 94
+      alignment: 9
+      pivot: {x: 0.34615386, y: 0.20212767}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -4704,15 +4602,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: wind_SpriteSheet_224x112_126
+      name: spaw
       rect:
         serializedVersion: 2
         x: 100
         y: 336
         width: 32
         height: 38
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.125, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -4725,15 +4623,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: wind_SpriteSheet_224x112_128
+      name: spaw2
       rect:
         serializedVersion: 2
         x: 529
         y: 336
         width: 59
         height: 37
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.37288135, y: 0.5135135}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -4746,15 +4644,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: wind_SpriteSheet_224x112_130
+      name: spaw4
       rect:
         serializedVersion: 2
         x: 1012
         y: 337
         width: 49
         height: 35
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.36734694, y: 0.54285717}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -4767,15 +4665,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: wind_SpriteSheet_224x112_131
+      name: spaw5
       rect:
         serializedVersion: 2
         x: 1267
         y: 337
         width: 45
         height: 35
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.4, y: 0.54285717}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -4788,15 +4686,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: wind_SpriteSheet_224x112_133
+      name: spaw10
       rect:
         serializedVersion: 2
         x: 2543
         y: 336
         width: 68
         height: 53
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.42647058, y: 0.35849056}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -4809,15 +4707,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: wind_SpriteSheet_224x112_134
+      name: spaw11
       rect:
         serializedVersion: 2
         x: 2762
-        y: 346
-        width: 37
-        height: 21
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        y: 337
+        width: 66
+        height: 30
+      alignment: 9
+      pivot: {x: 0.43939394, y: 0.6333333}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -4830,15 +4728,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: wind_SpriteSheet_224x112_135
+      name: spaw12
       rect:
         serializedVersion: 2
-        x: 3032
+        x: 3010
         y: 337
-        width: 44
+        width: 66
         height: 30
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.43939394, y: 0.6333333}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -4851,15 +4749,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: wind_SpriteSheet_224x112_136
+      name: spaw13
       rect:
         serializedVersion: 2
         x: 3312
-        y: 348
+        y: 344
         width: 47
-        height: 20
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        height: 29
+      alignment: 9
+      pivot: {x: 0.23404256, y: 0.6551724}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -4872,36 +4770,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: wind_SpriteSheet_224x112_137
+      name: spaw14
       rect:
         serializedVersion: 2
-        x: 3318
-        y: 364
-        width: 23
-        height: 9
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 98428e6a9540cbd40800000000000000
-      internalID: 5601356819640886409
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: wind_SpriteSheet_224x112_138
-      rect:
-        serializedVersion: 2
-        x: 3526
-        y: 349
-        width: 43
-        height: 25
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        x: 3519
+        y: 344
+        width: 50
+        height: 30
+      alignment: 9
+      pivot: {x: 0.22, y: 0.6333333}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -4914,15 +4791,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: wind_SpriteSheet_224x112_139
+      name: spaw15
       rect:
         serializedVersion: 2
         x: 3726
         y: 336
         width: 50
         height: 38
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.22, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -4935,15 +4812,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: wind_SpriteSheet_224x112_140
+      name: spaw16
       rect:
         serializedVersion: 2
         x: 3856
         y: 336
-        width: 50
-        height: 39
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        width: 91
+        height: 45
+      alignment: 9
+      pivot: {x: 0.10989011, y: 0.42222223}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -4956,36 +4833,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: wind_SpriteSheet_224x112_141
+      name: spaw17
       rect:
         serializedVersion: 2
-        x: 3902
-        y: 340
-        width: 45
-        height: 41
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 8eae66fdfb7994150800000000000000
-      internalID: 5857379640714652392
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: wind_SpriteSheet_224x112_142
-      rect:
-        serializedVersion: 2
-        x: 4071
-        y: 362
-        width: 16
-        height: 7
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        x: 4046
+        y: 337
+        width: 63
+        height: 32
+      alignment: 9
+      pivot: {x: 0.2857143, y: 0.59375}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -4998,36 +4854,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: wind_SpriteSheet_224x112_143
+      name: spaw18
       rect:
         serializedVersion: 2
         x: 4340
-        y: 338
-        width: 43
-        height: 53
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 14c6aa13209e7fa20800000000000000
-      internalID: 3096199464472964161
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: wind_SpriteSheet_224x112_144
-      rect:
-        serializedVersion: 2
-        x: 4395
         y: 336
-        width: 59
-        height: 35
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        width: 114
+        height: 55
+      alignment: 9
+      pivot: {x: 0.6666667, y: 0.34545454}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -5040,15 +4875,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: wind_SpriteSheet_224x112_145
+      name: spaw19
       rect:
         serializedVersion: 2
         x: 4619
         y: 336
         width: 59
         height: 35
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.3559322, y: 0.54285717}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -5061,15 +4896,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: wind_SpriteSheet_224x112_146
+      name: spaw20
       rect:
         serializedVersion: 2
         x: 4843
         y: 336
         width: 59
         height: 35
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.3559322, y: 0.54285717}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -5082,15 +4917,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: wind_SpriteSheet_224x112_147
+      name: spaw21
       rect:
         serializedVersion: 2
         x: 5067
         y: 336
         width: 59
         height: 35
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.3559322, y: 0.54285717}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -5103,15 +4938,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: wind_SpriteSheet_224x112_148
+      name: spaw22
       rect:
         serializedVersion: 2
         x: 5291
         y: 336
         width: 59
         height: 35
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.3559322, y: 0.54285717}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -5124,15 +4959,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: wind_SpriteSheet_224x112_149
+      name: spaw23
       rect:
         serializedVersion: 2
-        x: 5531
-        y: 345
-        width: 35
-        height: 26
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        x: 5504
+        y: 337
+        width: 62
+        height: 34
+      alignment: 9
+      pivot: {x: 0.32258064, y: 0.5588235}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -5145,15 +4980,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: wind_SpriteSheet_224x112_150
+      name: spaw25
       rect:
         serializedVersion: 2
         x: 6178
         y: 337
-        width: 227
+        width: 43
         height: 35
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.4651163, y: 0.54285717}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -5166,15 +5001,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: wind_SpriteSheet_224x112_151
+      name: spaw26
       rect:
         serializedVersion: 2
-        x: 6402
+        x: 6388
         y: 337
-        width: 25
+        width: 39
         height: 36
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.051282052, y: 0.5277778}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -5187,15 +5022,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: wind_SpriteSheet_224x112_152
+      name: spaw30
       rect:
         serializedVersion: 2
         x: 6590
         y: 336
         width: 39
         height: 37
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.051282052, y: 0.5135135}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -5203,342 +5038,6 @@ TextureImporter:
       bones: []
       spriteID: 025f324e24c7e2140800000000000000
       internalID: 4696828088131253536
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: wind_SpriteSheet_224x112_153
-      rect:
-        serializedVersion: 2
-        x: 3010
-        y: 342
-        width: 35
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 534cb249033fc1f70800000000000000
-      internalID: 9159463132134622261
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: wind_SpriteSheet_224x112_154
-      rect:
-        serializedVersion: 2
-        x: 3318
-        y: 357
-        width: 10
-        height: 5
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: a0263c77ffd30ed20800000000000000
-      internalID: 3305710293925192202
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: wind_SpriteSheet_224x112_155
-      rect:
-        serializedVersion: 2
-        x: 4061
-        y: 352
-        width: 21
-        height: 9
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: bd32c06da5a642a60800000000000000
-      internalID: 7648355005552665563
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: wind_SpriteSheet_224x112_156
-      rect:
-        serializedVersion: 2
-        x: 4091
-        y: 354
-        width: 10
-        height: 5
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 38c1601e02f12b730800000000000000
-      internalID: 4013304444015221891
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: wind_SpriteSheet_224x112_157
-      rect:
-        serializedVersion: 2
-        x: 5504
-        y: 344
-        width: 33
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 85fded6136e8fcfb0800000000000000
-      internalID: -4625321736049598632
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: wind_SpriteSheet_224x112_158
-      rect:
-        serializedVersion: 2
-        x: 2785
-        y: 337
-        width: 12
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 26df02a3c6823d8a0800000000000000
-      internalID: -6281632609954890398
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: wind_SpriteSheet_224x112_159
-      rect:
-        serializedVersion: 2
-        x: 2802
-        y: 345
-        width: 26
-        height: 10
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 0cb691a377efaaf20800000000000000
-      internalID: 3434837453852732352
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: wind_SpriteSheet_224x112_160
-      rect:
-        serializedVersion: 2
-        x: 3314
-        y: 344
-        width: 34
-        height: 7
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 8d61071165de397b0800000000000000
-      internalID: -5218566589276743976
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: wind_SpriteSheet_224x112_161
-      rect:
-        serializedVersion: 2
-        x: 3519
-        y: 344
-        width: 17
-        height: 8
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 297c86dc70a4e69c0800000000000000
-      internalID: -3932124027276441710
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: wind_SpriteSheet_224x112_162
-      rect:
-        serializedVersion: 2
-        x: 4046
-        y: 344
-        width: 17
-        height: 7
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 0c1f375b02eb9ae20800000000000000
-      internalID: 3362427644501291456
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: wind_SpriteSheet_224x112_163
-      rect:
-        serializedVersion: 2
-        x: 4067
-        y: 350
-        width: 17
-        height: 7
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 3235199d782548d20800000000000000
-      internalID: 3279837172056806179
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: wind_SpriteSheet_224x112_164
-      rect:
-        serializedVersion: 2
-        x: 4097
-        y: 345
-        width: 12
-        height: 8
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: b8da18e4e147d24f0800000000000000
-      internalID: -851897080988193397
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: wind_SpriteSheet_224x112_165
-      rect:
-        serializedVersion: 2
-        x: 5534
-        y: 337
-        width: 22
-        height: 20
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: b63eb1d1002a20a70800000000000000
-      internalID: 8791767543952696171
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: wind_SpriteSheet_224x112_166
-      rect:
-        serializedVersion: 2
-        x: 2797
-        y: 337
-        width: 12
-        height: 9
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: b57860bbe666b6e50800000000000000
-      internalID: 6803644287843469147
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: wind_SpriteSheet_224x112_167
-      rect:
-        serializedVersion: 2
-        x: 3533
-        y: 344
-        width: 24
-        height: 5
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 17a92e03866cf3f80800000000000000
-      internalID: -8124557051954029967
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: wind_SpriteSheet_224x112_169
-      rect:
-        serializedVersion: 2
-        x: 5522
-        y: 337
-        width: 15
-        height: 7
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 33b6a6ba9f77ad0c0800000000000000
-      internalID: -4550192559298024653
       vertices: []
       indices: 
       edges: []
