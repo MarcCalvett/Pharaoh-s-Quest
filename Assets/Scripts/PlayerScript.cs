@@ -255,6 +255,7 @@ public class PlayerScript : MonoBehaviour
     {
         spaWindSword = true;
         animator.SetBool("spaWS", false);
+        rememberOriginalPositionForSpaw = transform.position;
     }
     public void EndSPAttackNormalSword()
     {
@@ -295,97 +296,14 @@ public class PlayerScript : MonoBehaviour
         }
         
         
-    }
-    //public void MoveFirstPartForSPAWS()
-    //{
-
-    //    if (transform.localScale.x > 0)
-    //    {
-    //        horizontal = 1;
-    //    }
-    //    else
-    //    {
-    //        horizontal = -1;
-    //    }
-    //}
-    //public void MoveSecondPartForSPAWS()
-    //{        
-    //    if (transform.localScale.x > 0)
-    //    {
-    //        horizontal = -1;
-    //    }
-    //    else
-    //    {
-    //        horizontal = +1;
-    //    }
-    //    Vector3 aux = transform.localScale;
-    //    aux.x *= -1;
-    //    transform.localScale = aux;
-    //}
-    //public void MoveThirdPartForSPAWS()
-    //{
-    //    Vector3 aux = transform.localScale;
-    //    aux.x *= -1;
-    //    transform.localScale = aux;
-    //    if (transform.localScale.x > 0)
-    //    {
-    //        horizontal = 1;
-    //    }
-    //    else
-    //    {
-    //        horizontal = -1;
-    //    }
-
-    //}
-    //public void MoveFourthPartForSPAWS()
-    //{
-    //    Vector3 aux = transform.localScale;
-    //    aux.x *= -1;
-    //    transform.localScale = aux;
-    //    if (transform.localScale.x > 0)
-    //    {
-    //        horizontal = -1;
-    //    }
-    //    else
-    //    {
-    //        horizontal = +1;
-    //    }
-
-    //}
-    //public void ReturnForSPAWS()
-    //{
-
-    //    transform.position = rememberPositionForSpaw;
-    //}
+    }    
     public void StopForSPAWS()
     {
         horizontal = 0;
-    }
-    //public void SetPositionFor2Spaw()
-    //{
-    //    Vector3 aux;
-    //    aux.z = 0;
-    //    aux.y = rememberPositionForSpaw1.y;
-    //    aux.x = rememberPositionForSpaw1.x;
-    //    transform.position -= aux;
-    //}
-    //public void SetPositionFor3Spaw()
-    //{
-    //    Vector3 aux;
-    //    aux.z = 0;
-    //    aux.y = rememberPositionForSpaw1.y;
-    //    aux.x = rememberPositionForSpaw1.x;        
-    //    transform.position = rememberPositionForSpaw1 - aux;
-    //}
-    //public void RememberForSPAWS()
-    //{
-    //    horizontal = 0;
-    //    rememberPositionForSpaw = transform.position;
-    //    rememberPositionForSpaw.x = transform.position.x + 2;
-    //}
+    }    
     public void DashToFirstPoint()
     {
-        rememberOriginalPositionForSpaw = transform.position;
+        
         if (transform.localScale.x > 0)
         {
             horizontal = 1;
@@ -406,7 +324,7 @@ public class PlayerScript : MonoBehaviour
         else
         {
             rememberPositionForSpaw.x = transform.position.x - 2;
-        }
+        }     
         
     }
     public void ReturnOrigin()
@@ -414,10 +332,7 @@ public class PlayerScript : MonoBehaviour
         transform.position = rememberOriginalPositionForSpaw;
     }    
     public void DashToSecondPoint()
-    {
-        //Vector3 aux = transform.localScale;
-        //aux.x *= -1;
-        //transform.localScale = aux;
+    {       
 
         if (transform.localScale.x > 0)
         {
@@ -431,45 +346,25 @@ public class PlayerScript : MonoBehaviour
     public void GoSecondPoint()
     {
         Vector3 aux;
+        float operationPosition;
+
         if (transform.localScale.x > 0)
-        {
-            if(transform.position.x >= 0.0f)
-            {
-                aux.x = rememberPositionForSpaw.x - rememberOriginalPositionForSpaw.x;
-                //Debug.Log(aux.x);
-            }            
-            else
-            {
-                float operationPosition;
-                operationPosition = rememberPositionForSpaw.x - rememberOriginalPositionForSpaw.x;
-                aux.x = rememberOriginalPositionForSpaw.x - operationPosition;
-            }
-                
+        {                        
+            operationPosition = rememberPositionForSpaw.x - rememberOriginalPositionForSpaw.x;
+            aux.x = rememberOriginalPositionForSpaw.x - operationPosition;
         }
         else
-        {
-            if (transform.position.x > 0.0f)
-            {
-                aux.x = rememberPositionForSpaw.x + rememberOriginalPositionForSpaw.x;
-                //Debug.Log(aux.x);
-            }
-            else
-            {
-                float operationPosition;
-                operationPosition = rememberOriginalPositionForSpaw.x - rememberPositionForSpaw.x;
-                aux.x = rememberOriginalPositionForSpaw.x + operationPosition;
-            }
-        }        
+        {                       
+            operationPosition = rememberOriginalPositionForSpaw.x - rememberPositionForSpaw.x;
+            aux.x = rememberOriginalPositionForSpaw.x + operationPosition;
+        }
+
         aux.y = rememberOriginalPositionForSpaw.y;
-        aux.z = rememberOriginalPositionForSpaw.z;
+        aux.z = rememberOriginalPositionForSpaw.z;        
         transform.position = aux;
     }
     public void ReturnFirstPoint()
-    {
-        //Vector3 aux = transform.localScale;
-        //aux.x *= -1;
-        //transform.localScale = aux;
+    {        
         transform.position = rememberPositionForSpaw;
-    }
-    //Return origin
+    }    
 }
