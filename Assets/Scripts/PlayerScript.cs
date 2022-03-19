@@ -25,6 +25,7 @@ public class PlayerScript : MonoBehaviour
     //private Vector3 rememberPositionForSpaw3;
 
     private int cancelMovement = 1;
+    private int cancelGravity = 1;
     private bool attacking;
     private bool dodging;
     private bool windSwordInHand;
@@ -59,6 +60,7 @@ public class PlayerScript : MonoBehaviour
     private void FixedUpdate()
     {
         Rigidbody2D.velocity = new Vector2(horizontal*speed*cancelMovement, Rigidbody2D.velocity.y);
+        Physics2D.gravity *= cancelGravity;
     }
 
     private void CheckInputs()
@@ -228,6 +230,7 @@ public class PlayerScript : MonoBehaviour
     }
     public void EndSPAttackWindSword()
     {
+        cancelGravity = 1;
         spaWindSword = false;
         cancelMovement = 1;
     }
@@ -253,6 +256,7 @@ public class PlayerScript : MonoBehaviour
     }
     public void SPAttackWindSwordStarted()
     {
+        cancelGravity = 0;
         spaWindSword = true;
         animator.SetBool("spaWS", false);
         rememberOriginalPositionForSpaw = transform.position;
