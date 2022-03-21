@@ -538,28 +538,28 @@ TextureImporter:
     second: wind_SpriteSheet_224x112_177
   - first:
       213: -8405768438004048898
-    second: wind_SpriteSheet_224x112_178
+    second: takeDamage
   - first:
       213: 3237768716475673842
     second: wind_SpriteSheet_224x112_179
   - first:
       213: -4887472415252084748
-    second: wind_SpriteSheet_224x112_180
+    second: takeDamage2
   - first:
       213: -3559526754115580170
-    second: wind_SpriteSheet_224x112_181
+    second: takeDamage3
   - first:
       213: -8007622798312496604
-    second: wind_SpriteSheet_224x112_182
+    second: takeDamage1
   - first:
       213: 8269535425040247208
     second: wind_SpriteSheet_224x112_183
   - first:
       213: -443893519094157715
-    second: wind_SpriteSheet_224x112_184
+    second: takeDamage4
   - first:
       213: -7618406299477421337
-    second: wind_SpriteSheet_224x112_185
+    second: takeDamage5
   - first:
       213: 5537456320603315123
     second: wind_SpriteSheet_224x112_186
@@ -1543,10 +1543,10 @@ TextureImporter:
     second: wind_SpriteSheet_224x112_175
   - first:
       213: -4585525432584326469
-    second: wind_SpriteSheet_224x112_180
+    second: takeDamage2
   - first:
       213: 585330497941713157
-    second: wind_SpriteSheet_224x112_185
+    second: takeDamage5
   - first:
       213: 9001015963128674977
     second: wind_SpriteSheet_224x112_187
@@ -1813,22 +1813,22 @@ TextureImporter:
     second: wind_SpriteSheet_224x112_177
   - first:
       213: 5937914224147341784
-    second: wind_SpriteSheet_224x112_178
+    second: takeDamage
   - first:
       213: 5138110955309423354
     second: wind_SpriteSheet_224x112_179
   - first:
       213: 585038187405954102
-    second: wind_SpriteSheet_224x112_181
+    second: takeDamage3
   - first:
       213: -6763720761378897780
-    second: wind_SpriteSheet_224x112_182
+    second: takeDamage1
   - first:
       213: -8615646537575883329
     second: wind_SpriteSheet_224x112_183
   - first:
       213: 2327236551445647538
-    second: wind_SpriteSheet_224x112_184
+    second: takeDamage4
   - first:
       213: 3758354783414494581
     second: wind_SpriteSheet_224x112_186
@@ -3846,15 +3846,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: wind_SpriteSheet_224x112_180
+      name: takeDamage2
       rect:
         serializedVersion: 2
         x: 536
         y: 112
         width: 41
         height: 52
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.14634146, y: 0.3653846}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -3867,15 +3867,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: wind_SpriteSheet_224x112_185
+      name: takeDamage5
       rect:
         serializedVersion: 2
         x: 1220
         y: 112
         width: 33
         height: 38
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.121212125, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -5169,15 +5169,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: wind_SpriteSheet_224x112_178
+      name: takeDamage
       rect:
         serializedVersion: 2
         x: 96
         y: 112
         width: 29
         height: 43
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.51724136, y: 0.44186047}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -5190,36 +5190,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: wind_SpriteSheet_224x112_179
-      rect:
-        serializedVersion: 2
-        x: 336
-        y: 153
-        width: 8
-        height: 8
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: afad2c3e0bc3e4740800000000000000
-      internalID: 5138110955309423354
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: wind_SpriteSheet_224x112_181
+      name: takeDamage3
       rect:
         serializedVersion: 2
         x: 759
         y: 112
         width: 44
         height: 54
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.1590909, y: 0.35185185}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -5232,15 +5211,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: wind_SpriteSheet_224x112_182
+      name: takeDamage1
       rect:
         serializedVersion: 2
         x: 311
         y: 112
-        width: 31
-        height: 38
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        width: 40
+        height: 49
+      alignment: 9
+      pivot: {x: 0.175, y: 0.3877551}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -5253,36 +5232,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: wind_SpriteSheet_224x112_183
-      rect:
-        serializedVersion: 2
-        x: 344
-        y: 138
-        width: 7
-        height: 15
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: fbd17792f131f6880800000000000000
-      internalID: -8615646537575883329
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: wind_SpriteSheet_224x112_184
+      name: takeDamage4
       rect:
         serializedVersion: 2
         x: 983
         y: 112
         width: 37
         height: 38
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.1891892, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []

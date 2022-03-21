@@ -18,20 +18,24 @@ public class PlayerScript : MonoBehaviour
     private float lastDefaultAttackWind;
     private float lastSPAWS;
     private float lastScroll;
+    private float lastDash;
+    private float scrollSpeedBoost;
+    private float dashSpeedBoost;
     private float timeSwitchSword;
     private Vector3 rememberPositionForSpaw;
     private Vector3 rememberOriginalPositionForSpaw;
+    private Vector2 rememberGravity;
     //private Vector3 rememberPositionForSpaw2;
     //private Vector3 rememberPositionForSpaw3;
 
-    private int cancelMovement = 1;
-    private int cancelGravity = 1;
+    private int cancelMovement;    
     private bool attacking;
     private bool dodging;
     private bool windSwordInHand;
     private bool windSwordTaken;
     private bool spaNormalSword;
     private bool attackingWind;
+    private bool dashing;
     public bool spaWindSword;
     [HideInInspector]public bool grounded;
 
@@ -47,6 +51,10 @@ public class PlayerScript : MonoBehaviour
         spaNormalSword = false;
         attackingWind = false;
         spaWindSword = false;
+        dashing = false;
+        cancelMovement = 1;
+        scrollSpeedBoost = 2;
+        dashSpeedBoost = 3;
     }
 
     // Update is called once per frame
@@ -59,13 +67,12 @@ public class PlayerScript : MonoBehaviour
 
     private void FixedUpdate()
     {
-        Rigidbody2D.velocity = new Vector2(horizontal*speed*cancelMovement, Rigidbody2D.velocity.y);
-        Physics2D.gravity *= cancelGravity;
+        Rigidbody2D.velocity = new Vector2(horizontal*speed*cancelMovement, Rigidbody2D.velocity.y);        
     }
 
     private void CheckInputs()
     {
-        if (animator.GetBool("defaultAttack") == false && animator.GetBool("scroll") == false)
+        if (animator.GetBool("defaultAttack") == false && animator.GetBool("scroll") == false && animator.GetBool("dash") == false)
         {
             if (!spaWindSword)
             {
@@ -84,22 +91,36 @@ public class PlayerScript : MonoBehaviour
             }
             
         }        
-        if (Input.GetKey(KeyCode.Space) && grounded && Time.time > lastJump + 0.5 && animator.GetBool("scroll") == false && cancelMovement != 0 && !spaWindSword)
+        if (Input.GetKey(KeyCode.Space) && grounded && Time.time > lastJump + 0.5 && animator.GetBool("scroll") == false && cancelMovement != 0 && !spaWindSword && animator.GetBool("dash") == false)
         {
             Jump();
             lastJump = Time.time;
         }        
-        if (Input.GetKey(KeyCode.F) && Time.time > lastParry + 0.9f && grounded && animator.GetBool("scroll") == false)
+        if (Input.GetKey(KeyCode.F) && Time.time > lastParry + 0.9f && grounded && animator.GetBool("scroll") == false && animator.GetBool("dash") == false)
         {
             animator.SetBool("parry", true);
             cancelMovement = 0;
             lastParry = Time.time;
         }
-        if (Input.GetKey(KeyCode.S) && grounded && animator.GetBool("running") && Time.time > lastScroll + 0.7f){
-            animator.SetBool("scroll", true);
-            animator.SetBool("running", false);
-            lastScroll = Time.time;
-
+        if (Input.GetKey(KeyCode.S) && grounded && animator.GetBool("running")){
+            if (!windSwordInHand && Time.time > lastScroll + 0.7f)
+            {
+                animator.SetBool("scroll", true);
+                animator.SetBool("running", false);                
+                speed *= scrollSpeedBoost;
+                lastScroll = Time.time;
+            }
+            else if(windSwordInHand && Time.time >lastDash + 0.7)
+            {
+                animator.SetBool("dash", true);
+                animator.SetBool("running", false);
+                dashing = true;
+                speed *= dashSpeedBoost;
+                rememberGravity = Physics2D.gravity;
+                Physics2D.gravity *= 0;
+                lastDash = Time.time;
+            }
+           
         }
         if (Input.GetKey(KeyCode.Q))
         {
@@ -118,13 +139,13 @@ public class PlayerScript : MonoBehaviour
         }
         if (!windSwordInHand)
         {
-            if (Input.GetKey(KeyCode.E) && Time.time > lastDefaultAttack + 1.2 && grounded && animator.GetBool("scroll") == false)
+            if (Input.GetKey(KeyCode.E) && Time.time > lastDefaultAttack + 1.2 && grounded && animator.GetBool("scroll") == false && animator.GetBool("dash") == false)
             {
                 animator.SetBool("defaultAttack", true);
                 cancelMovement = 0;
                 lastDefaultAttack = Time.time;
             }
-            if(Input.GetKey(KeyCode.R) && Time.time > lastSPANS + 1.4 && grounded && animator.GetBool("scroll") == false)
+            if(Input.GetKey(KeyCode.R) && Time.time > lastSPANS + 1.4 && grounded && animator.GetBool("scroll") == false && animator.GetBool("dash") == false)
             {
                 animator.SetBool("spaNS", true);
                 cancelMovement = 0;
@@ -133,13 +154,13 @@ public class PlayerScript : MonoBehaviour
         }
         else
         {
-            if (Input.GetKey(KeyCode.E) && Time.time > lastDefaultAttackWind + 1.6 && grounded && animator.GetBool("scroll") == false)
+            if (Input.GetKey(KeyCode.E) && Time.time > lastDefaultAttackWind + 1.6 && grounded && animator.GetBool("scroll") == false && animator.GetBool("dash") == false)
             {
                 animator.SetBool("defaultAttackWind", true);
                 cancelMovement = 0;
                 lastDefaultAttackWind = Time.time;
             }
-            if (Input.GetKey(KeyCode.R) && Time.time > lastSPAWS + 1.4 && grounded && animator.GetBool("scroll") == false)
+            if (Input.GetKey(KeyCode.R) && Time.time > lastSPAWS + 1.4 && grounded && animator.GetBool("scroll") == false && animator.GetBool("dash") == false)
             {
                 animator.SetBool("spaWS", true);                
                 lastSPAWS = Time.time;
@@ -153,7 +174,6 @@ public class PlayerScript : MonoBehaviour
     {
         Rigidbody2D.AddForce(Vector2.up * jumpForce);
     }
-
     private void Orientation()
     {
         Vector3 auxiliar;
@@ -168,7 +188,6 @@ public class PlayerScript : MonoBehaviour
             transform.localScale = new Vector3(-auxiliar.x, auxiliar.y, auxiliar.z);
         }
     }
-
     private void CheckLanding()
     {
         Debug.DrawRay(transform.position, Vector3.down * 0.9f, Color.red);
@@ -198,7 +217,7 @@ public class PlayerScript : MonoBehaviour
             animator.SetBool("jump", false);
             animator.SetBool("fall", false);
         }
-        else if(!spaWindSword)
+        else if(!spaWindSword && !dashing)
         {
             if (Rigidbody2D.velocity.y > 0)
             {
@@ -215,6 +234,7 @@ public class PlayerScript : MonoBehaviour
         if (animator.GetBool("idle"))
         {
             animator.SetBool("scroll", false);
+            animator.SetBool("dash", false);
         }
     }
     public void EndDefaultAttack()
@@ -230,7 +250,7 @@ public class PlayerScript : MonoBehaviour
     }
     public void EndSPAttackWindSword()
     {
-        cancelGravity = 1;
+        Physics2D.gravity = rememberGravity;        
         spaWindSword = false;
         cancelMovement = 1;
     }
@@ -256,7 +276,8 @@ public class PlayerScript : MonoBehaviour
     }
     public void SPAttackWindSwordStarted()
     {
-        cancelGravity = 0;
+        rememberGravity = Physics2D.gravity;
+        Physics2D.gravity *= 0;        
         spaWindSword = true;
         animator.SetBool("spaWS", false);
         rememberOriginalPositionForSpaw = transform.position;
@@ -273,7 +294,15 @@ public class PlayerScript : MonoBehaviour
     }
     public void EndScroll()
     {
+        speed /= scrollSpeedBoost;
         horizontal = 0;
+    }
+    public void EndDash()
+    {
+        dashing = false;
+        speed /= dashSpeedBoost;
+        horizontal = 0;
+        Physics2D.gravity = rememberGravity;
     }
     public void ThrowTornado()
     {
