@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 
 public class PlayerScript : MonoBehaviour
@@ -20,6 +21,7 @@ public class PlayerScript : MonoBehaviour
     private float lastScroll;
     private float lastDash;
     private float scrollSpeedBoost;
+    private float lastTreure;
     private float dashSpeedBoost;
     private float timeSwitchSword;
     private Vector3 rememberPositionForSpaw;
@@ -27,7 +29,9 @@ public class PlayerScript : MonoBehaviour
     private Vector2 rememberGravity;
     //private Vector3 rememberPositionForSpaw2;
     //private Vector3 rememberPositionForSpaw3;
-
+    public FloatValue playerHealth;
+    public FloatValue playerStamina;
+    public IntValue playerLives;
     private int cancelMovement;    
     private bool attacking;
     private bool dodging;
@@ -37,6 +41,8 @@ public class PlayerScript : MonoBehaviour
     private bool attackingWind;
     private bool dashing;
     public bool spaWindSword;
+    public BoolValue rechargingStamina;
+    
     [HideInInspector]public bool grounded;
 
     // Start is called before the first frame update
@@ -55,21 +61,50 @@ public class PlayerScript : MonoBehaviour
         cancelMovement = 1;
         scrollSpeedBoost = 2;
         dashSpeedBoost = 3;
+        
     }
 
     // Update is called once per frame
     void Update()
     {
-        CheckInputs();
-        UpdateAnimations();       
+        if (!rechargingStamina.RuntimeValue)
+        {
+            CheckInputs();
+            UpdateAnimations();
+        }
+        else
+        {
+            WaitForStamina();
+        }           
        
     }
-
     private void FixedUpdate()
     {
         Rigidbody2D.velocity = new Vector2(horizontal*speed*cancelMovement, Rigidbody2D.velocity.y);        
-    }
+    }    
 
+    [ContextMenu("Take Damage")]
+    private void TakeDamage()
+    {
+        playerHealth.RuntimeValue -= 35;
+    }
+    [ContextMenu("Spend Stamina")]
+    private void TakeStamina()
+    {
+        playerStamina.RuntimeValue -= 25;
+    }
+    private void WaitForStamina()
+    {
+        animator.SetBool("idle", true);
+        animator.SetBool("scroll", false);
+        animator.SetBool("dash", false);
+        horizontal = 0;
+        if (grounded)
+        {
+            animator.SetBool("jump", false);
+            animator.SetBool("fall", false);
+        }
+    }
     private void CheckInputs()
     {
         if (animator.GetBool("defaultAttack") == false && animator.GetBool("scroll") == false && animator.GetBool("dash") == false)
