@@ -42,7 +42,7 @@ public class PlayerScript : MonoBehaviour
     private bool dashing;
     public bool spaWindSword;
     public BoolValue rechargingStamina;
-    
+    private float recoverStaminaTime;
     [HideInInspector]public bool grounded;
 
     // Start is called before the first frame update
@@ -69,6 +69,10 @@ public class PlayerScript : MonoBehaviour
     {
         if (!rechargingStamina.RuntimeValue)
         {
+            if (animator.GetBool("rechargingLoop"))
+            {
+                animator.SetBool("rechargingLoop", false);
+            }
             CheckInputs();
             UpdateAnimations();
         }
@@ -95,7 +99,11 @@ public class PlayerScript : MonoBehaviour
     }
     private void WaitForStamina()
     {
-        animator.SetBool("idle", true);
+        if (!animator.GetBool("recharging") && !animator.GetBool("rechargingLoop"))
+        {
+            animator.SetBool("recharging", true);
+        }
+        animator.SetBool("idle", false);
         animator.SetBool("scroll", false);
         animator.SetBool("dash", false);
         horizontal = 0;
@@ -113,10 +121,20 @@ public class PlayerScript : MonoBehaviour
             {
                 if (Input.GetKey(KeyCode.A))
                 {
+                    if(Time.time > recoverStaminaTime + 0.02f)
+                    {
+                        playerStamina.RuntimeValue -= 0.02f;
+                        recoverStaminaTime = Time.time;
+                    }
                     horizontal = -1;
                 }
                 else if (Input.GetKey(KeyCode.D))
                 {
+                    if (Time.time > recoverStaminaTime + 0.02f)
+                    {
+                        playerStamina.RuntimeValue -= 0.02f;
+                        recoverStaminaTime = Time.time;
+                    }
                     horizontal = 1;
                 }
                 else
@@ -128,31 +146,47 @@ public class PlayerScript : MonoBehaviour
         }        
         if (Input.GetKey(KeyCode.Space) && grounded && Time.time > lastJump + 0.5 && animator.GetBool("scroll") == false && cancelMovement != 0 && !spaWindSword && animator.GetBool("dash") == false)
         {
-            Jump();
+            playerStamina.RuntimeValue -= 15;
+            if (playerStamina.RuntimeValue > 0)
+            {
+                Jump();
+            }            
             lastJump = Time.time;
         }        
         if (Input.GetKey(KeyCode.F) && Time.time > lastParry + 0.9f && grounded && animator.GetBool("scroll") == false && animator.GetBool("dash") == false)
         {
-            animator.SetBool("parry", true);
-            cancelMovement = 0;
+            playerStamina.RuntimeValue -= 20;
+            if (playerStamina.RuntimeValue > 0)
+            {
+                animator.SetBool("parry", true);
+                cancelMovement = 0;
+            }            
             lastParry = Time.time;
         }
         if (Input.GetKey(KeyCode.S) && grounded && animator.GetBool("running")){
             if (!windSwordInHand && Time.time > lastScroll + 0.7f)
             {
-                animator.SetBool("scroll", true);
-                animator.SetBool("running", false);                
-                speed *= scrollSpeedBoost;
+                playerStamina.RuntimeValue -= 8;
+                if (playerStamina.RuntimeValue > 0)
+                {
+                    animator.SetBool("scroll", true);
+                    animator.SetBool("running", false);
+                    speed *= scrollSpeedBoost;
+                }                
                 lastScroll = Time.time;
             }
             else if(windSwordInHand && Time.time >lastDash + 0.7)
             {
-                animator.SetBool("dash", true);
-                animator.SetBool("running", false);
-                dashing = true;
-                speed *= dashSpeedBoost;
-                rememberGravity = Physics2D.gravity;
-                Physics2D.gravity *= 0;
+                playerStamina.RuntimeValue -= 15;
+                if (playerStamina.RuntimeValue > 0)
+                {
+                    animator.SetBool("dash", true);
+                    animator.SetBool("running", false);
+                    dashing = true;
+                    speed *= dashSpeedBoost;
+                    rememberGravity = Physics2D.gravity;
+                    Physics2D.gravity *= 0;
+                }                
                 lastDash = Time.time;
             }
            
@@ -176,14 +210,22 @@ public class PlayerScript : MonoBehaviour
         {
             if (Input.GetKey(KeyCode.E) && Time.time > lastDefaultAttack + 1.2 && grounded && animator.GetBool("scroll") == false && animator.GetBool("dash") == false)
             {
-                animator.SetBool("defaultAttack", true);
-                cancelMovement = 0;
+                playerStamina.RuntimeValue -= 20;
+                if (playerStamina.RuntimeValue > 0)
+                {
+                    animator.SetBool("defaultAttack", true);
+                    cancelMovement = 0;
+                }                
                 lastDefaultAttack = Time.time;
             }
             if(Input.GetKey(KeyCode.R) && Time.time > lastSPANS + 1.4 && grounded && animator.GetBool("scroll") == false && animator.GetBool("dash") == false)
             {
-                animator.SetBool("spaNS", true);
-                cancelMovement = 0;
+                playerStamina.RuntimeValue -= 35;
+                if (playerStamina.RuntimeValue > 0)
+                {
+                    animator.SetBool("spaNS", true);
+                    cancelMovement = 0;
+                }                
                 lastSPANS = Time.time;
             }
         }
@@ -191,16 +233,24 @@ public class PlayerScript : MonoBehaviour
         {
             if (Input.GetKey(KeyCode.E) && Time.time > lastDefaultAttackWind + 1.6 && grounded && animator.GetBool("scroll") == false && animator.GetBool("dash") == false)
             {
-                animator.SetBool("defaultAttackWind", true);
-                cancelMovement = 0;
+                playerStamina.RuntimeValue -= 25;
+                if (playerStamina.RuntimeValue > 0)
+                {
+                    animator.SetBool("defaultAttackWind", true);
+                    cancelMovement = 0;
+                }                
                 lastDefaultAttackWind = Time.time;
             }
             if (Input.GetKey(KeyCode.R) && Time.time > lastSPAWS + 1.4 && grounded && animator.GetBool("scroll") == false && animator.GetBool("dash") == false)
             {
-                animator.SetBool("spaWS", true);                
-                lastSPAWS = Time.time;
-                horizontal = 0;
-                rememberPositionForSpaw = transform.position;
+                playerStamina.RuntimeValue -= 45;
+                if (playerStamina.RuntimeValue > 0)
+                {
+                    animator.SetBool("spaWS", true);
+                    horizontal = 0;
+                    rememberPositionForSpaw = transform.position;
+                }                               
+                lastSPAWS = Time.time;                
             }
         }
 
@@ -435,4 +485,10 @@ public class PlayerScript : MonoBehaviour
     {        
         transform.position = rememberPositionForSpaw;
     }    
+    public void RechargeLoop()
+    {
+        animator.SetBool("rechargingLoop", true);
+        animator.SetBool("recharging", false);
+    }
+    
 }
