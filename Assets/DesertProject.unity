@@ -354,7 +354,7 @@ GameObject:
   m_Component:
   - component: {fileID: 245842483}
   - component: {fileID: 245842484}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: 1st hit
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -416,7 +416,7 @@ GameObject:
   m_Component:
   - component: {fileID: 255167415}
   - component: {fileID: 255167416}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: 2n hit
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -965,7 +965,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1022798566}
   - component: {fileID: 1022798567}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: 3rd hit
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1100,7 +1100,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1111713098}
   - component: {fileID: 1111713099}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: DefaultWindAttack
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1162,7 +1162,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1155134076}
   - component: {fileID: 1155134077}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: DefaultAttack
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1369,8 +1369,9 @@ GameObject:
   - component: {fileID: 1252757396}
   - component: {fileID: 1252757399}
   - component: {fileID: 1252757400}
+  - component: {fileID: 1252757401}
   m_Layer: 0
-  m_Name: Skorpion
+  m_Name: Skeleton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1386,7 +1387,7 @@ Animator:
   m_GameObject: {fileID: 1252757395}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 66ef6ef34876fab418a78aac8ef45f71, type: 2}
+  m_Controller: {fileID: 9100000, guid: 1611661e9bcb7ab49812b86d80e68c5e, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -1434,13 +1435,13 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 4187418769492460425, guid: 088ef68718e03814a848335fc6af8f87,
+  m_Sprite: {fileID: 7928858964255100155, guid: dee63058f89fe8048bb84a83f0129097,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 0.27, y: 0.27}
+  m_Size: {x: 0.22, y: 0.32}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -1454,8 +1455,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1252757395}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.21, y: -3.503, z: 0}
-  m_LocalScale: {x: 4, y: 4, z: 1}
+  m_LocalPosition: {x: 3, y: -2.71, z: 0}
+  m_LocalScale: {x: 8, y: 8, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 5
@@ -1473,18 +1474,18 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.0135655105, y: 0.01703763}
+  m_Offset: {x: -0.012091935, y: -0.03442043}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.27, y: 0.27}
-    newSize: {x: 0.27, y: 0.27}
+    pivot: {x: 0.09090909, y: 0.46875}
+    oldSize: {x: 0.22, y: 0.32}
+    newSize: {x: 0.22, y: 0.32}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.19600636, y: 0.23592472}
+  m_Size: {x: 0.16948187, y: 0.2268486}
   m_EdgeRadius: 0
 --- !u!50 &1252757400
 Rigidbody2D:
@@ -1502,11 +1503,30 @@ Rigidbody2D:
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 03301e8e8906d2941bd4c0e90755c817, type: 2}
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!114 &1252757401
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1252757395}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4004e872687c4c48a0451e231387290, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  entityData: {fileID: 11400000, guid: e4c040dd6228b7a4297193639ecf6e2f, type: 2}
+  wallCheck: {fileID: 1252757398}
+  ledgeCheck: {fileID: 1252757398}
+  playerCheck: {fileID: 1252757398}
+  idleStateData: {fileID: 11400000, guid: e908278d46130174f90790478ca98d71, type: 2}
+  moveStateData: {fileID: 11400000, guid: 624123c031d38554cbe373288b57734e, type: 2}
+  playerDetectedData: {fileID: 11400000, guid: a3b23dba346b89b4bb10d6f560cc94a5, type: 2}
 --- !u!1 &1404498910
 GameObject:
   m_ObjectHideFlags: 0
@@ -1654,7 +1674,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1432846607}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: SpecialWindAttack
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1688,7 +1708,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1435056848}
   - component: {fileID: 1435056849}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: SpecialNormalAttack
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1755,9 +1775,9 @@ GameObject:
   - component: {fileID: 1435575949}
   - component: {fileID: 1435575948}
   - component: {fileID: 1435575947}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1899,7 +1919,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1435575946}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -3.003, z: 0}
+  m_LocalPosition: {x: 0, y: -2.994, z: 0}
   m_LocalScale: {x: 5, y: 5, z: 1}
   m_Children:
   - {fileID: 1155134076}
@@ -2385,7 +2405,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1530275551}
   - component: {fileID: 1530275550}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Grid
   m_TagString: Untagged
   m_Icon: {fileID: 0}
