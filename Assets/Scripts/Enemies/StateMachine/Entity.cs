@@ -12,6 +12,7 @@ public class Entity : MonoBehaviour
     public Rigidbody2D rb { get; private set; }
     public Animator anim { get; private set; }
     public GameObject aliveGO { get; private set; }
+    public AnimationToStateMachine atsm { get; private set; }
 
     [SerializeField]
     private Transform wallCheck;
@@ -20,15 +21,22 @@ public class Entity : MonoBehaviour
     [SerializeField]
     private Transform playerCheck;
 
+    private float currentHealth;
+
+    private int lastDamageDirection;
+
     private Vector2 velocityWorkSpace;
 
     public virtual void Start()
     {
+        currentHealth = entityData.maxHealth;
+
         facingDirection = 1;
         //aliveGO = transform.Find("Alive").gameObject;
         aliveGO = this.gameObject;
         rb = aliveGO.GetComponent<Rigidbody2D>();
         anim = aliveGO.GetComponent<Animator>();
+        atsm = aliveGO.GetComponent<AnimationToStateMachine>();
 
         stateMachine = new FiniteStateMachine();
     }
@@ -36,6 +44,7 @@ public class Entity : MonoBehaviour
     public virtual void Update()
     {
         stateMachine.currentState.LogicUpdate();
+       
     }
 
     public virtual void FixedUpdate()
@@ -69,6 +78,34 @@ public class Entity : MonoBehaviour
     {
         return Physics2D.Raycast(playerCheck.position, aliveGO.transform.right, entityData.maxAgroDistance, entityData.whatIsPlayer);
     }
+    public virtual bool CheckPlayerInCloseRangeAction()
+    {
+        return Physics2D.Raycast(playerCheck.position, aliveGO.transform.right, entityData.closeRangeActionDistance, entityData.whatIsPlayer);
+    }
+    public virtual void DamageHop(float velocity)
+    {
+        velocityWorkSpace.Set(rb.velocity.x, velocity);
+        rb.velocity = velocityWorkSpace;
+    }
+    public virtual void Damage(InformationMessageSource informationMessage)
+    {
+        currentHealth -= informationMessage.damage;
+        DamageHop(entityData.damageHopSpeed);
+
+        if(informationMessage.position.x > aliveGO.transform.position.x)
+        {
+            lastDamageDirection = -1;
+        }
+        else
+        {
+            lastDamageDirection = 1;
+        }
+
+        if (currentHealth <= 0)
+        {
+            Debug.Log("Dead");
+        }
+    }
     public virtual void Flip()
     {
         facingDirection *= -1;
@@ -83,5 +120,10 @@ public class Entity : MonoBehaviour
 
         Gizmos.DrawLine(wallCheck.position, wallCheck.position + (Vector3)(Vector2.right * facingDirection * entityData.wallCheckDistance));
         Gizmos.DrawLine(fixposition, fixposition + (Vector3)(Vector2.down  * entityData.ledgeCheckDistance));
+
+        Gizmos.DrawWireSphere(playerCheck.position + (Vector3)(Vector2.right * entityData.closeRangeActionDistance), 0.2f);
+        Gizmos.DrawWireSphere(playerCheck.position + (Vector3)(Vector2.right * entityData.minAgroDistance), 0.2f);
+        Gizmos.DrawWireSphere(playerCheck.position + (Vector3)(Vector2.right * entityData.maxAgroDistance), 0.2f);
+
     }
 }

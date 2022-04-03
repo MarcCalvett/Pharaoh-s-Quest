@@ -64,19 +64,30 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Scripts\AnimationToStateMachine.cs" />
     <Compile Include="Assets\Scripts\Camera\CameraScript.cs" />
+    <Compile Include="Assets\Scripts\Enemies\EnemySpecific\Enemy1\E1_ChargeState.cs" />
     <Compile Include="Assets\Scripts\Enemies\EnemySpecific\Enemy1\E1_IdleState.cs" />
+    <Compile Include="Assets\Scripts\Enemies\EnemySpecific\Enemy1\E1_LookForPlayerState.cs" />
+    <Compile Include="Assets\Scripts\Enemies\EnemySpecific\Enemy1\E1_MeleeAttackState.cs" />
     <Compile Include="Assets\Scripts\Enemies\EnemySpecific\Enemy1\E1_MoveState.cs" />
     <Compile Include="Assets\Scripts\Enemies\EnemySpecific\Enemy1\E1_PlayerDetectedState.cs" />
     <Compile Include="Assets\Scripts\Enemies\EnemySpecific\Enemy1\Enemy1.cs" />
     <Compile Include="Assets\Scripts\Enemies\StateMachine\Entity.cs" />
     <Compile Include="Assets\Scripts\Enemies\StateMachine\FiniteStateMachine.cs" />
     <Compile Include="Assets\Scripts\Enemies\StateMachine\State.cs" />
+    <Compile Include="Assets\Scripts\Enemies\States\AttackState.cs" />
+    <Compile Include="Assets\Scripts\Enemies\States\ChargeState.cs" />
+    <Compile Include="Assets\Scripts\Enemies\States\Data\D_ChargeState.cs" />
     <Compile Include="Assets\Scripts\Enemies\States\Data\D_Entity.cs" />
     <Compile Include="Assets\Scripts\Enemies\States\Data\D_IdleState.cs" />
+    <Compile Include="Assets\Scripts\Enemies\States\Data\D_LookForPlayer.cs" />
+    <Compile Include="Assets\Scripts\Enemies\States\Data\D_MeleeAttack.cs" />
     <Compile Include="Assets\Scripts\Enemies\States\Data\D_MoveState.cs" />
     <Compile Include="Assets\Scripts\Enemies\States\Data\D_PlayerDetected.cs" />
     <Compile Include="Assets\Scripts\Enemies\States\IdleState.cs" />
+    <Compile Include="Assets\Scripts\Enemies\States\LookForPlayerState.cs" />
+    <Compile Include="Assets\Scripts\Enemies\States\MeleeAttackState.cs" />
     <Compile Include="Assets\Scripts\Enemies\States\MoveState.cs" />
     <Compile Include="Assets\Scripts\Enemies\States\PlayerDetectedState.cs" />
     <Compile Include="Assets\Scripts\HUD\HealthBar.cs" />
@@ -87,6 +98,9 @@
     <Compile Include="Assets\Scripts\ScriptableObjectsType\BoolValue.cs" />
     <Compile Include="Assets\Scripts\ScriptableObjectsType\FloatValue.cs" />
     <Compile Include="Assets\Scripts\ScriptableObjectsType\IntValue.cs" />
+    <Compile Include="Assets\Scripts\ScriptableObjectsType\PlayerAttackValues.cs" />
+    <Compile Include="Assets\Scripts\Structs\AttackDetails.cs" />
+    <Compile Include="Assets\Scripts\Structs\InformationMessageSource.cs" />
     <Reference Include="UnityEngine">
       <HintPath>C:/Program Files/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
     </Reference>

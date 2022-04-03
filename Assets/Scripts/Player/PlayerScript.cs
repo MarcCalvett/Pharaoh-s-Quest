@@ -27,6 +27,7 @@ public class PlayerScript : MonoBehaviour
     private Vector3 rememberPositionForSpaw;
     private Vector3 rememberOriginalPositionForSpaw;
     private Vector2 rememberGravity;
+    private AttackDetails attackDetails;
     //private Vector3 rememberPositionForSpaw2;
     //private Vector3 rememberPositionForSpaw3;
     public FloatValue playerHealth;
@@ -43,13 +44,23 @@ public class PlayerScript : MonoBehaviour
     public bool spaWindSword;
     public BoolValue rechargingStamina;
     private float recoverStaminaTime;
+    private InformationMessageSource infoMessage;
     [HideInInspector]public bool grounded;
+    [HideInInspector] Collider2D collider;
+    [SerializeField] private PlayerAttackValues values;
+    [SerializeField]private GameObject defaultAttack;
+    [SerializeField] private GameObject defaultAttackWind;
+    [SerializeField] private GameObject specialAttack;
+    [SerializeField] private GameObject[] specialWindAttack;
+
+
 
     // Start is called before the first frame update
     void Start()
     {
         Rigidbody2D = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
+        collider = GetComponent<Collider2D>();
         dodging = false;       
         windSwordInHand = false;
         windSwordTaken = true;
@@ -80,7 +91,7 @@ public class PlayerScript : MonoBehaviour
         {
             WaitForStamina();
         }           
-       
+               
     }
     private void FixedUpdate()
     {
@@ -490,5 +501,102 @@ public class PlayerScript : MonoBehaviour
         animator.SetBool("rechargingLoop", true);
         animator.SetBool("recharging", false);
     }
-    
+
+    public void Damage(AttackDetails attackDetails)
+    {
+        playerHealth.RuntimeValue -= attackDetails.damageAmount;
+    }
+    private void TriggerDefaultAttack()
+    {
+        Collider2D[] detectedObjects = Physics2D.OverlapCircleAll(defaultAttack.transform.position, values.defaultAttackRadius, values.whatIsEnemy);
+
+        
+        infoMessage.damage = values.defaultAttackDamage;
+        infoMessage.position = defaultAttack.transform.position;
+
+        foreach (Collider2D collider in detectedObjects)
+        {
+            collider.transform.SendMessage("Damage",infoMessage);
+        }
+    }
+    private void TriggerDefaultWindAttack()
+    {
+        Collider2D[] detectedObjects = Physics2D.OverlapCircleAll(defaultAttackWind.transform.position, values.defaultWindAttackRadius, values.whatIsEnemy);
+
+        infoMessage.damage = values.defaultWindAttackDamage;
+        infoMessage.position = defaultAttackWind.transform.position;
+
+        foreach (Collider2D collider in detectedObjects)
+        {
+            collider.transform.SendMessage("Damage", infoMessage);
+        }
+    }
+    private void TriggerSpecialAttack()
+    {
+        Collider2D[] detectedObjects = Physics2D.OverlapCircleAll(specialAttack.transform.position, values.specialAttackRadius, values.whatIsEnemy);
+
+        infoMessage.damage = values.specialAttackDamage;
+        infoMessage.position = specialAttack.transform.position;
+
+        foreach (Collider2D collider in detectedObjects)
+        {
+            collider.transform.SendMessage("Damage", infoMessage);
+        }
+    }
+    private void TriggerSpecialWindAttack()
+    {
+        Collider2D[] detectedObjects;
+        switch (values.specialAttackStep)
+        {
+            case 0:
+                detectedObjects = Physics2D.OverlapCircleAll(specialWindAttack[0].transform.position, values.defaultAttackRadius, values.whatIsEnemy);
+
+                infoMessage.damage = values.specialWindAttackDamage;
+                infoMessage.position = specialWindAttack[0].transform.position;
+
+                foreach (Collider2D collider in detectedObjects)
+                {
+                    collider.transform.SendMessage("Damage", infoMessage);
+                }
+                values.specialAttackStep++;
+                break;
+            case 1:
+                detectedObjects = Physics2D.OverlapCircleAll(specialWindAttack[1].transform.position, values.defaultAttackRadius, values.whatIsEnemy);
+
+                infoMessage.damage = values.specialWindAttackDamage;
+                infoMessage.position = specialWindAttack[1].transform.position;
+
+                foreach (Collider2D collider in detectedObjects)
+                {
+                    collider.transform.SendMessage("Damage", infoMessage);
+                }
+                values.specialAttackStep++;
+                break;
+            case 2:
+                detectedObjects = Physics2D.OverlapCircleAll(specialWindAttack[2].transform.position, values.defaultAttackRadius, values.whatIsEnemy);
+
+                infoMessage.damage = values.specialWindAttackDamage;
+                infoMessage.position = specialWindAttack[2].transform.position;
+
+                foreach (Collider2D collider in detectedObjects)
+                {
+                    collider.transform.SendMessage("Damage", infoMessage);
+                }
+                values.specialAttackStep = 0;
+                break;
+            default:
+                values.specialAttackStep = 0;
+                break;
+        }      
+        
+    }
+    //public void OnDrawGizmos()
+    //{
+    //    Gizmos.DrawWireSphere(defaultAttack.transform.position, values.defaultAttackRadius);
+    //    Gizmos.DrawWireSphere(specialAttack.transform.position, values.specialAttackRadius);
+    //    Gizmos.DrawWireSphere(specialWindAttack[0].transform.position, values.specialWindAttackRadius);
+    //    Gizmos.DrawWireSphere(specialWindAttack[1].transform.position, values.specialWindAttackRadius);
+    //    Gizmos.DrawWireSphere(specialWindAttack[2].transform.position, values.specialWindAttackRadius);
+
+    //}
 }
