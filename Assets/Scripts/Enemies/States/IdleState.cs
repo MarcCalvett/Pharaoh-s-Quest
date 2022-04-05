@@ -9,7 +9,8 @@ public class IdleState : State
     protected bool flipAfterIdle;
     protected bool isIdleTimeOver;
     protected bool isPlayerInMinAgroRange;
-
+    protected bool isPlayerInMaxAgroRange;
+    protected bool isPlayerInCloseRangeAction;
     protected float idleTime;
     public IdleState(Entity entity, FiniteStateMachine stateMachine, string animBoolName, D_IdleState stateData) : base(entity, stateMachine, animBoolName)
     {
@@ -20,6 +21,8 @@ public class IdleState : State
     {
         base.DoChecks();
         isPlayerInMinAgroRange = entity.CheckPlayerInMinAgroRange();
+        isPlayerInMaxAgroRange = entity.CheckPlayerInMinAgroRange();
+        isPlayerInCloseRangeAction = entity.CheckPlayerInCloseRangeAction();
     }
 
     public override void Enter()

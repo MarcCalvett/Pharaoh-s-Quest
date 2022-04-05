@@ -8,7 +8,7 @@ public class Entity : MonoBehaviour
 
     public D_Entity entityData;
     public int facingDirection { get; private set; }
-
+    public BoolValue playerAttacking;
     public Rigidbody2D rb { get; private set; }
     public Animator anim { get; private set; }
     public GameObject aliveGO { get; private set; }
@@ -84,13 +84,17 @@ public class Entity : MonoBehaviour
     }
     public virtual void DamageHop(float velocity)
     {
-        velocityWorkSpace.Set(rb.velocity.x, velocity);
+        velocityWorkSpace.Set(0, velocity);
         rb.velocity = velocityWorkSpace;
     }
     public virtual void Damage(InformationMessageSource informationMessage)
     {
         currentHealth -= informationMessage.damage;
-        DamageHop(entityData.damageHopSpeed);
+
+        if (informationMessage.hoop)
+        {
+            DamageHop(entityData.damageHopSpeed);            
+        }       
 
         if(informationMessage.position.x > aliveGO.transform.position.x)
         {
@@ -108,8 +112,11 @@ public class Entity : MonoBehaviour
     }
     public virtual void Flip()
     {
+        //Vector3 auxiliar;
         facingDirection *= -1;
         aliveGO.transform.Rotate(0f, 180f, 0f);
+        //auxiliar = transform.localScale;
+        //aliveGO.transform.localScale = new Vector3(auxiliar.x *= -1, auxiliar.y, auxiliar.z);
     }
     public virtual void OnDrawGizmos()
     {
@@ -126,4 +133,41 @@ public class Entity : MonoBehaviour
         Gizmos.DrawWireSphere(playerCheck.position + (Vector3)(Vector2.right * entityData.maxAgroDistance), 0.2f);
 
     }
+    public virtual void OnCollisionStay2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Player"))
+        {            
+            if (!playerAttacking.RuntimeValue)
+            {
+                rb.bodyType = RigidbodyType2D.Kinematic;
+            }
+            else
+            {
+                rb.bodyType = RigidbodyType2D.Dynamic;
+                collision.rigidbody.AddForce(new Vector2(collision.rigidbody.mass*collision.rigidbody.velocity.x*2, 0));
+            }
+
+        }
+    }
+    //public virtual void OnCollisionExit2D(Collision2D collision)
+    //{
+    //    if (collision.gameObject.CompareTag("Player"))
+    //    {            
+    //        rb.bodyType = RigidbodyType2D.Dynamic;          
+
+    //    }
+    //}
 }
+
+
+//infoMessage.applyKnockback = true;
+////isActive = false;
+//// = Mathf.Sign(gameObject.transform.position.x - col.gameObject.transform.position.x);
+//if (this.gameObject.transform.position.x > collision.transform.position.x)
+//{
+//    direccionEmpuje = 1;
+//}
+//else
+//{
+//    direccionEmpuje = -1;
+//}

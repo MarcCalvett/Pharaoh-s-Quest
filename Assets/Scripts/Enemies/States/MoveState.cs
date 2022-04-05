@@ -40,7 +40,7 @@ public class MoveState : State
 
     public override void PhysicsUpdate()
     {
-        base.PhysicsUpdate();
+        base.PhysicsUpdate();        
         //DoChecks();
         //Debug.Log(isDetectingLedge);
         //Debug.Log(isDetectingWall);

@@ -26,7 +26,9 @@ public class PlayerScript : MonoBehaviour
     private float timeSwitchSword;
     private Vector3 rememberPositionForSpaw;
     private Vector3 rememberOriginalPositionForSpaw;
-    private Vector2 rememberGravity;
+    private Vector2 knockBackVelocities;
+    private float direccionEmpuje;
+    private float rememberGravity;
     private AttackDetails attackDetails;
     //private Vector3 rememberPositionForSpaw2;
     //private Vector3 rememberPositionForSpaw3;
@@ -43,6 +45,11 @@ public class PlayerScript : MonoBehaviour
     private bool dashing;
     public bool spaWindSword;
     public BoolValue rechargingStamina;
+    public BoolValue imAttacking;
+    public BoolValue applyKnockBack;
+    private int aplicator;
+    private int _aplicator;
+    public Vector2 knockBack;
     private float recoverStaminaTime;
     private InformationMessageSource infoMessage;
     [HideInInspector]public bool grounded;
@@ -64,7 +71,7 @@ public class PlayerScript : MonoBehaviour
         dodging = false;       
         windSwordInHand = false;
         windSwordTaken = true;
-        attacking = false;
+        attacking = false;        
         spaNormalSword = false;
         attackingWind = false;
         spaWindSword = false;
@@ -72,12 +79,42 @@ public class PlayerScript : MonoBehaviour
         cancelMovement = 1;
         scrollSpeedBoost = 2;
         dashSpeedBoost = 3;
-        
+        knockBackVelocities.Set(100, 2);
     }
 
     // Update is called once per frame
     void Update()
     {
+        //knockBack.Set(Rigidbody2D.velocity.x * Rigidbody2D.mass, 0);
+
+        //if (applyKnockBack.RuntimeValue)
+        //{
+        //    aplicator = 1;
+        //}
+        //else
+        //{
+        //    aplicator = 0;
+        //}
+
+        //if (dashing)
+        //{
+        //    aplicator = 0;
+        //    _aplicator = 1;
+        //}
+        //else if(aplicator == 0)
+        //{
+        //    _aplicator = 1;
+        //}        
+        //else
+        //{
+        //    _aplicator = 0;
+        //}
+
+        if(!attacking && !spaNormalSword && !spaWindSword)
+        {
+            cancelMovement = 1;
+        }
+
         if (!rechargingStamina.RuntimeValue)
         {
             if (animator.GetBool("rechargingLoop"))
@@ -95,7 +132,9 @@ public class PlayerScript : MonoBehaviour
     }
     private void FixedUpdate()
     {
-        Rigidbody2D.velocity = new Vector2(horizontal*speed*cancelMovement, Rigidbody2D.velocity.y);        
+        
+         Rigidbody2D.velocity = new Vector2(horizontal * speed * cancelMovement/* * _aplicator + 1.5f * aplicator*knockBack.x*-Mathf.Sign(Rigidbody2D.velocity.x) */, Rigidbody2D.velocity.y);
+             
     }    
 
     [ContextMenu("Take Damage")]
@@ -195,8 +234,10 @@ public class PlayerScript : MonoBehaviour
                     animator.SetBool("running", false);
                     dashing = true;
                     speed *= dashSpeedBoost;
-                    rememberGravity = Physics2D.gravity;
-                    Physics2D.gravity *= 0;
+                    //rememberGravity = Physics2D.gravity;
+                    rememberGravity = this.Rigidbody2D.gravityScale;
+                    //Physics2D.gravity *= 0;
+                    this.Rigidbody2D.gravityScale *= 0;
                 }                
                 lastDash = Time.time;
             }
@@ -336,19 +377,23 @@ public class PlayerScript : MonoBehaviour
     public void EndDefaultAttack()
     {
         attacking = false;
-        cancelMovement = 1;
+        imAttacking.RuntimeValue = false;
+        //cancelMovement = 1;
     }
     public void EndDefaultAttackWind()
     {
         attackingWind = false;
+        //imAttacking.RuntimeValue = false;
         cancelMovement = 1;
         ThrowTornado();
     }
     public void EndSPAttackWindSword()
     {
-        Physics2D.gravity = rememberGravity;        
+        //Physics2D.gravity = rememberGravity;
+        this.Rigidbody2D.gravityScale = rememberGravity;
         spaWindSword = false;
-        cancelMovement = 1;
+        imAttacking.RuntimeValue = false;
+        //cancelMovement = 1;
     }
     public void EndParry()
     {
@@ -358,30 +403,40 @@ public class PlayerScript : MonoBehaviour
     public void DefaultAttackStarted()
     {
         attacking = true;
+        imAttacking.RuntimeValue = true;
+        cancelMovement = 0;
         animator.SetBool("defaultAttack", false);
     }
     public void DefaultAttackWindStarted()
     {
         attackingWind = true;
+        //imAttacking.RuntimeValue = true;
         animator.SetBool("defaultAttackWind", false);
     }
     public void SPAttackNormalSwordStarted()
     {
         spaNormalSword = true;
+        imAttacking.RuntimeValue = true;
         animator.SetBool("spaNS", false);
+        cancelMovement = 0;
     }
     public void SPAttackWindSwordStarted()
     {
-        rememberGravity = Physics2D.gravity;
-        Physics2D.gravity *= 0;        
+        //rememberGravity = Physics2D.gravity;
+        //Physics2D.gravity *= 0;        
+        rememberGravity = this.Rigidbody2D.gravityScale;
+        this.Rigidbody2D.gravityScale *= 0;
         spaWindSword = true;
+        imAttacking.RuntimeValue = true;
         animator.SetBool("spaWS", false);
         rememberOriginalPositionForSpaw = transform.position;
+        cancelMovement = 0;
     }
     public void EndSPAttackNormalSword()
     {
         spaNormalSword = false;
-        cancelMovement = 1;
+        imAttacking.RuntimeValue = false;
+        //cancelMovement = 1;
     }
     public void ParryStarted()
     {
@@ -398,7 +453,7 @@ public class PlayerScript : MonoBehaviour
         dashing = false;
         speed /= dashSpeedBoost;
         horizontal = 0;
-        Physics2D.gravity = rememberGravity;
+        this.Rigidbody2D.gravityScale = rememberGravity;
     }
     public void ThrowTornado()
     {
@@ -513,10 +568,13 @@ public class PlayerScript : MonoBehaviour
         
         infoMessage.damage = values.defaultAttackDamage;
         infoMessage.position = defaultAttack.transform.position;
+        infoMessage.hoop = true;
 
         foreach (Collider2D collider in detectedObjects)
         {
+            //collider.attachedRigidbody.bodyType = RigidbodyType2D.Dynamic;
             collider.transform.SendMessage("Damage",infoMessage);
+            
         }
     }
     private void TriggerDefaultWindAttack()
@@ -525,9 +583,11 @@ public class PlayerScript : MonoBehaviour
 
         infoMessage.damage = values.defaultWindAttackDamage;
         infoMessage.position = defaultAttackWind.transform.position;
+        infoMessage.hoop = true;
 
         foreach (Collider2D collider in detectedObjects)
         {
+            //collider.attachedRigidbody.bodyType = RigidbodyType2D.Dynamic;
             collider.transform.SendMessage("Damage", infoMessage);
         }
     }
@@ -537,9 +597,11 @@ public class PlayerScript : MonoBehaviour
 
         infoMessage.damage = values.specialAttackDamage;
         infoMessage.position = specialAttack.transform.position;
+        infoMessage.hoop = true;
 
         foreach (Collider2D collider in detectedObjects)
         {
+            //collider.attachedRigidbody.bodyType = RigidbodyType2D.Dynamic;
             collider.transform.SendMessage("Damage", infoMessage);
         }
     }
@@ -553,6 +615,7 @@ public class PlayerScript : MonoBehaviour
 
                 infoMessage.damage = values.specialWindAttackDamage;
                 infoMessage.position = specialWindAttack[0].transform.position;
+                infoMessage.hoop = false;
 
                 foreach (Collider2D collider in detectedObjects)
                 {
@@ -565,6 +628,7 @@ public class PlayerScript : MonoBehaviour
 
                 infoMessage.damage = values.specialWindAttackDamage;
                 infoMessage.position = specialWindAttack[1].transform.position;
+                infoMessage.hoop = false;
 
                 foreach (Collider2D collider in detectedObjects)
                 {
@@ -577,9 +641,11 @@ public class PlayerScript : MonoBehaviour
 
                 infoMessage.damage = values.specialWindAttackDamage;
                 infoMessage.position = specialWindAttack[2].transform.position;
+                infoMessage.hoop = true;
 
                 foreach (Collider2D collider in detectedObjects)
                 {
+                    //collider.attachedRigidbody.bodyType = RigidbodyType2D.Dynamic;
                     collider.transform.SendMessage("Damage", infoMessage);
                 }
                 values.specialAttackStep = 0;
@@ -590,13 +656,29 @@ public class PlayerScript : MonoBehaviour
         }      
         
     }
-    //public void OnDrawGizmos()
-    //{
-    //    Gizmos.DrawWireSphere(defaultAttack.transform.position, values.defaultAttackRadius);
-    //    Gizmos.DrawWireSphere(specialAttack.transform.position, values.specialAttackRadius);
-    //    Gizmos.DrawWireSphere(specialWindAttack[0].transform.position, values.specialWindAttackRadius);
-    //    Gizmos.DrawWireSphere(specialWindAttack[1].transform.position, values.specialWindAttackRadius);
-    //    Gizmos.DrawWireSphere(specialWindAttack[2].transform.position, values.specialWindAttackRadius);
+    public void OnDrawGizmos()
+    {
+        //Gizmos.DrawWireSphere(defaultAttack.transform.position, values.defaultAttackRadius);
+        //Gizmos.DrawWireSphere(specialAttack.transform.position, values.specialAttackRadius);
+        //Gizmos.DrawWireSphere(specialWindAttack[0].transform.position, values.specialWindAttackRadius);
+        //Gizmos.DrawWireSphere(specialWindAttack[1].transform.position, values.specialWindAttackRadius);
+        Gizmos.DrawWireSphere(specialWindAttack[2].transform.position, values.specialWindAttackRadius);
 
-    //}
+    }
+    public void OnCollisionExit2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Enemy"))
+        {
+            applyKnockBack.RuntimeValue = false;
+        }
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Enemy"))
+        {
+            applyKnockBack.RuntimeValue = true;
+        }
+    }
+
 }

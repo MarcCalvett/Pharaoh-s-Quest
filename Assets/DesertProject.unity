@@ -915,7 +915,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1022798565}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.516, y: 0.122, z: 0}
+  m_LocalPosition: {x: -0.462, y: 0.122, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1432846607}
@@ -1019,7 +1019,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1108111801}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.156, y: -0.03, z: 0}
+  m_LocalPosition: {x: 0.1458, y: -0.03, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1252757398}
@@ -1237,10 +1237,10 @@ GameObject:
   - component: {fileID: 1252757398}
   - component: {fileID: 1252757397}
   - component: {fileID: 1252757396}
-  - component: {fileID: 1252757399}
   - component: {fileID: 1252757400}
   - component: {fileID: 1252757401}
   - component: {fileID: 1252757402}
+  - component: {fileID: 1252757399}
   m_Layer: 10
   m_Name: Skeleton
   m_TagString: Enemy
@@ -1326,7 +1326,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1252757395}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3, y: -2.71, z: 0}
+  m_LocalPosition: {x: 2.97, y: -2.612, z: 0}
   m_LocalScale: {x: 8, y: 8, z: 1}
   m_Children:
   - {fileID: 1108111802}
@@ -1342,14 +1342,14 @@ BoxCollider2D:
   m_GameObject: {fileID: 1252757395}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 6200000, guid: 03301e8e8906d2941bd4c0e90755c817, type: 2}
+  m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.012091935, y: -0.03442043}
+  m_Offset: {x: 0, y: -0.001535207}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.09090909, y: 0.46875}
+    pivot: {x: 0.5, y: 0.515625}
     oldSize: {x: 0.22, y: 0.32}
     newSize: {x: 0.22, y: 0.32}
     adaptiveTilingThreshold: 0.5
@@ -1357,7 +1357,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.16948187, y: 0.2268486}
+  m_Size: {x: 0.22, y: 0.3230704}
   m_EdgeRadius: 0
 --- !u!50 &1252757400
 Rigidbody2D:
@@ -1367,7 +1367,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1252757395}
-  m_BodyType: 0
+  m_BodyType: 1
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -1393,6 +1393,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   entityData: {fileID: 11400000, guid: e4c040dd6228b7a4297193639ecf6e2f, type: 2}
+  playerAttacking: {fileID: 11400000, guid: 26b8a3a30d7fdbe468628e30dc13f208, type: 2}
   wallCheck: {fileID: 1252757398}
   ledgeCheck: {fileID: 1252757398}
   playerCheck: {fileID: 1252757398}
@@ -1660,6 +1661,9 @@ MonoBehaviour:
   playerLives: {fileID: 11400000, guid: d735b0348c93a7940b24ece80b78bf88, type: 2}
   spaWindSword: 0
   rechargingStamina: {fileID: 11400000, guid: 4eb265ff5cd24fd468694d6f33076706, type: 2}
+  imAttacking: {fileID: 11400000, guid: 26b8a3a30d7fdbe468628e30dc13f208, type: 2}
+  applyKnockBack: {fileID: 11400000, guid: c1bf1b740e37a2749b9f3a6e580a55b6, type: 2}
+  knockBack: {x: 0, y: 0}
   grounded: 0
   values: {fileID: 11400000, guid: 4f66707127884e34baf5f420740f18a2, type: 2}
   defaultAttack: {fileID: 1155134075}

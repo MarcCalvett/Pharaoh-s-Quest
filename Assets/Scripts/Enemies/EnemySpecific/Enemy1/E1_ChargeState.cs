@@ -38,12 +38,16 @@ public class E1_ChargeState : ChargeState
             stateMachine.ChangeState(enemy.lookForPlayerState);
         }
         else if (isChargeTimeOver)
-        {            
-            if (isPlayerInMinAgroRange)
-            {
-                stateMachine.ChangeState(enemy.playerDetectedState);
-            }
-            else
+        {
+            //if (isPlayerInMinAgroRange)
+            //{
+            //    stateMachine.ChangeState(enemy.playerDetectedState);
+            //}
+            //else
+            //{
+            //    stateMachine.ChangeState(enemy.lookForPlayerState);
+            //}
+            if (!isPlayerInMaxAgroRange)
             {
                 stateMachine.ChangeState(enemy.lookForPlayerState);
             }

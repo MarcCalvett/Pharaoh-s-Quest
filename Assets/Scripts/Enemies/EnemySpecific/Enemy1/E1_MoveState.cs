@@ -23,13 +23,13 @@ public class E1_MoveState : MoveState
     public override void LogicUpdate()
     {
         base.LogicUpdate();
-
+               
         
     }
 
     public override void PhysicsUpdate()
     {
-        base.PhysicsUpdate();
+        base.PhysicsUpdate();        
 
         if (isPlayerInMinAgroRange)
         {

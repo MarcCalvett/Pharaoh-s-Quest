@@ -41,6 +41,26 @@ public class Enemy1 : Entity
 
         stateMachine.Initialize(moveState);
     }
+    public override void Update()
+    {
+        base.Update();
+
+        Debug.Log(stateMachine.currentState);
+
+        if(rb.bodyType == RigidbodyType2D.Kinematic && !CheckLedge())
+        {
+            rb.bodyType = RigidbodyType2D.Dynamic;
+        }
+
+        if(rb.bodyType == RigidbodyType2D.Dynamic)
+        {            
+            rb.constraints = RigidbodyConstraints2D.FreezePositionX;
+        }
+        else
+        {
+            rb.constraints = RigidbodyConstraints2D.None;
+        }
+    }
 
     public override void OnDrawGizmos()
     {
@@ -48,4 +68,15 @@ public class Enemy1 : Entity
 
         Gizmos.DrawWireSphere(meleeAttackPosition.position, meleeAttackStateData.attackRadius);
     }
+
+    public override void OnCollisionStay2D(Collision2D collision)
+    {
+        base.OnCollisionStay2D(collision);
+    }
+
+    //public override void OnCollisionExit2D(Collision2D collision)
+    //{
+    //    base.OnCollisionExit2D(collision);
+    //}
+
 }

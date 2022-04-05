@@ -24,7 +24,7 @@ public class E1_IdleState : IdleState
     {
         base.LogicUpdate();
 
-        if (isPlayerInMinAgroRange)
+        if (isPlayerInMaxAgroRange || isPlayerInCloseRangeAction)
         {
             stateMachine.ChangeState(enemy.playerDetectedState);
         }

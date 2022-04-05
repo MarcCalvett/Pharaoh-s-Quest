@@ -44,7 +44,19 @@ public class E1_MeleeAttackState : MeleeAttackState
             else
             {
                 stateMachine.ChangeState(enemy.lookForPlayerState);
-            } 
+            }
+
+        }
+        else if (!entity.anim.GetBool("move") && entity.anim.GetBool("meleeAttack") && !entity.anim.GetBool("playerDetected"))
+        {
+            //entity.anim.SetBool("move", false);
+            //entity.anim.SetBool("meleeAttack", false);
+            entity.anim.SetBool("playerDetected", true);
+            //stateMachine.ChangeState(enemy.lookForPlayerState);
+        }
+        else if(entity.anim.GetBool("playerDetected") && entity.anim.GetBool("meleeAttack"))
+        {
+            entity.anim.SetBool("playerDetected", false);
         }
     }
 
