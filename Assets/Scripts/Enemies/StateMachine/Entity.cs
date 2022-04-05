@@ -27,6 +27,8 @@ public class Entity : MonoBehaviour
 
     private Vector2 velocityWorkSpace;
 
+    protected bool isDead;
+
     public virtual void Start()
     {
         currentHealth = entityData.maxHealth;
@@ -94,7 +96,9 @@ public class Entity : MonoBehaviour
         if (informationMessage.hoop)
         {
             DamageHop(entityData.damageHopSpeed);            
-        }       
+        }
+
+        Instantiate(entityData.hitParticle, aliveGO.transform.position, Quaternion.Euler(0f, 0f, Random.Range(0f, 360f)));
 
         if(informationMessage.position.x > aliveGO.transform.position.x)
         {
@@ -107,7 +111,7 @@ public class Entity : MonoBehaviour
 
         if (currentHealth <= 0)
         {
-            Debug.Log("Dead");
+            isDead = true;
         }
     }
     public virtual void Flip()
@@ -144,7 +148,7 @@ public class Entity : MonoBehaviour
             else
             {
                 rb.bodyType = RigidbodyType2D.Dynamic;
-                collision.rigidbody.AddForce(new Vector2(collision.rigidbody.mass*collision.rigidbody.velocity.x*2, 0));
+                
             }
 
         }
@@ -152,8 +156,8 @@ public class Entity : MonoBehaviour
     //public virtual void OnCollisionExit2D(Collision2D collision)
     //{
     //    if (collision.gameObject.CompareTag("Player"))
-    //    {            
-    //        rb.bodyType = RigidbodyType2D.Dynamic;          
+    //    {
+    //        rb.bodyType = RigidbodyType2D.Kinematic;
 
     //    }
     //}

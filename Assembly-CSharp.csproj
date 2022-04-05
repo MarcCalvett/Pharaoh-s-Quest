@@ -67,6 +67,7 @@
     <Compile Include="Assets\Scripts\AnimationToStateMachine.cs" />
     <Compile Include="Assets\Scripts\Camera\CameraScript.cs" />
     <Compile Include="Assets\Scripts\Enemies\EnemySpecific\Enemy1\E1_ChargeState.cs" />
+    <Compile Include="Assets\Scripts\Enemies\EnemySpecific\Enemy1\E1_DeadState.cs" />
     <Compile Include="Assets\Scripts\Enemies\EnemySpecific\Enemy1\E1_IdleState.cs" />
     <Compile Include="Assets\Scripts\Enemies\EnemySpecific\Enemy1\E1_LookForPlayerState.cs" />
     <Compile Include="Assets\Scripts\Enemies\EnemySpecific\Enemy1\E1_MeleeAttackState.cs" />
@@ -79,12 +80,14 @@
     <Compile Include="Assets\Scripts\Enemies\States\AttackState.cs" />
     <Compile Include="Assets\Scripts\Enemies\States\ChargeState.cs" />
     <Compile Include="Assets\Scripts\Enemies\States\Data\D_ChargeState.cs" />
+    <Compile Include="Assets\Scripts\Enemies\States\Data\D_DeadState.cs" />
     <Compile Include="Assets\Scripts\Enemies\States\Data\D_Entity.cs" />
     <Compile Include="Assets\Scripts\Enemies\States\Data\D_IdleState.cs" />
     <Compile Include="Assets\Scripts\Enemies\States\Data\D_LookForPlayer.cs" />
     <Compile Include="Assets\Scripts\Enemies\States\Data\D_MeleeAttack.cs" />
     <Compile Include="Assets\Scripts\Enemies\States\Data\D_MoveState.cs" />
     <Compile Include="Assets\Scripts\Enemies\States\Data\D_PlayerDetected.cs" />
+    <Compile Include="Assets\Scripts\Enemies\States\DeadState.cs" />
     <Compile Include="Assets\Scripts\Enemies\States\IdleState.cs" />
     <Compile Include="Assets\Scripts\Enemies\States\LookForPlayerState.cs" />
     <Compile Include="Assets\Scripts\Enemies\States\MeleeAttackState.cs" />
@@ -93,6 +96,7 @@
     <Compile Include="Assets\Scripts\HUD\HealthBar.cs" />
     <Compile Include="Assets\Scripts\HUD\HeartsManager.cs" />
     <Compile Include="Assets\Scripts\HUD\StaminaBar.cs" />
+    <Compile Include="Assets\Scripts\Particles\ParticleController.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerScript.cs" />
     <Compile Include="Assets\Scripts\Player\TornadoScript.cs" />
     <Compile Include="Assets\Scripts\ScriptableObjectsType\BoolValue.cs" />
