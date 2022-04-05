@@ -569,6 +569,7 @@ public class PlayerScript : MonoBehaviour
         infoMessage.damage = values.defaultAttackDamage;
         infoMessage.position = defaultAttack.transform.position;
         infoMessage.hoop = true;
+        infoMessage.objectTag = this.gameObject.tag;
 
         foreach (Collider2D collider in detectedObjects)
         {
@@ -584,6 +585,7 @@ public class PlayerScript : MonoBehaviour
         infoMessage.damage = values.defaultWindAttackDamage;
         infoMessage.position = defaultAttackWind.transform.position;
         infoMessage.hoop = true;
+        infoMessage.objectTag = this.gameObject.tag;
 
         foreach (Collider2D collider in detectedObjects)
         {
@@ -598,6 +600,7 @@ public class PlayerScript : MonoBehaviour
         infoMessage.damage = values.specialAttackDamage;
         infoMessage.position = specialAttack.transform.position;
         infoMessage.hoop = true;
+        infoMessage.objectTag = this.gameObject.tag;
 
         foreach (Collider2D collider in detectedObjects)
         {
@@ -616,6 +619,7 @@ public class PlayerScript : MonoBehaviour
                 infoMessage.damage = values.specialWindAttackDamage;
                 infoMessage.position = specialWindAttack[0].transform.position;
                 infoMessage.hoop = false;
+                infoMessage.objectTag = this.gameObject.tag;
 
                 foreach (Collider2D collider in detectedObjects)
                 {
@@ -629,6 +633,7 @@ public class PlayerScript : MonoBehaviour
                 infoMessage.damage = values.specialWindAttackDamage;
                 infoMessage.position = specialWindAttack[1].transform.position;
                 infoMessage.hoop = false;
+                infoMessage.objectTag = this.gameObject.tag;
 
                 foreach (Collider2D collider in detectedObjects)
                 {
@@ -642,6 +647,7 @@ public class PlayerScript : MonoBehaviour
                 infoMessage.damage = values.specialWindAttackDamage;
                 infoMessage.position = specialWindAttack[2].transform.position;
                 infoMessage.hoop = true;
+                infoMessage.objectTag = this.gameObject.tag;
 
                 foreach (Collider2D collider in detectedObjects)
                 {

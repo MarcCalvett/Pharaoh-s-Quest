@@ -5,8 +5,10 @@ using UnityEngine;
 public class TornadoScript : MonoBehaviour
 {
     public float speed;
+    public float damage;
     private Rigidbody2D Rigidbody2D;
     private Vector3 direction;
+    private InformationMessageSource infoMessage;
     // Start is called before the first frame update
     void Start()
     {
@@ -39,4 +41,16 @@ public class TornadoScript : MonoBehaviour
         }
         
     }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Enemy"))
+        {
+            infoMessage.damage = damage;
+            infoMessage.position = transform.position;
+            infoMessage.hoop = true;
+            infoMessage.objectTag = this.gameObject.tag;
+            collision.SendMessage("Damage", infoMessage);
+        }
+    }
+
 }

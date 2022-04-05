@@ -27,7 +27,8 @@ public class Entity : MonoBehaviour
 
     private Vector2 velocityWorkSpace;
 
-    protected bool isDead;
+    protected bool isDead = false;
+    protected bool transitionToUnbuilded = false;
 
     public virtual void Start()
     {
@@ -91,27 +92,31 @@ public class Entity : MonoBehaviour
     }
     public virtual void Damage(InformationMessageSource informationMessage)
     {
-        currentHealth -= informationMessage.damage;
-
-        if (informationMessage.hoop)
+        if (!isDead)
         {
-            DamageHop(entityData.damageHopSpeed);            
-        }
+            currentHealth -= informationMessage.damage;
 
-        Instantiate(entityData.hitParticle, aliveGO.transform.position, Quaternion.Euler(0f, 0f, Random.Range(0f, 360f)));
+            if (informationMessage.hoop)
+            {
+                DamageHop(entityData.damageHopSpeed);
+            }
 
-        if(informationMessage.position.x > aliveGO.transform.position.x)
-        {
-            lastDamageDirection = -1;
-        }
-        else
-        {
-            lastDamageDirection = 1;
-        }
+            Instantiate(entityData.hitParticle, aliveGO.transform.position, Quaternion.Euler(0f, 0f, Random.Range(0f, 360f)));
+
+            if (informationMessage.position.x > aliveGO.transform.position.x)
+            {
+                lastDamageDirection = -1;
+            }
+            else
+            {
+                lastDamageDirection = 1;
+            }
+        }        
 
         if (currentHealth <= 0)
         {
-            isDead = true;
+            transitionToUnbuilded = true;            
+                        
         }
     }
     public virtual void Flip()
@@ -152,6 +157,25 @@ public class Entity : MonoBehaviour
             }
 
         }
+    }
+    public virtual void BuildingEnded()
+    {
+        //if (Time.time >= stateData.enterTimeState + stateData.timeBuilding)
+        //{
+        currentHealth = entityData.maxHealth;
+        //anim.SetBool("idle", false);
+        //anim.SetBool("move", false);
+        //anim.SetBool("playerDetected", false);
+        //anim.SetBool("charge", false);
+        //anim.SetBool("lookForPlayer", false);
+        //anim.SetBool("meleeAttack", false);
+        //anim.SetBool("dead", false);
+        anim.SetBool("unbuilded", false);
+        //stateMachine.currentState.Exit();
+        //stateMachine.Initialize(move)
+        //entityData.he
+
+        //}
     }
     //public virtual void OnCollisionExit2D(Collision2D collision)
     //{

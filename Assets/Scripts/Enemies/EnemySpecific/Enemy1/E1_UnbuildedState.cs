@@ -28,10 +28,19 @@ public class E1_UnbuildedState : UnbuildedState
     public override void LogicUpdate()
     {
         base.LogicUpdate();
+
+        if (stateData.enemyFinished)
+        {
+            stateData.enemyFinished = false;
+            stateMachine.ChangeState(enemy.deadState);
+        }
+        
     }
 
     public override void PhysicsUpdate()
     {
         base.PhysicsUpdate();
     }
+
+    
 }

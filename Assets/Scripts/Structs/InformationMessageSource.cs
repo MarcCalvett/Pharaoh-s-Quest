@@ -8,4 +8,5 @@ public struct InformationMessageSource
     public float damage;
     public bool hoop;
     public bool applyKnockback;
+    public string objectTag;
 }

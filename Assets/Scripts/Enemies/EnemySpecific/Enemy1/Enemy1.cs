@@ -11,6 +11,7 @@ public class Enemy1 : Entity
     public E1_LookForPlayerState lookForPlayerState { get; private set; }
     public E1_MeleeAttackState meleeAttackState { get; private set; }
     public E1_DeadState deadState { get; private set; }
+    public E1_UnbuildedState unbuildedState { get; private set; }
 
     [SerializeField]
     private D_IdleState idleStateData;
@@ -26,6 +27,8 @@ public class Enemy1 : Entity
     private D_MeleeAttack meleeAttackStateData;
     [SerializeField]
     private D_DeadState deadStateData;
+    [SerializeField]
+    private D_UnbuildedState unbuildedStateData;
 
 
     [SerializeField]
@@ -42,6 +45,7 @@ public class Enemy1 : Entity
         lookForPlayerState = new E1_LookForPlayerState(this, stateMachine, "lookForPlayer", lookForPlayerStateData, this);
         meleeAttackState = new E1_MeleeAttackState(this, stateMachine, "meleeAttack", meleeAttackPosition, meleeAttackStateData, this);
         deadState = new E1_DeadState(this, stateMachine, "dead", deadStateData, this);
+        unbuildedState = new E1_UnbuildedState(this, stateMachine, "unbuilded", unbuildedStateData, this);
 
         stateMachine.Initialize(moveState);
     }
@@ -90,10 +94,40 @@ public class Enemy1 : Entity
     {
         base.Damage(informationMessage);
 
-        if (isDead)
+
+        if (transitionToUnbuilded)
         {
-            stateMachine.ChangeState(deadState);
+            isDead = true;
+            stateMachine.ChangeState(unbuildedState);
+            transitionToUnbuilded = false;
         }
+
+        if (isDead && stateMachine.currentState == unbuildedState && informationMessage.objectTag == "Tornado")
+        {
+            unbuildedStateData.enemyFinished = true;
+        }
+
+        
+
+        //if (isDead && stateMachine.currentState != unbuildedState)
+        //{
+        //    //stateMachine.ChangeState(unbuildedState);
+        //    isDead = false;
+        //}
+
+
+
     }
 
+    public override void BuildingEnded()
+    {
+        base.BuildingEnded();
+
+        //anim.SetBool("move", true);
+        //anim.SetBool("unbuilded", false);
+        //stateMachine.ChangeState(cha);
+        unbuildedStateData.enemyFinished = false;
+        isDead = false;
+        stateMachine.Initialize(moveState);
+    }
 }

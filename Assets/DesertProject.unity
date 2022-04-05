@@ -1406,6 +1406,7 @@ MonoBehaviour:
   meleeAttackStateData: {fileID: 11400000, guid: fbec0857f4cb80a49ad4bdd536a5159d,
     type: 2}
   deadStateData: {fileID: 11400000, guid: eed60ce99a7813c48ad6c271b0c3bf89, type: 2}
+  unbuildedStateData: {fileID: 11400000, guid: b1db94e899d4a9b4eaf69d3d633327bc, type: 2}
   meleeAttackPosition: {fileID: 1108111802}
 --- !u!114 &1252757402
 MonoBehaviour:
