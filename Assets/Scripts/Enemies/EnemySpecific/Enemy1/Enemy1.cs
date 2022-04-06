@@ -12,6 +12,7 @@ public class Enemy1 : Entity
     public E1_MeleeAttackState meleeAttackState { get; private set; }
     public E1_DeadState deadState { get; private set; }
     public E1_UnbuildedState unbuildedState { get; private set; }
+    public E1_StunState stunState { get; private set; }
 
     [SerializeField]
     private D_IdleState idleStateData;
@@ -29,6 +30,8 @@ public class Enemy1 : Entity
     private D_DeadState deadStateData;
     [SerializeField]
     private D_UnbuildedState unbuildedStateData;
+    [SerializeField]
+    private D_StunState stunStateData;
 
 
     [SerializeField]
@@ -46,6 +49,7 @@ public class Enemy1 : Entity
         meleeAttackState = new E1_MeleeAttackState(this, stateMachine, "meleeAttack", meleeAttackPosition, meleeAttackStateData, this);
         deadState = new E1_DeadState(this, stateMachine, "dead", deadStateData, this);
         unbuildedState = new E1_UnbuildedState(this, stateMachine, "unbuilded", unbuildedStateData, this);
+        stunState = new E1_StunState(this, stateMachine, "stun", stunStateData, this);
 
         stateMachine.Initialize(moveState);
     }
@@ -71,6 +75,11 @@ public class Enemy1 : Entity
         else
         {
             rb.constraints = RigidbodyConstraints2D.None;
+        }
+
+        if(stateMachine.currentState != stunState && this.gameObject.GetComponent<Renderer>().material.color != originalColor)
+        {
+            this.gameObject.GetComponent<Renderer>().material.color = originalColor;
         }
     }
 
@@ -128,6 +137,36 @@ public class Enemy1 : Entity
         //stateMachine.ChangeState(cha);
         unbuildedStateData.enemyFinished = false;
         isDead = false;
+        stateMachine.Initialize(moveState);
+    }
+
+    public override void Stun()
+    {
+        base.Stun();
+
+        anim.SetBool("stun", true);
+
+        float r = 0.5f;
+        float g = 1f;
+        float b = 0.8f;
+        float a = 1f;
+
+        Color freeze = new Color(r, g, b, a);
+
+
+        this.gameObject.GetComponent<Renderer>().material.color = freeze;
+
+        
+        stateMachine.Initialize(stunState);
+    }
+    public override void StopStun()
+    {
+        base.StopStun();
+
+        anim.SetBool("stun", false);
+
+        this.gameObject.GetComponent<Renderer>().material.color = originalColor;
+        //this.gameObject.GetComponent<Renderer>().material.color = new Color(0, 0, 0);
         stateMachine.Initialize(moveState);
     }
 }

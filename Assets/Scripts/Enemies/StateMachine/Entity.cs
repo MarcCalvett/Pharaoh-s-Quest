@@ -15,6 +15,8 @@ public class Entity : MonoBehaviour
     public AnimationToStateMachine atsm { get; private set; }
 
     [SerializeField]
+    private GameObject StunStars;
+    [SerializeField]
     private Transform wallCheck;
     [SerializeField]
     private Transform ledgeCheck;
@@ -27,11 +29,14 @@ public class Entity : MonoBehaviour
 
     private Vector2 velocityWorkSpace;
 
+    protected Color originalColor;
+
     protected bool isDead = false;
     protected bool transitionToUnbuilded = false;
 
     public virtual void Start()
     {
+        
         currentHealth = entityData.maxHealth;
 
         facingDirection = 1;
@@ -41,13 +46,14 @@ public class Entity : MonoBehaviour
         anim = aliveGO.GetComponent<Animator>();
         atsm = aliveGO.GetComponent<AnimationToStateMachine>();
 
+        originalColor = this.gameObject.GetComponent<Renderer>().material.color;
+
         stateMachine = new FiniteStateMachine();
     }
 
     public virtual void Update()
     {
-        stateMachine.currentState.LogicUpdate();
-       
+        stateMachine.currentState.LogicUpdate();       
     }
 
     public virtual void FixedUpdate()
@@ -176,6 +182,14 @@ public class Entity : MonoBehaviour
         //entityData.he
 
         //}
+    }
+    public virtual void Stun()
+    {        
+        StunStars.SendMessage("Stuned", this.gameObject);
+    }
+    public virtual void StopStun()
+    {
+        
     }
     //public virtual void OnCollisionExit2D(Collision2D collision)
     //{
