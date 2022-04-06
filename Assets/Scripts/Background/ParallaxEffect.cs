@@ -4,7 +4,9 @@ using UnityEngine;
 
 public class ParallaxEffect : MonoBehaviour
 {
-    private Transform cameraTransform;
+    [SerializeField] private float parallaxMultiplier;
+
+    private Transfrom cameraTransform;
     private Vector3 previousCameraPosition;
 
     void Start()
@@ -15,8 +17,13 @@ public class ParallaxEffect : MonoBehaviour
 
     void LateUpdate()
     {
+<<<<<<< Updated upstream
         float diferenceX = (cameraTransform.position.x - previousCameraPosition.x);
         transform.Translate(new Vector3(diferenceX, 0, 0));
+=======
+        float xIncrease = (cameraTransform.position.x - previousCameraPosition.x)*parallaxMultiplier;
+        transform.Translate(new Vector3(xIncrease, 0, 0));
+>>>>>>> Stashed changes
         previousCameraPosition = cameraTransform.position;
     }
 }
