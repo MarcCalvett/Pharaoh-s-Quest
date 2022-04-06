@@ -132,9 +132,24 @@ public class PlayerScript : MonoBehaviour
     }
     private void FixedUpdate()
     {
-        
-         Rigidbody2D.velocity = new Vector2(horizontal * speed * cancelMovement/* * _aplicator + 1.5f * aplicator*knockBack.x*-Mathf.Sign(Rigidbody2D.velocity.x) */, Rigidbody2D.velocity.y);
-             
+        if(knockBack.x != 0)
+        {
+            if(Rigidbody2D.velocity.y == 0)
+            {
+                knockBack.Set(0, 0);
+            }
+            Rigidbody2D.velocity = this.Rigidbody2D.velocity;
+        }
+        else
+        {
+            Rigidbody2D.velocity = new Vector2(horizontal * speed * cancelMovement /* * _aplicator + 1.5f * aplicator*knockBack.x*-Mathf.Sign(Rigidbody2D.velocity.x) */, Rigidbody2D.velocity.y);
+            //Rigidbody2D.AddForceAtPosition(knockBack, transform.position);        
+        }
+
+        //{
+        //    knockBack.Set(0, 0);
+        //}    
+
     }    
 
     [ContextMenu("Take Damage")]
@@ -209,6 +224,7 @@ public class PlayerScript : MonoBehaviour
             if (playerStamina.RuntimeValue > 0)
             {
                 animator.SetBool("parry", true);
+                
                 cancelMovement = 0;
             }            
             lastParry = Time.time;
@@ -559,7 +575,27 @@ public class PlayerScript : MonoBehaviour
 
     public void Damage(AttackDetails attackDetails)
     {
-        playerHealth.RuntimeValue -= attackDetails.damageAmount;
+        if (dodging)
+        {
+            if( Time.time - lastParry <= 0.2f)
+            {
+                Debug.Log("Parry");
+                attackDetails.whoHitted.SendMessage("Stun");
+            }
+            else
+            {
+                Debug.Log("DamageMitigated");
+                playerHealth.RuntimeValue -= attackDetails.damageAmount/2;
+            }
+        }
+        else
+        {
+            playerHealth.RuntimeValue -= attackDetails.damageAmount;
+            knockBack.Set(attackDetails.knockbackForce.x * -Mathf.Sign(attackDetails.position.x - transform.position.x), attackDetails.knockbackForce.y);
+            Rigidbody2D.velocity = knockBack;
+        }
+       
+
     }
     private void TriggerDefaultAttack()
     {

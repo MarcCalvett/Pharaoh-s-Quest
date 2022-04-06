@@ -9,6 +9,7 @@ public class E1_MeleeAttackState : MeleeAttackState
     public E1_MeleeAttackState(Entity entity, FiniteStateMachine stateMachine, string animBoolName, Transform attackPosition, D_MeleeAttack stateData, Enemy1 enemy) : base(entity, stateMachine, animBoolName, attackPosition, stateData)
     {
         this.enemy = enemy;
+        stateData.imWhoHitted = entity.rb;
     }
 
     public override void DoChecks()

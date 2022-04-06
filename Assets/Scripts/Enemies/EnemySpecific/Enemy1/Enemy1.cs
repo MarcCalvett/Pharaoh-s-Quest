@@ -53,7 +53,7 @@ public class Enemy1 : Entity
     {
         base.Update();
 
-        Debug.Log(stateMachine.currentState);
+        //Debug.Log(stateMachine.currentState);
 
         if(rb.bodyType == RigidbodyType2D.Kinematic && !CheckLedge())
         {

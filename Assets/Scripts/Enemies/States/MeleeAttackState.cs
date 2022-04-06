@@ -23,6 +23,8 @@ public class MeleeAttackState : AttackState
 
         attackDetails.damageAmount = stateData.attackDamage;
         attackDetails.position = entity.aliveGO.transform.position;
+        attackDetails.knockbackForce = stateData.kncockBackForce;
+        attackDetails.whoHitted = stateData.imWhoHitted;
     }
 
     public override void Exit()
