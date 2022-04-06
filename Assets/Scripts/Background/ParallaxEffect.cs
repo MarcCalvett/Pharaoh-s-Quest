@@ -6,7 +6,7 @@ public class ParallaxEffect : MonoBehaviour
 {
     [SerializeField] private float parallaxMultiplier;
 
-    private Transfrom cameraTransform;
+    private Transform cameraTransform;
     private Vector3 previousCameraPosition;
 
     void Start()
@@ -17,13 +17,13 @@ public class ParallaxEffect : MonoBehaviour
 
     void LateUpdate()
     {
-<<<<<<< Updated upstream
+//<<<<<<< Updated upstream
         float diferenceX = (cameraTransform.position.x - previousCameraPosition.x);
         transform.Translate(new Vector3(diferenceX, 0, 0));
-=======
+//=======
         float xIncrease = (cameraTransform.position.x - previousCameraPosition.x)*parallaxMultiplier;
         transform.Translate(new Vector3(xIncrease, 0, 0));
->>>>>>> Stashed changes
+//>>>>>>> Stashed changes
         previousCameraPosition = cameraTransform.position;
     }
 }

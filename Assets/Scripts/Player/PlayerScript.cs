@@ -6,6 +6,7 @@ using UnityEngine.UI;
 
 public class PlayerScript : MonoBehaviour
 {
+
     public GameObject tornadoPrefab;
     public float jumpForce;
     public float speed;
