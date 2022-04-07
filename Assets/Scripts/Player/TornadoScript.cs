@@ -43,13 +43,14 @@ public class TornadoScript : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("Enemy"))
+        if (collision.gameObject.CompareTag("Enemy") && collision.attachedRigidbody.bodyType == RigidbodyType2D.Kinematic)
         {
             infoMessage.damage = damage;
             infoMessage.position = transform.position;
-            infoMessage.hoop = true;
+            infoMessage.hoop = false;
             infoMessage.objectTag = this.gameObject.tag;
             collision.SendMessage("Damage", infoMessage);
+            Debug.Log("enter");
         }
     }
 

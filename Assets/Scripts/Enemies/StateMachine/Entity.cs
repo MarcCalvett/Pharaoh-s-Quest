@@ -15,7 +15,7 @@ public class Entity : MonoBehaviour
     public AnimationToStateMachine atsm { get; private set; }
 
     [SerializeField]
-    private GameObject StunStars;
+    protected GameObject StunStars;
     [SerializeField]
     private Transform wallCheck;
     [SerializeField]
@@ -28,6 +28,8 @@ public class Entity : MonoBehaviour
     private int lastDamageDirection;
 
     private Vector2 velocityWorkSpace;
+
+
 
     protected Color originalColor;
 
@@ -93,6 +95,7 @@ public class Entity : MonoBehaviour
     }
     public virtual void DamageHop(float velocity)
     {
+        
         velocityWorkSpace.Set(0, velocity);
         rb.velocity = velocityWorkSpace;
     }

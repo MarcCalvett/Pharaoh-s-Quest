@@ -37,6 +37,8 @@ public class Enemy1 : Entity
     [SerializeField]
     private Transform meleeAttackPosition;
 
+    private Vector3 posBeforeKnockback;
+
     public override void Start()
     {
         base.Start();
@@ -51,6 +53,8 @@ public class Enemy1 : Entity
         unbuildedState = new E1_UnbuildedState(this, stateMachine, "unbuilded", unbuildedStateData, this);
         stunState = new E1_StunState(this, stateMachine, "stun", stunStateData, this);
 
+        posBeforeKnockback.Set(0, 0, 0);
+
         stateMachine.Initialize(moveState);
     }
     public override void Update()
@@ -58,29 +62,36 @@ public class Enemy1 : Entity
         base.Update();
 
         //Debug.Log(stateMachine.currentState);
+        
+        rb.rotation = 0;
 
-        if(rb.bodyType == RigidbodyType2D.Kinematic && !CheckLedge())
+        if (rb.bodyType == RigidbodyType2D.Kinematic && !CheckLedge())
         {
-            rb.bodyType = RigidbodyType2D.Dynamic;
+            rb.bodyType = RigidbodyType2D.Dynamic;                                  //Si li estem aplicant knockback q pasi a dynamic
         }
+
 
         if(rb.bodyType == RigidbodyType2D.Dynamic && rb.velocity.y == 0)
         {
-            rb.bodyType = RigidbodyType2D.Kinematic;
+            rb.bodyType = RigidbodyType2D.Kinematic;          //Si esta en repos en y que pasi a kinematic (cas de que se li acaba de aplicar un knockback)
         }
         else if(rb.bodyType == RigidbodyType2D.Dynamic)
         {            
-            rb.constraints = RigidbodyConstraints2D.FreezePositionX;
+            rb.constraints = RigidbodyConstraints2D.FreezePositionX;  //Knockback vertical nomes
         }
         else
         {
-            rb.constraints = RigidbodyConstraints2D.None;
+            rb.constraints = RigidbodyConstraints2D.None; //Si no esta en knockback que pugui moures en x
         }
 
         if(stateMachine.currentState != stunState && this.gameObject.GetComponent<Renderer>().material.color != originalColor)
         {
             this.gameObject.GetComponent<Renderer>().material.color = originalColor;
         }
+        if (stateMachine.currentState != stunState && StunStars.GetComponent<Renderer>().enabled){
+            StunStars.GetComponent<Renderer>().enabled = false;
+        }
+
     }
 
     public override void OnDrawGizmos()
@@ -102,7 +113,7 @@ public class Enemy1 : Entity
     public override void Damage(InformationMessageSource informationMessage)
     {
         base.Damage(informationMessage);
-
+        posBeforeKnockback = this.gameObject.transform.position;
 
         if (transitionToUnbuilded)
         {
