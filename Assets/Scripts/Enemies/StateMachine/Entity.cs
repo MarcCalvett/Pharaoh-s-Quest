@@ -34,7 +34,7 @@ public class Entity : MonoBehaviour
     protected Color originalColor;
 
     protected bool isDead = false;
-    protected bool transitionToUnbuilded = false;
+    protected bool healthOut = false;
 
     public virtual void Start()
     {
@@ -124,7 +124,8 @@ public class Entity : MonoBehaviour
 
         if (currentHealth <= 0)
         {
-            transitionToUnbuilded = true;            
+
+            healthOut = true;            
                         
         }
     }
@@ -169,22 +170,11 @@ public class Entity : MonoBehaviour
     }
     public virtual void BuildingEnded()
     {
-        //if (Time.time >= stateData.enterTimeState + stateData.timeBuilding)
-        //{
+        
         currentHealth = entityData.maxHealth;
-        //anim.SetBool("idle", false);
-        //anim.SetBool("move", false);
-        //anim.SetBool("playerDetected", false);
-        //anim.SetBool("charge", false);
-        //anim.SetBool("lookForPlayer", false);
-        //anim.SetBool("meleeAttack", false);
-        //anim.SetBool("dead", false);
+        
         anim.SetBool("unbuilded", false);
-        //stateMachine.currentState.Exit();
-        //stateMachine.Initialize(move)
-        //entityData.he
-
-        //}
+        
     }
     public virtual void Stun()
     {        
@@ -194,25 +184,6 @@ public class Entity : MonoBehaviour
     {
         
     }
-    //public virtual void OnCollisionExit2D(Collision2D collision)
-    //{
-    //    if (collision.gameObject.CompareTag("Player"))
-    //    {
-    //        rb.bodyType = RigidbodyType2D.Kinematic;
-
-    //    }
-    //}
+    
 }
 
-
-//infoMessage.applyKnockback = true;
-////isActive = false;
-//// = Mathf.Sign(gameObject.transform.position.x - col.gameObject.transform.position.x);
-//if (this.gameObject.transform.position.x > collision.transform.position.x)
-//{
-//    direccionEmpuje = 1;
-//}
-//else
-//{
-//    direccionEmpuje = -1;
-//}

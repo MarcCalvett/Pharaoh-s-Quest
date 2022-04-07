@@ -1,7 +1,682 @@
 fileFormatVersion: 2
 guid: 0569c6d08c1ab8f4bab6b30ab25555ac
 TextureImporter:
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      213: -3100869282824942749
+    second: Mv_flamethrower 3_0
+  - first:
+      213: -2431198000841295502
+    second: Mv_flamethrower 3_1
+  - first:
+      213: -6917394734455199918
+    second: Mv_flamethrower 3_2
+  - first:
+      213: 2268770331851805918
+    second: Mv_flamethrower 3_3
+  - first:
+      213: 872315383923234152
+    second: Mv_flamethrower 3_4
+  - first:
+      213: 7725266965175985810
+    second: Mv_flamethrower 3_5
+  - first:
+      213: -1454180856751802028
+    second: Mv_flamethrower 3_6
+  - first:
+      213: -647647997593361870
+    second: Mv_flamethrower 3_7
+  - first:
+      213: -1251019503267939252
+    second: Mv_flamethrower 3_8
+  - first:
+      213: 8030128126452855503
+    second: Mv_flamethrower 3_9
+  - first:
+      213: 4983875119415018897
+    second: Mv_flamethrower 3_10
+  - first:
+      213: 1199310228176074922
+    second: Mv_flamethrower 3_11
+  - first:
+      213: -178493148188231112
+    second: Mv_flamethrower 3_12
+  - first:
+      213: 6931454859285524728
+    second: Mv_flamethrower 3_13
+  - first:
+      213: 3532010786905358751
+    second: Mv_flamethrower 3_14
+  - first:
+      213: 7201744468032330389
+    second: Mv_flamethrower 3_15
+  - first:
+      213: 18871815591611386
+    second: Mv_flamethrower 3_16
+  - first:
+      213: -1278637860335389841
+    second: Mv_flamethrower 3_17
+  - first:
+      213: 3281250632595309971
+    second: Mv_flamethrower 3_18
+  - first:
+      213: 8150224686070542589
+    second: Mv_flamethrower 3_19
+  - first:
+      213: -1603244876103993354
+    second: Mv_flamethrower 3_20
+  - first:
+      213: 8299518846162425243
+    second: Mv_flamethrower 3_21
+  - first:
+      213: 6105911827962480805
+    second: Mv_flamethrower 3_22
+  - first:
+      213: -8315985817538482261
+    second: Mv_flamethrower 3_23
+  - first:
+      213: 9179925428676567331
+    second: Mv_flamethrower 3_24
+  - first:
+      213: -5296279631531783832
+    second: Mv_flamethrower 3_25
+  - first:
+      213: -5581564884470648332
+    second: Mv_flamethrower 3_26
+  - first:
+      213: -5534957975858389234
+    second: Mv_flamethrower 3_27
+  - first:
+      213: -8714330209157911741
+    second: Mv_flamethrower 3_28
+  - first:
+      213: 4295624926840383629
+    second: Mv_flamethrower 3_29
+  - first:
+      213: 8203654133190652336
+    second: Mv_flamethrower 3_30
+  - first:
+      213: 5198414693723118967
+    second: Mv_flamethrower 3_31
+  - first:
+      213: 5528774675694695233
+    second: Mv_flamethrower 3_32
+  - first:
+      213: 3530438648831169738
+    second: Mv_flamethrower 3_33
+  - first:
+      213: -2585839274291517152
+    second: Mv_flamethrower 3_34
+  - first:
+      213: 3674405570038595824
+    second: Mv_flamethrower 3_35
+  - first:
+      213: -973449213722638859
+    second: Mv_flamethrower 3_36
+  - first:
+      213: 4262964300653604653
+    second: Mv_flamethrower 3_37
+  - first:
+      213: 2873235691002787118
+    second: Mv_flamethrower 3_38
+  - first:
+      213: -6581014777160819678
+    second: Mv_flamethrower 3_39
+  - first:
+      213: 2638522596107347762
+    second: Mv_flamethrower 3_40
+  - first:
+      213: -2749228543920738913
+    second: Mv_flamethrower 3_41
+  - first:
+      213: 4717218037927875510
+    second: Mv_flamethrower 3_42
+  - first:
+      213: -7294609806529066893
+    second: Mv_flamethrower 3_43
+  - first:
+      213: 413551098086937560
+    second: Mv_flamethrower 3_44
+  - first:
+      213: 1203091289251548412
+    second: Mv_flamethrower 3_45
+  - first:
+      213: -3954311241777099891
+    second: Mv_flamethrower 3_46
+  - first:
+      213: 3656468315287039980
+    second: Mv_flamethrower 3_47
+  - first:
+      213: -5218915020557582982
+    second: Mv_flamethrower 3_48
+  - first:
+      213: -4596579468037622946
+    second: Mv_flamethrower 3_49
+  - first:
+      213: -2738978500634001189
+    second: Mv_flamethrower 3_50
+  - first:
+      213: 7554962494414341281
+    second: Mv_flamethrower 3_51
+  - first:
+      213: 4163684079113403557
+    second: Mv_flamethrower 3_52
+  - first:
+      213: -770940380315094905
+    second: Mv_flamethrower 3_53
+  - first:
+      213: -7671581869729906189
+    second: Mv_flamethrower 3_54
+  - first:
+      213: -2111723576472658379
+    second: Mv_flamethrower 3_55
+  - first:
+      213: -2915846565146382074
+    second: Mv_flamethrower 3_56
+  - first:
+      213: 2289759111176298220
+    second: Mv_flamethrower 3_57
+  - first:
+      213: 7351328777189691622
+    second: Mv_flamethrower 3_58
+  - first:
+      213: -5138576891670071066
+    second: Mv_flamethrower 3_59
+  - first:
+      213: -8683987729720972650
+    second: Mv_flamethrower 3_60
+  - first:
+      213: -7865465136696017378
+    second: Mv_flamethrower 3_61
+  - first:
+      213: -7892855445389362849
+    second: Mv_flamethrower 3_62
+  - first:
+      213: -5828710835888198958
+    second: Mv_flamethrower 3_63
+  - first:
+      213: 5032046671686462088
+    second: Mv_flamethrower 3_64
+  - first:
+      213: 4430443104572613858
+    second: Mv_flamethrower 3_65
+  - first:
+      213: 1825044178156119166
+    second: Mv_flamethrower 3_66
+  - first:
+      213: -4874209676214226236
+    second: Mv_flamethrower 3_67
+  - first:
+      213: 4876505029177370251
+    second: Mv_flamethrower 3_68
+  - first:
+      213: 2090466230414349852
+    second: Mv_flamethrower 3_69
+  - first:
+      213: 433003448980245629
+    second: Mv_flamethrower 3_70
+  - first:
+      213: 8864479402676101402
+    second: Mv_flamethrower 3_71
+  - first:
+      213: -8343324453782293735
+    second: Mv_flamethrower 3_72
+  - first:
+      213: -422314275489098326
+    second: Mv_flamethrower 3_73
+  - first:
+      213: -4023632785413872643
+    second: Mv_flamethrower 3_74
+  - first:
+      213: -2439945434812227814
+    second: Mv_flamethrower 3_75
+  - first:
+      213: 4237009018359084876
+    second: Mv_flamethrower 3_76
+  - first:
+      213: -8757372189385721916
+    second: Mv_flamethrower 3_77
+  - first:
+      213: 5272888684473047399
+    second: Mv_flamethrower 3_78
+  - first:
+      213: -5058551899100513288
+    second: Mv_flamethrower 3_79
+  - first:
+      213: -6006162535062632604
+    second: Mv_flamethrower 3_80
+  - first:
+      213: 7991273491778748999
+    second: Mv_flamethrower 3_81
+  - first:
+      213: -7010080030744182252
+    second: Mv_flamethrower 3_82
+  - first:
+      213: 4551746018978119930
+    second: Mv_flamethrower 3_83
+  - first:
+      213: -7055445748267383432
+    second: Mv_flamethrower 3_84
+  - first:
+      213: 309024574039711982
+    second: Mv_flamethrower 3_85
+  - first:
+      213: 8544695790790332448
+    second: Mv_flamethrower 3_86
+  - first:
+      213: -8077409872817516963
+    second: Mv_flamethrower 3_87
+  - first:
+      213: -1548897899921251312
+    second: Mv_flamethrower 3_88
+  - first:
+      213: 8685054824671669879
+    second: Mv_flamethrower 3_89
+  - first:
+      213: 7675825488109086389
+    second: Mv_flamethrower 3_90
+  - first:
+      213: -6333329858701960648
+    second: Mv_flamethrower 3_91
+  - first:
+      213: 2026303689231123912
+    second: Mv_flamethrower 3_92
+  - first:
+      213: 6494084715761766794
+    second: Mv_flamethrower 3_93
+  - first:
+      213: -5631345943667713027
+    second: Mv_flamethrower 3_94
+  - first:
+      213: 1097518686905540307
+    second: Mv_flamethrower 3_95
+  - first:
+      213: 6681121607443785618
+    second: Mv_flamethrower 3_96
+  - first:
+      213: 2742167848757529044
+    second: Mv_flamethrower 3_97
+  - first:
+      213: 5130438708049686223
+    second: Mv_flamethrower 3_98
+  - first:
+      213: -6625451359516635578
+    second: Mv_flamethrower 3_99
+  - first:
+      213: 2659941743364433411
+    second: Mv_flamethrower 3_100
+  - first:
+      213: 7230269727540872328
+    second: Mv_flamethrower 3_101
+  - first:
+      213: -2041702732367224028
+    second: Mv_flamethrower 3_102
+  - first:
+      213: 794477216819130552
+    second: Mv_flamethrower 3_103
+  - first:
+      213: -1062632105736328624
+    second: Mv_flamethrower 3_104
+  - first:
+      213: -8343763969614042803
+    second: Mv_flamethrower 3_105
+  - first:
+      213: 3047779412099445055
+    second: Mv_flamethrower 3_106
+  - first:
+      213: 8978551764990007233
+    second: Mv_flamethrower 3_107
+  - first:
+      213: -1651444698982446143
+    second: Mv_flamethrower 3_108
+  - first:
+      213: 5792596858572382538
+    second: Mv_flamethrower 3_109
+  - first:
+      213: -8643615111809632822
+    second: Mv_flamethrower 3_110
+  - first:
+      213: -821066685747866535
+    second: Mv_flamethrower 3_111
+  - first:
+      213: -121613320219475479
+    second: Mv_flamethrower 3_112
+  - first:
+      213: -4369710818200520439
+    second: Mv_flamethrower 3_113
+  - first:
+      213: -2286712003578598861
+    second: Mv_flamethrower 3_114
+  - first:
+      213: 1597912150324103213
+    second: Mv_flamethrower 3_115
+  - first:
+      213: -2508667500594528654
+    second: Mv_flamethrower 3_116
+  - first:
+      213: 8999957706492753218
+    second: Mv_flamethrower 3_117
+  - first:
+      213: -5472031000172372525
+    second: Mv_flamethrower 3_118
+  - first:
+      213: -9180310390000249797
+    second: Mv_flamethrower 3_119
+  - first:
+      213: 4801975990260737485
+    second: Mv_flamethrower 3_120
+  - first:
+      213: -7305520893884730273
+    second: Mv_flamethrower 3_121
+  - first:
+      213: -1747653678290863978
+    second: Mv_flamethrower 3_122
+  - first:
+      213: 4596909840022770747
+    second: Mv_flamethrower 3_123
+  - first:
+      213: -4725677000400670760
+    second: Mv_flamethrower 3_124
+  - first:
+      213: 2099107657898031991
+    second: Mv_flamethrower 3_125
+  - first:
+      213: -8521770517889851716
+    second: Mv_flamethrower 3_126
+  - first:
+      213: 803527370111838870
+    second: Mv_flamethrower 3_127
+  - first:
+      213: -5492242450273232182
+    second: Mv_flamethrower 3_128
+  - first:
+      213: -6600459605853230123
+    second: Mv_flamethrower 3_129
+  - first:
+      213: -8540305162102120597
+    second: Mv_flamethrower 3_130
+  - first:
+      213: 6342268414136677719
+    second: Mv_flamethrower 3_131
+  - first:
+      213: -7538443749588420789
+    second: Mv_flamethrower 3_132
+  - first:
+      213: 668321637729212038
+    second: Mv_flamethrower 3_133
+  - first:
+      213: -7159088296114524205
+    second: Mv_flamethrower 3_134
+  - first:
+      213: -3113649659682662900
+    second: Mv_flamethrower 3_135
+  - first:
+      213: -3423307627538055248
+    second: Mv_flamethrower 3_136
+  - first:
+      213: -2271886062794873858
+    second: Mv_flamethrower 3_137
+  - first:
+      213: -1849648968149373657
+    second: Mv_flamethrower 3_138
+  - first:
+      213: -60680242477113964
+    second: Mv_flamethrower 3_139
+  - first:
+      213: 8761750099388435045
+    second: Mv_flamethrower 3_140
+  - first:
+      213: 1456116900060930152
+    second: Mv_flamethrower 3_141
+  - first:
+      213: 6777646475776614888
+    second: Mv_flamethrower 3_142
+  - first:
+      213: -6889237359379042609
+    second: Mv_flamethrower 3_143
+  - first:
+      213: 4217990228001792532
+    second: Mv_flamethrower 3_144
+  - first:
+      213: -3022086767462593753
+    second: Mv_flamethrower 3_145
+  - first:
+      213: -5246854237201779778
+    second: Mv_flamethrower 3_146
+  - first:
+      213: -1076485897251742712
+    second: Mv_flamethrower 3_147
+  - first:
+      213: 6696744518985595889
+    second: Mv_flamethrower 3_148
+  - first:
+      213: -2781578468287652732
+    second: Mv_flamethrower 3_149
+  - first:
+      213: 3822132666467615686
+    second: Mv_flamethrower 3_150
+  - first:
+      213: 5786671930178769404
+    second: Mv_flamethrower 3_151
+  - first:
+      213: -8196775335597925307
+    second: Mv_flamethrower 3_152
+  - first:
+      213: 4385975315852532797
+    second: Mv_flamethrower 3_153
+  - first:
+      213: -1465776501108738498
+    second: Mv_flamethrower 3_154
+  - first:
+      213: 7217486923928341129
+    second: Mv_flamethrower 3_155
+  - first:
+      213: 8147252015394536417
+    second: Mv_flamethrower 3_156
+  - first:
+      213: 9039765127403852869
+    second: Mv_flamethrower 3_157
+  - first:
+      213: 1948496371939983170
+    second: Mv_flamethrower 3_158
+  - first:
+      213: 170788320460298571
+    second: Mv_flamethrower 3_159
+  - first:
+      213: -3457255543976300049
+    second: Mv_flamethrower 3_160
+  - first:
+      213: 5771444545284082786
+    second: Mv_flamethrower 3_161
+  - first:
+      213: -2882206210492956427
+    second: Mv_flamethrower 3_162
+  - first:
+      213: -7088419188721818034
+    second: Mv_flamethrower 3_163
+  - first:
+      213: 2282011556276068894
+    second: Mv_flamethrower 3_164
+  - first:
+      213: 7525793661956824174
+    second: Mv_flamethrower 3_165
+  - first:
+      213: -1858450998098030473
+    second: Mv_flamethrower 3_166
+  - first:
+      213: -8208446588507674697
+    second: Mv_flamethrower 3_167
+  - first:
+      213: -4122111697201689941
+    second: Mv_flamethrower 3_168
+  - first:
+      213: 1157635554500459199
+    second: Mv_flamethrower 3_169
+  - first:
+      213: -8451433501222665611
+    second: Mv_flamethrower 3_170
+  - first:
+      213: 6855416083051399462
+    second: Mv_flamethrower 3_171
+  - first:
+      213: 6813229564950259306
+    second: Mv_flamethrower 3_172
+  - first:
+      213: -311278384533577779
+    second: Mv_flamethrower 3_173
+  - first:
+      213: 8509672246187982639
+    second: Mv_flamethrower 3_174
+  - first:
+      213: 5195372689256528521
+    second: Mv_flamethrower 3_175
+  - first:
+      213: 978585337716200292
+    second: Mv_flamethrower 3_176
+  - first:
+      213: 4499099283477918941
+    second: Mv_flamethrower 3_177
+  - first:
+      213: -648894625222544920
+    second: Mv_flamethrower 3_178
+  - first:
+      213: -8435203735837568645
+    second: Mv_flamethrower 3_179
+  - first:
+      213: -4980333527989573946
+    second: Mv_flamethrower 3_180
+  - first:
+      213: 6716600808469399893
+    second: Mv_flamethrower 3_181
+  - first:
+      213: 1577295525140201903
+    second: Mv_flamethrower 3_182
+  - first:
+      213: 6200307380405080399
+    second: Mv_flamethrower 3_183
+  - first:
+      213: -739472608842692180
+    second: Mv_flamethrower 3_184
+  - first:
+      213: -461945577837659791
+    second: Mv_flamethrower 3_185
+  - first:
+      213: -328364909754445706
+    second: Mv_flamethrower 3_186
+  - first:
+      213: 3643349570906943811
+    second: Mv_flamethrower 3_187
+  - first:
+      213: 1449979409068999955
+    second: Mv_flamethrower 3_188
+  - first:
+      213: 3914711769506440380
+    second: Mv_flamethrower 3_189
+  - first:
+      213: -7060683428064914441
+    second: Mv_flamethrower 3_190
+  - first:
+      213: 4079898295391444549
+    second: Mv_flamethrower 3_191
+  - first:
+      213: -2530898684392741064
+    second: Mv_flamethrower 3_192
+  - first:
+      213: -3969350167626980290
+    second: Mv_flamethrower 3_193
+  - first:
+      213: -396513454481674641
+    second: Mv_flamethrower 3_194
+  - first:
+      213: 1294615053681846603
+    second: Mv_flamethrower 3_195
+  - first:
+      213: 7351697690977727192
+    second: Mv_flamethrower 3_196
+  - first:
+      213: -5529315467208120959
+    second: Mv_flamethrower 3_197
+  - first:
+      213: 4365804539025952552
+    second: Mv_flamethrower 3_198
+  - first:
+      213: -6449613242883935338
+    second: Mv_flamethrower 3_199
+  - first:
+      213: -8864590028261227936
+    second: Mv_flamethrower 3_200
+  - first:
+      213: -6470495954472213187
+    second: Mv_flamethrower 3_201
+  - first:
+      213: -5140567336858372177
+    second: Mv_flamethrower 3_202
+  - first:
+      213: -7127590486442673349
+    second: Mv_flamethrower 3_203
+  - first:
+      213: -5398180732305883298
+    second: Mv_flamethrower 3_204
+  - first:
+      213: 7150840384153003422
+    second: Mv_flamethrower 3_205
+  - first:
+      213: 1468133414898438290
+    second: Mv_flamethrower 3_206
+  - first:
+      213: -6345039913492619098
+    second: Mv_flamethrower 3_207
+  - first:
+      213: -2842197304853794253
+    second: Mv_flamethrower 3_208
+  - first:
+      213: -6303960369130196836
+    second: Mv_flamethrower 3_209
+  - first:
+      213: 3911782782023849779
+    second: Mv_flamethrower 3_210
+  - first:
+      213: -8583310368842208968
+    second: Mv_flamethrower 3_211
+  - first:
+      213: 2552481985999832397
+    second: Mv_flamethrower 3_212
+  - first:
+      213: -2622316624400087267
+    second: Mv_flamethrower 3_213
+  - first:
+      213: -420806261613773918
+    second: Mv_flamethrower 3_214
+  - first:
+      213: -3769888344891959295
+    second: Mv_flamethrower 3_215
+  - first:
+      213: 6896225445121825429
+    second: Mv_flamethrower 3_216
+  - first:
+      213: 2725412283021389739
+    second: Mv_flamethrower 3_217
+  - first:
+      213: 5136350843188290658
+    second: Mv_flamethrower 3_218
+  - first:
+      213: 1388849986191506090
+    second: Mv_flamethrower 3_219
+  - first:
+      213: 30365282667318218
+    second: Mv_flamethrower 3_220
+  - first:
+      213: -5231292496511081710
+    second: Mv_flamethrower 3_221
+  - first:
+      213: -424484027410155464
+    second: Mv_flamethrower 3_222
+  - first:
+      213: 5766869700758244180
+    second: Mv_flamethrower 3_223
+  - first:
+      213: 8972851331514165846
+    second: Mv_flamethrower 3_224
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -31,7 +706,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: -1
+    filterMode: 0
     aniso: -1
     mipBias: -100
     wrapU: 1
@@ -40,7 +715,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -71,9 +746,819 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: Mv_flamethrower 3_0
+      rect:
+        serializedVersion: 2
+        x: 190
+        y: 1330
+        width: 190
+        height: 190
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 36b8c4ef0df77f4d0800000000000000
+      internalID: -3100869282824942749
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mv_flamethrower 3_1
+      rect:
+        serializedVersion: 2
+        x: 380
+        y: 1330
+        width: 190
+        height: 190
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 279f63d9c46a24ed0800000000000000
+      internalID: -2431198000841295502
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mv_flamethrower 3_2
+      rect:
+        serializedVersion: 2
+        x: 570
+        y: 1330
+        width: 190
+        height: 190
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 257e3a1932a7000a0800000000000000
+      internalID: -6917394734455199918
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mv_flamethrower 3_3
+      rect:
+        serializedVersion: 2
+        x: 760
+        y: 1330
+        width: 190
+        height: 190
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ed4d8faa89a4c7f10800000000000000
+      internalID: 2268770331851805918
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mv_flamethrower 3_4
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1140
+        width: 190
+        height: 190
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8655ade48361b1c00800000000000000
+      internalID: 872315383923234152
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mv_flamethrower 3_5
+      rect:
+        serializedVersion: 2
+        x: 190
+        y: 1140
+        width: 190
+        height: 190
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 296ef56ef59a53b60800000000000000
+      internalID: 7725266965175985810
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mv_flamethrower 3_6
+      rect:
+        serializedVersion: 2
+        x: 380
+        y: 1140
+        width: 190
+        height: 190
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 459b2222736b1dbe0800000000000000
+      internalID: -1454180856751802028
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mv_flamethrower 3_7
+      rect:
+        serializedVersion: 2
+        x: 570
+        y: 1140
+        width: 190
+        height: 190
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 23264fbd3971307f0800000000000000
+      internalID: -647647997593361870
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mv_flamethrower 3_8
+      rect:
+        serializedVersion: 2
+        x: 760
+        y: 1140
+        width: 190
+        height: 190
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c4cf0a4d36c73aee0800000000000000
+      internalID: -1251019503267939252
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mv_flamethrower 3_9
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 950
+        width: 190
+        height: 190
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fc2781e4cfeb07f60800000000000000
+      internalID: 8030128126452855503
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mv_flamethrower 3_10
+      rect:
+        serializedVersion: 2
+        x: 190
+        y: 950
+        width: 190
+        height: 190
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 195c3a1f3084a2540800000000000000
+      internalID: 4983875119415018897
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mv_flamethrower 3_11
+      rect:
+        serializedVersion: 2
+        x: 380
+        y: 950
+        width: 190
+        height: 190
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aa87ded5c4ec4a010800000000000000
+      internalID: 1199310228176074922
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mv_flamethrower 3_12
+      rect:
+        serializedVersion: 2
+        x: 570
+        y: 950
+        width: 190
+        height: 190
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 83a366b6d6dd58df0800000000000000
+      internalID: -178493148188231112
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mv_flamethrower 3_13
+      rect:
+        serializedVersion: 2
+        x: 760
+        y: 950
+        width: 190
+        height: 190
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8f07e585879713060800000000000000
+      internalID: 6931454859285524728
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mv_flamethrower 3_14
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 760
+        width: 190
+        height: 190
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f918758e819340130800000000000000
+      internalID: 3532010786905358751
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mv_flamethrower 3_15
+      rect:
+        serializedVersion: 2
+        x: 190
+        y: 760
+        width: 190
+        height: 190
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 59a933cef6cb1f360800000000000000
+      internalID: 7201744468032330389
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mv_flamethrower 3_16
+      rect:
+        serializedVersion: 2
+        x: 380
+        y: 760
+        width: 190
+        height: 190
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: afbca98f0db034000800000000000000
+      internalID: 18871815591611386
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mv_flamethrower 3_17
+      rect:
+        serializedVersion: 2
+        x: 570
+        y: 760
+        width: 190
+        height: 190
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f63f75af3ad514ee0800000000000000
+      internalID: -1278637860335389841
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mv_flamethrower 3_18
+      rect:
+        serializedVersion: 2
+        x: 760
+        y: 760
+        width: 190
+        height: 190
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3958ed6c018598d20800000000000000
+      internalID: 3281250632595309971
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mv_flamethrower 3_19
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 570
+        width: 190
+        height: 190
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: df0bad49b2a6b1170800000000000000
+      internalID: 8150224686070542589
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mv_flamethrower 3_20
+      rect:
+        serializedVersion: 2
+        x: 190
+        y: 570
+        width: 190
+        height: 190
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6f73bdf874120c9e0800000000000000
+      internalID: -1603244876103993354
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mv_flamethrower 3_21
+      rect:
+        serializedVersion: 2
+        x: 380
+        y: 570
+        width: 190
+        height: 190
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b95db28fa60dd2370800000000000000
+      internalID: 8299518846162425243
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mv_flamethrower 3_22
+      rect:
+        serializedVersion: 2
+        x: 570
+        y: 570
+        width: 190
+        height: 190
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5a84f8ff47e8cb450800000000000000
+      internalID: 6105911827962480805
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mv_flamethrower 3_23
+      rect:
+        serializedVersion: 2
+        x: 760
+        y: 570
+        width: 190
+        height: 190
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bafae6c75fea79c80800000000000000
+      internalID: -8315985817538482261
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mv_flamethrower 3_24
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 380
+        width: 190
+        height: 190
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 321a7d04a85a56f70800000000000000
+      internalID: 9179925428676567331
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mv_flamethrower 3_25
+      rect:
+        serializedVersion: 2
+        x: 190
+        y: 380
+        width: 190
+        height: 190
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 869496b6cb5df76b0800000000000000
+      internalID: -5296279631531783832
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mv_flamethrower 3_26
+      rect:
+        serializedVersion: 2
+        x: 380
+        y: 380
+        width: 190
+        height: 190
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4f1355a5f4c4a82b0800000000000000
+      internalID: -5581564884470648332
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mv_flamethrower 3_27
+      rect:
+        serializedVersion: 2
+        x: 570
+        y: 380
+        width: 190
+        height: 190
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e0fde32eb01ef23b0800000000000000
+      internalID: -5534957975858389234
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mv_flamethrower 3_28
+      rect:
+        serializedVersion: 2
+        x: 760
+        y: 380
+        width: 190
+        height: 190
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 34befa368da701780800000000000000
+      internalID: -8714330209157911741
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mv_flamethrower 3_29
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 190
+        width: 190
+        height: 190
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d8862ac9c102d9b30800000000000000
+      internalID: 4295624926840383629
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mv_flamethrower 3_30
+      rect:
+        serializedVersion: 2
+        x: 190
+        y: 190
+        width: 190
+        height: 190
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0b17ef428fb39d170800000000000000
+      internalID: 8203654133190652336
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mv_flamethrower 3_31
+      rect:
+        serializedVersion: 2
+        x: 380
+        y: 190
+        width: 190
+        height: 190
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 77d998e1f9a742840800000000000000
+      internalID: 5198414693723118967
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mv_flamethrower 3_32
+      rect:
+        serializedVersion: 2
+        x: 570
+        y: 190
+        width: 190
+        height: 190
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 14335fb56472abc40800000000000000
+      internalID: 5528774675694695233
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mv_flamethrower 3_33
+      rect:
+        serializedVersion: 2
+        x: 760
+        y: 190
+        width: 190
+        height: 190
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ac454ecfe33aef030800000000000000
+      internalID: 3530438648831169738
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mv_flamethrower 3_34
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 190
+        height: 190
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 029a99161e04d1cd0800000000000000
+      internalID: -2585839274291517152
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mv_flamethrower 3_35
+      rect:
+        serializedVersion: 2
+        x: 190
+        y: 0
+        width: 190
+        height: 190
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0f00edae56c1ef230800000000000000
+      internalID: 3674405570038595824
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mv_flamethrower 3_36
+      rect:
+        serializedVersion: 2
+        x: 380
+        y: 0
+        width: 190
+        height: 190
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5f5cd21091d9d72f0800000000000000
+      internalID: -973449213722638859
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mv_flamethrower 3_37
+      rect:
+        serializedVersion: 2
+        x: 570
+        y: 0
+        width: 190
+        height: 190
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d2f21aef177192b30800000000000000
+      internalID: 4262964300653604653
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []

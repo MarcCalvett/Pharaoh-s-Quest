@@ -113,13 +113,15 @@ public class Enemy1 : Entity
     public override void Damage(InformationMessageSource informationMessage)
     {
         base.Damage(informationMessage);
+
+
         posBeforeKnockback = this.gameObject.transform.position;
 
-        if (transitionToUnbuilded)
+        if (healthOut)
         {
             isDead = true;
             stateMachine.ChangeState(unbuildedState);
-            transitionToUnbuilded = false;
+            healthOut = false;
         }
 
         if (isDead && stateMachine.currentState == unbuildedState && informationMessage.objectTag == "Tornado")
