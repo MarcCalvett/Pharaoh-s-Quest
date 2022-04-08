@@ -36,6 +36,11 @@ public class MoveState : State
     public override void LogicUpdate()
     {
         base.LogicUpdate();
+
+        entity.SetVelocity(stateData.movementSpeed);
+        entity.rb.bodyType = RigidbodyType2D.Kinematic;
+
+        
     }
 
     public override void PhysicsUpdate()

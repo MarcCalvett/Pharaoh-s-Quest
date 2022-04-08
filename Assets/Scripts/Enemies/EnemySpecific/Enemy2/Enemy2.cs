@@ -11,6 +11,9 @@ public class Enemy2 : Entity
     public E2_LookForPlayerState lookForPlayerState { get; private set; }
     public E2_DeadState deadState { get; private set; }
     public E2_StunState stunState { get; private set; }
+    public E2_DodgeState dodgeState { get; private set; }
+    public E2_RangeAttackState rangedAttackState { get; private set; }
+
 
     [SerializeField]
     private D_MoveState moveStateData;
@@ -26,9 +29,15 @@ public class Enemy2 : Entity
     private D_DeadState deadStateData;
     [SerializeField]
     private D_StunState stunStateData;
+    [SerializeField]
+    public D_DodgeState dodgeStateData;
+    [SerializeField]
+    private D_RangeAttackState rangedAttackStateData;
 
     [SerializeField]
     private Transform meleeAttackPosition;
+    [SerializeField]
+    private Transform rangedAttackPosition;
     private Vector3 posBeforeKnockback;
 
     public override void Start()
@@ -42,6 +51,8 @@ public class Enemy2 : Entity
         lookForPlayerState = new E2_LookForPlayerState(this, stateMachine, "lookForPlayer", lookForPlayerStateData, this);
         deadState = new E2_DeadState(this, stateMachine, "dead", deadStateData, this);
         stunState = new E2_StunState(this, stateMachine, "stun", stunStateData, this);
+        dodgeState = new E2_DodgeState(this, stateMachine, "dodge", dodgeStateData, this);
+        rangedAttackState = new E2_RangeAttackState(this, stateMachine, "rangedAttack", rangedAttackPosition, rangedAttackStateData, this);
 
         posBeforeKnockback.Set(0, 0, 0);
 
@@ -61,6 +72,10 @@ public class Enemy2 : Entity
         {
             stateMachine.ChangeState(deadState);
         }
+        else if (CheckPlayerInMinAgroRange())
+        {
+            stateMachine.ChangeState(rangedAttackState);
+        }
         else if(!CheckPlayerInMinAgroRange())
         {
             lookForPlayerState.SetTurnImmediately(true);
@@ -79,6 +94,8 @@ public class Enemy2 : Entity
     {
         base.Update();
 
+        Debug.Log(stateMachine.currentState);
+
         rb.rotation = 0;
 
         if (rb.bodyType == RigidbodyType2D.Kinematic && !CheckLedge())
@@ -87,11 +104,11 @@ public class Enemy2 : Entity
         }
 
 
-        if (rb.bodyType == RigidbodyType2D.Dynamic && rb.velocity.y == 0)
+        if (rb.bodyType == RigidbodyType2D.Dynamic && rb.velocity.y == 0 && CheckLedge())
         {
             rb.bodyType = RigidbodyType2D.Kinematic;          //Si esta en repos en y que pasi a kinematic (cas de que se li acaba de aplicar un knockback)
         }
-        else if (rb.bodyType == RigidbodyType2D.Dynamic)
+        else if (rb.bodyType == RigidbodyType2D.Dynamic && stateMachine.currentState != dodgeState)
         {
             rb.constraints = RigidbodyConstraints2D.FreezePositionX;  //Knockback vertical nomes
         }
@@ -137,5 +154,15 @@ public class Enemy2 : Entity
         this.gameObject.GetComponent<Renderer>().material.color = originalColor;
         //this.gameObject.GetComponent<Renderer>().material.color = new Color(0, 0, 0);
         stateMachine.Initialize(moveState);
+    }
+
+    public override bool CheckWall()
+    {
+        return base.CheckWall();
+    }
+
+    public override bool CheckLedge()
+    {
+        return base.CheckLedge();
     }
 }

@@ -14,12 +14,17 @@ public class Entity : MonoBehaviour
     public GameObject aliveGO { get; private set; }
     public AnimationToStateMachine atsm { get; private set; }
 
+
+    public Transform landingSpot;
+
     [SerializeField]
     protected GameObject StunStars;
     [SerializeField]
     private Transform wallCheck;
     [SerializeField]
     private Transform ledgeCheck;
+    [SerializeField]
+    private Transform checkGround;
     [SerializeField]
     private Transform playerCheck;
 
@@ -55,7 +60,9 @@ public class Entity : MonoBehaviour
 
     public virtual void Update()
     {
-        stateMachine.currentState.LogicUpdate();       
+        stateMachine.currentState.LogicUpdate();
+
+        anim.SetFloat("yVelocity", rb.velocity.y);
     }
 
     public virtual void FixedUpdate()
@@ -93,11 +100,28 @@ public class Entity : MonoBehaviour
     {
         return Physics2D.Raycast(playerCheck.position, aliveGO.transform.right, entityData.closeRangeActionDistance, entityData.whatIsPlayer);
     }
+    public virtual bool CheckGround()
+    {
+        return Physics2D.OverlapCircle(checkGround.position, 0.2f, entityData.whatIsGround);
+    }
+    public virtual void SetVelocity(float velocity, Vector2 angle, int direction)
+    {
+        angle.Normalize();
+        velocityWorkSpace.Set(angle.x * velocity * direction, angle.y * velocity);
+        rb.velocity = velocityWorkSpace;
+    }
+    public virtual Vector2 RetSetVelocity(float velocity, Vector2 angle, int direction)
+    {
+        angle.Normalize();
+        velocityWorkSpace.Set(angle.x * velocity * direction, angle.y * velocity);
+        return velocityWorkSpace;
+    }
     public virtual void DamageHop(float velocity)
     {
         
         velocityWorkSpace.Set(0, velocity);
         rb.velocity = velocityWorkSpace;
+
     }
     public virtual void Damage(InformationMessageSource informationMessage)
     {
@@ -147,9 +171,13 @@ public class Entity : MonoBehaviour
         Gizmos.DrawLine(wallCheck.position, wallCheck.position + (Vector3)(Vector2.right * facingDirection * entityData.wallCheckDistance));
         Gizmos.DrawLine(fixposition, fixposition + (Vector3)(Vector2.down  * entityData.ledgeCheckDistance));
 
-        Gizmos.DrawWireSphere(playerCheck.position + (Vector3)(Vector2.right * entityData.closeRangeActionDistance), 0.2f);
-        Gizmos.DrawWireSphere(playerCheck.position + (Vector3)(Vector2.right * entityData.minAgroDistance), 0.2f);
-        Gizmos.DrawWireSphere(playerCheck.position + (Vector3)(Vector2.right * entityData.maxAgroDistance), 0.2f);
+
+        Gizmos.DrawWireSphere(playerCheck.position + (Vector3)(Vector2.right * facingDirection * entityData.closeRangeActionDistance), 0.2f);
+        Gizmos.DrawWireSphere(playerCheck.position + (Vector3)(Vector2.right * facingDirection * entityData.minAgroDistance), 0.2f);
+        Gizmos.DrawWireSphere(playerCheck.position + (Vector3)(Vector2.right * facingDirection * entityData.maxAgroDistance), 0.2f);
+        Gizmos.DrawWireSphere(checkGround.position, 0.2f);
+        Vector3 beSure = new Vector2(landingSpot.position.x + 0.5f * -facingDirection, landingSpot.position.y);
+        Gizmos.DrawLine(beSure, beSure + (Vector3)(Vector2.down * (entityData.ledgeCheckDistance+ 0.3f)));
 
     }
     public virtual void OnCollisionStay2D(Collision2D collision)

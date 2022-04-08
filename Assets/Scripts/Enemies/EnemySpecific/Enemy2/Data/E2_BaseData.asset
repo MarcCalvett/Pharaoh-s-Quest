@@ -16,9 +16,9 @@ MonoBehaviour:
   damageHopSpeed: 3
   wallCheckDistance: 0.2
   ledgeCheckDistance: 0.4
-  minAgroDistance: 3
-  maxAgroDistance: 4
-  closeRangeActionDistance: 1.25
+  minAgroDistance: 7.5
+  maxAgroDistance: 8.5
+  closeRangeActionDistance: 1.5
   hitParticle: {fileID: 6240072112886026631, guid: d3ad3f1375e0d114ca19695641fceb61,
     type: 3}
   whatIsGround:
