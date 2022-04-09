@@ -62,6 +62,8 @@ public class Entity : MonoBehaviour
     {
         stateMachine.currentState.LogicUpdate();
 
+        Debug.Log(CheckPlayerInCloseRangeAction());
+
         anim.SetFloat("yVelocity", rb.velocity.y);
     }
 
@@ -178,6 +180,9 @@ public class Entity : MonoBehaviour
         Gizmos.DrawWireSphere(checkGround.position, 0.2f);
         Vector3 beSure = new Vector2(landingSpot.position.x + 0.5f * -facingDirection, landingSpot.position.y);
         Gizmos.DrawLine(beSure, beSure + (Vector3)(Vector2.down * (entityData.ledgeCheckDistance+ 0.3f)));
+        Vector3 aux = playerCheck.position;
+        aux.x += entityData.closeRangeActionDistance;
+        Gizmos.DrawLine(playerCheck.position, aux);
 
     }
     public virtual void OnCollisionStay2D(Collision2D collision)

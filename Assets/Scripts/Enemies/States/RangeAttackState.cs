@@ -7,6 +7,7 @@ public class RangeAttackState : AttackState
     protected D_RangeAttackState stateData;
     protected GameObject projectile;
     protected Projectile projectileScript;
+    
     public RangeAttackState(Entity entity, FiniteStateMachine stateMachine, string animBoolName, Transform attackPosition, D_RangeAttackState stateData) : base(entity, stateMachine, animBoolName, attackPosition)
     {
         this.stateData = stateData;
@@ -46,8 +47,15 @@ public class RangeAttackState : AttackState
     {
         base.TriggerAttack();
 
-        projectile = GameObject.Instantiate(stateData.projectile, attackPosition.position, attackPosition.rotation);
-        projectileScript = projectile.GetComponent<Projectile>();
-        projectileScript.FireProjectile(stateData.projectileSpeed, stateData.projectileTravelDistance, stateData.projectileDamage);
+        if(stateData.firstShoot.RuntimeValue || Time.time - stateData.lastShoot.RuntimeValue >= stateData.coolDown)
+        {
+            projectile = GameObject.Instantiate(stateData.projectile, attackPosition.position, attackPosition.rotation);
+            projectileScript = projectile.GetComponent<Projectile>();
+            projectileScript.FireProjectile(stateData.projectileSpeed, stateData.projectileTravelDistance, stateData.projectileDamage);
+
+            stateData.firstShoot.RuntimeValue = false;
+            stateData.lastShoot.RuntimeValue = Time.time;
+        }
+        
     }
 }

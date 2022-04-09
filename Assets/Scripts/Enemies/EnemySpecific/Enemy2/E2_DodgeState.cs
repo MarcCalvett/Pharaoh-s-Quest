@@ -67,11 +67,11 @@ public class E2_DodgeState : DodgeState
 
         if (isDodgeOver || !stateData.dodging)
         {
-            if(isPlayerInMaxAgroRange && performCloseRangeAction && entity.CheckGround())
+            if (isPlayerInMaxAgroRange && performCloseRangeAction && entity.CheckGround()) 
             {
                 stateMachine.ChangeState(enemy.meleeAttackState);
             }      
-            else if(isPlayerInMaxAgroRange && !performCloseRangeAction)
+            else if(isPlayerInMaxAgroRange && !performCloseRangeAction && entity.CheckGround())
             {
                 stateMachine.ChangeState(enemy.rangedAttackState);
             }

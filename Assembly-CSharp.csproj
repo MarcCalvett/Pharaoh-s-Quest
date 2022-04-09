@@ -122,11 +122,14 @@
     <Compile Include="Assets\Scripts\Player\PlayerScript.cs" />
     <Compile Include="Assets\Scripts\Player\TornadoScript.cs" />
     <Compile Include="Assets\Scripts\Projectiles\Projectile.cs" />
+    <Compile Include="Assets\Scripts\Projectiles\ProjectileSpecific\ToxicBomb\ToxicBomb.cs" />
+    <Compile Include="Assets\Scripts\Projectiles\ProjectileSpecific\ToxicBomb\ToxicGas.cs" />
     <Compile Include="Assets\Scripts\ScriptableObjectsType\BoolValue.cs" />
     <Compile Include="Assets\Scripts\ScriptableObjectsType\FloatValue.cs" />
     <Compile Include="Assets\Scripts\ScriptableObjectsType\IntValue.cs" />
     <Compile Include="Assets\Scripts\ScriptableObjectsType\PlayerAttackValues.cs" />
     <Compile Include="Assets\Scripts\Structs\AttackDetails.cs" />
+    <Compile Include="Assets\Scripts\Structs\EnumTypeDamage.cs" />
     <Compile Include="Assets\Scripts\Structs\InformationMessageSource.cs" />
     <Reference Include="UnityEngine">
       <HintPath>C:/Program Files/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>

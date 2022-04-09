@@ -8,4 +8,5 @@ public struct AttackDetails
     public float damageAmount;
     public Vector2 knockbackForce;
     public Rigidbody2D whoHitted;
+    public TypeDamage type;
 }

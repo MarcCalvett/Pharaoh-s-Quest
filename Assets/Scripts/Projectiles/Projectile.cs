@@ -17,7 +17,8 @@ public class Projectile : MonoBehaviour
     private Rigidbody2D rb;
 
     private bool isGravityOn;
-    private bool hasHitGround;
+    protected bool hasHitGround;
+    protected bool hasHitPlayer;
 
     [SerializeField]
     private LayerMask whatIsGround;
@@ -26,7 +27,7 @@ public class Projectile : MonoBehaviour
     [SerializeField]
     private Transform damagePosition;
 
-    private void Start()
+    protected virtual void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         rb.gravityScale = 0.0f;
@@ -37,7 +38,7 @@ public class Projectile : MonoBehaviour
         xStartPos = transform.position.x;
     }
 
-    private void Update()
+    protected virtual void Update()
     {
         if (!hasHitGround)
         {
@@ -50,7 +51,7 @@ public class Projectile : MonoBehaviour
         }
     }
 
-    private void FixedUpdate()
+    protected virtual void FixedUpdate()
     {
         if (!hasHitGround)
         {
@@ -59,9 +60,10 @@ public class Projectile : MonoBehaviour
 
             if (damageHit)
             {
+                hasHitPlayer = true;
                 damageHit.transform.SendMessage("Damage", attackDetails);
-                Destroy(gameObject);
-                //TODO: Gas
+                //Destroy(gameObject);
+                
             }
 
             if (groundHit)
@@ -86,6 +88,7 @@ public class Projectile : MonoBehaviour
         this.speed = speed;
         this.travelDistance = travelDistance;
         attackDetails.damageAmount = damage;
+        attackDetails.type = TypeDamage.TEMPORAL;
     }
 
     private void OnDrawGizmos()

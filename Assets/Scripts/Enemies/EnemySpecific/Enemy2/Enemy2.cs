@@ -94,17 +94,29 @@ public class Enemy2 : Entity
     {
         base.Update();
 
-        Debug.Log(stateMachine.currentState);
+        //Debug.Log(stateMachine.currentState);
+        //Debug.Log(CheckGround());
 
         rb.rotation = 0;
 
-        if (rb.bodyType == RigidbodyType2D.Kinematic && !CheckLedge())
+        if(CheckGround() && rb.velocity.y < 0)
+        {
+            Vector2 aux = rb.velocity;
+            aux.y = 0;
+            rb.velocity = aux;
+            Vector3 aux2 = transform.position;
+            aux2.y -= 0.1f;
+            transform.position = aux2;
+        }
+
+        if (rb.bodyType == RigidbodyType2D.Kinematic && !CheckGround())
         {
             rb.bodyType = RigidbodyType2D.Dynamic;                                  //Si li estem aplicant knockback q pasi a dynamic
         }
 
+        
 
-        if (rb.bodyType == RigidbodyType2D.Dynamic && rb.velocity.y == 0 && CheckLedge())
+        if (rb.bodyType == RigidbodyType2D.Dynamic && rb.velocity.y == 0 && CheckGround())
         {
             rb.bodyType = RigidbodyType2D.Kinematic;          //Si esta en repos en y que pasi a kinematic (cas de que se li acaba de aplicar un knockback)
         }
@@ -165,4 +177,5 @@ public class Enemy2 : Entity
     {
         return base.CheckLedge();
     }
+    
 }

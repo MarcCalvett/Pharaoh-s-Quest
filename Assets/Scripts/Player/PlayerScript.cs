@@ -10,6 +10,8 @@ public class PlayerScript : MonoBehaviour
     public GameObject tornadoPrefab;
     public float jumpForce;
     public float speed;
+        
+
     private Rigidbody2D Rigidbody2D;
     private Animator animator;
     private float horizontal;    
@@ -45,6 +47,7 @@ public class PlayerScript : MonoBehaviour
     private bool attackingWind;
     private bool dashing;
     public bool spaWindSword;
+    public BoolValue intoxicated;
     public BoolValue rechargingStamina;
     public BoolValue imAttacking;
     public BoolValue applyKnockBack;
@@ -53,6 +56,7 @@ public class PlayerScript : MonoBehaviour
     public Vector2 knockBack;
     private float recoverStaminaTime;
     private InformationMessageSource infoMessage;
+    private Color originalColor;
     [HideInInspector]public bool grounded;
     [HideInInspector] Collider2D collider;
     [SerializeField] private PlayerAttackValues values;
@@ -81,35 +85,20 @@ public class PlayerScript : MonoBehaviour
         scrollSpeedBoost = 2;
         dashSpeedBoost = 3;
         knockBackVelocities.Set(100, 2);
+        originalColor = this.gameObject.GetComponent<Renderer>().material.color;
     }
 
     // Update is called once per frame
     void Update()
     {
-        //knockBack.Set(Rigidbody2D.velocity.x * Rigidbody2D.mass, 0);
-
-        //if (applyKnockBack.RuntimeValue)
-        //{
-        //    aplicator = 1;
-        //}
-        //else
-        //{
-        //    aplicator = 0;
-        //}
-
-        //if (dashing)
-        //{
-        //    aplicator = 0;
-        //    _aplicator = 1;
-        //}
-        //else if(aplicator == 0)
-        //{
-        //    _aplicator = 1;
-        //}        
-        //else
-        //{
-        //    _aplicator = 0;
-        //}
+        if (intoxicated.RuntimeValue)
+        {
+            IntoxicatedColor();
+        }
+        else
+        {
+            OriginalColor();
+        }
 
         if(!attacking && !spaNormalSword && !spaWindSword)
         {
@@ -576,7 +565,7 @@ public class PlayerScript : MonoBehaviour
 
     public void Damage(AttackDetails attackDetails)
     {
-        if (dodging)
+        if (dodging && attackDetails.type == TypeDamage.NORMAL)
         {
             if( Time.time - lastParry <= 0.2f)
             {
@@ -592,12 +581,21 @@ public class PlayerScript : MonoBehaviour
         else
         {
             playerHealth.RuntimeValue -= attackDetails.damageAmount;
-            knockBack.Set(attackDetails.knockbackForce.x * -Mathf.Sign(attackDetails.position.x - transform.position.x), attackDetails.knockbackForce.y);
-            Rigidbody2D.velocity = knockBack;
+            if (attackDetails.type == TypeDamage.NORMAL)
+            {
+                knockBack.Set(attackDetails.knockbackForce.x * -Mathf.Sign(attackDetails.position.x - transform.position.x), attackDetails.knockbackForce.y);
+                Rigidbody2D.velocity = knockBack;
+            }
+               
         }
        
 
     }
+    public void DamagePerSecond(AttackDetails attackDetails)
+    {
+
+    }
+
     private void TriggerDefaultAttack()
     {
         Collider2D[] detectedObjects = Physics2D.OverlapCircleAll(defaultAttack.transform.position, values.defaultAttackRadius, values.whatIsEnemy);
@@ -724,4 +722,20 @@ public class PlayerScript : MonoBehaviour
         }
     }
 
+    private void IntoxicatedColor()
+    {
+        float r =0f;
+        float g = 0.7f;
+        float b = 0f;
+        float a = 1f;
+
+        Color intoxicated = new Color(r, g, b, a);
+
+
+        this.gameObject.GetComponent<Renderer>().material.color = intoxicated;
+    }
+    private void OriginalColor()
+    {
+        this.gameObject.GetComponent<Renderer>().material.color = originalColor;
+    }
 }
