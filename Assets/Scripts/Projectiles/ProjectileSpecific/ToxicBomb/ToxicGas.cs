@@ -12,6 +12,8 @@ public class ToxicGas : MonoBehaviour
     private float toxicityDuration;
     [SerializeField]
     private BoolValue isPlayerIntoxicated;
+    [SerializeField]
+    private BoolValue isPlayerDashing;
 
     private AttackDetails attackDetails;
 
@@ -102,7 +104,7 @@ public class ToxicGas : MonoBehaviour
 
     private void OnTriggerStay2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("Player") && !gasOut && coliderEnabled){
+        if (collision.gameObject.CompareTag("Player") && !gasOut && coliderEnabled && !isPlayerDashing.RuntimeValue){
 
             isPlayerIntoxicated.RuntimeValue = true;
             playerOut = false;

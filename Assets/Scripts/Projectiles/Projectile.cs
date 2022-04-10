@@ -26,6 +26,8 @@ public class Projectile : MonoBehaviour
     private LayerMask whatIsPlayer;
     [SerializeField]
     private Transform damagePosition;
+    [SerializeField]
+    private BoolValue playerDashing;
 
     protected virtual void Start()
     {
@@ -58,7 +60,10 @@ public class Projectile : MonoBehaviour
             Collider2D damageHit = Physics2D.OverlapCircle(damagePosition.position, damageRadius, whatIsPlayer);
             Collider2D groundHit = Physics2D.OverlapCircle(damagePosition.position, damageRadius, whatIsGround);
 
-            if (damageHit)
+
+            
+
+            if (damageHit && !playerDashing.RuntimeValue)
             {
                 hasHitPlayer = true;
                 damageHit.transform.SendMessage("Damage", attackDetails);

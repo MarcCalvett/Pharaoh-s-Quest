@@ -56,6 +56,7 @@ public class MeleeAttackState : AttackState
 
         foreach(Collider2D collider in detectedObjects)
         {
+            if(!stateData.isPlayerDashing.RuntimeValue)
             collider.transform.SendMessage("Damage", attackDetails);
         }
     }

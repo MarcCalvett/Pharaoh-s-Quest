@@ -19,3 +19,4 @@ MonoBehaviour:
   whatIsPlayer:
     serializedVersion: 2
     m_Bits: 512
+  isPlayerDashing: {fileID: 11400000, guid: 3c18a5b1356a8d14481a52371c5488c8, type: 2}

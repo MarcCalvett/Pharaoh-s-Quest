@@ -158,6 +158,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 512
   damagePosition: {fileID: 8007083087736100509}
+  playerDashing: {fileID: 11400000, guid: 3c18a5b1356a8d14481a52371c5488c8, type: 2}
   toxicGas: {fileID: 1973923583675883794, guid: 38527bffbf2cece4fa7dad020d8aeadf,
     type: 3}
 --- !u!95 &457511209075718697

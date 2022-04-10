@@ -27,6 +27,7 @@ public class Entity : MonoBehaviour
     private Transform checkGround;
     [SerializeField]
     private Transform playerCheck;
+    
 
     private float currentHealth;
 
@@ -40,6 +41,7 @@ public class Entity : MonoBehaviour
 
     protected bool isDead = false;
     protected bool healthOut = false;
+
 
     public virtual void Start()
     {

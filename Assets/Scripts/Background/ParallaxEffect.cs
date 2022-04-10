@@ -8,22 +8,34 @@ public class ParallaxEffect : MonoBehaviour
 
     private Transform cameraTransform;
     private Vector3 previousCameraPosition;
+    private float spriteWidth, startPosition;
 
     void Start()
     {
         cameraTransform = Camera.main.transform;
         previousCameraPosition = cameraTransform.position;
+        spriteWidth = GetComponent<SpriteRenderer>().bounds.size.x;
+        startPosition = transform.position.x;
     }
 
     void LateUpdate()
     {
-//<<<<<<< Updated upstream
-        float diferenceX = (cameraTransform.position.x - previousCameraPosition.x);
-        transform.Translate(new Vector3(diferenceX, 0, 0));
-//=======
-        float xIncrease = (cameraTransform.position.x - previousCameraPosition.x)*parallaxMultiplier;
+
+        float xIncrease = (cameraTransform.position.x - previousCameraPosition.x) * parallaxMultiplier;
+        float moveAmount = cameraTransform.position.x * (1 - parallaxMultiplier);
+
         transform.Translate(new Vector3(xIncrease, 0, 0));
-//>>>>>>> Stashed changes
         previousCameraPosition = cameraTransform.position;
+
+        if (moveAmount > startPosition + spriteWidth)
+        {
+            transform.Translate(new Vector3(spriteWidth, 0, 0));
+            startPosition += spriteWidth;
+        }
+        else if (moveAmount < startPosition - spriteWidth)
+        {
+            transform.Translate(new Vector3(-spriteWidth, 0, 0));
+            startPosition -= spriteWidth;
+        }
     }
 }

@@ -50,7 +50,9 @@ MonoBehaviour:
   damagePerSecond: 5
   duration: 3
   toxicityDuration: 3
-  isPlayerIntoxicated: {fileID: 0}
+  isPlayerIntoxicated: {fileID: 11400000, guid: 1e2cfbedd1012df46a721d517a032b7b,
+    type: 2}
+  isPlayerDashing: {fileID: 11400000, guid: 3c18a5b1356a8d14481a52371c5488c8, type: 2}
 --- !u!212 &1973923583675883797
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -138,6 +140,7 @@ MonoBehaviour:
   toxicityDuration: 3
   isPlayerIntoxicated: {fileID: 11400000, guid: 1e2cfbedd1012df46a721d517a032b7b,
     type: 2}
+  isPlayerDashing: {fileID: 0}
 --- !u!70 &6383733676709816898
 CapsuleCollider2D:
   m_ObjectHideFlags: 0

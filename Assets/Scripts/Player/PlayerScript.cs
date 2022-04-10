@@ -51,6 +51,7 @@ public class PlayerScript : MonoBehaviour
     public BoolValue rechargingStamina;
     public BoolValue imAttacking;
     public BoolValue applyKnockBack;
+    public BoolValue dashing2;
     private int aplicator;
     private int _aplicator;
     public Vector2 knockBack;
@@ -117,14 +118,25 @@ public class PlayerScript : MonoBehaviour
         else
         {
             WaitForStamina();
-        }           
-               
+        }
+
+        //if (knockBack.x != 0 && Rigidbody2D.gravityScale == 0)
+        //{
+        //    collider.isTrigger = false;
+        //    Rigidbody2D.gravityScale = rememberGravity;
+        //}
+        //if (grounded)
+        //{
+
+        //}
+
     }
     private void FixedUpdate()
     {
-        if(knockBack.x != 0)
+        if(knockBack.x != 0 && !collider.isTrigger && Rigidbody2D.gravityScale != 0)
         {
-            if(Rigidbody2D.velocity.y == 0)
+            
+            if(Rigidbody2D.velocity.y == 0 )
             {
                 knockBack.Set(0, 0);
             }
@@ -219,7 +231,7 @@ public class PlayerScript : MonoBehaviour
             }            
             lastParry = Time.time;
         }
-        if (Input.GetKey(KeyCode.S) && grounded && animator.GetBool("running")){
+        if (Input.GetKey(KeyCode.S) && grounded && animator.GetBool("running") && knockBack.x == 0){
             if (!windSwordInHand && Time.time > lastScroll + 0.7f)
             {
                 playerStamina.RuntimeValue -= 8;
@@ -239,9 +251,11 @@ public class PlayerScript : MonoBehaviour
                     animator.SetBool("dash", true);
                     animator.SetBool("running", false);
                     dashing = true;
+                    dashing2.RuntimeValue = true;
                     speed *= dashSpeedBoost;
                     //rememberGravity = Physics2D.gravity;
                     rememberGravity = this.Rigidbody2D.gravityScale;
+                    collider.isTrigger = true;
                     //Physics2D.gravity *= 0;
                     this.Rigidbody2D.gravityScale *= 0;
                 }                
@@ -397,7 +411,10 @@ public class PlayerScript : MonoBehaviour
     {
         //Physics2D.gravity = rememberGravity;
         this.Rigidbody2D.gravityScale = rememberGravity;
+        collider.isTrigger = false;
         spaWindSword = false;
+        dashing = false;
+        dashing2.RuntimeValue = false;
         imAttacking.RuntimeValue = false;
         //cancelMovement = 1;
     }
@@ -431,8 +448,11 @@ public class PlayerScript : MonoBehaviour
         //rememberGravity = Physics2D.gravity;
         //Physics2D.gravity *= 0;        
         rememberGravity = this.Rigidbody2D.gravityScale;
+        collider.isTrigger = true;
         this.Rigidbody2D.gravityScale *= 0;
         spaWindSword = true;
+        dashing = true;
+        dashing2.RuntimeValue = true;
         imAttacking.RuntimeValue = true;
         animator.SetBool("spaWS", false);
         rememberOriginalPositionForSpaw = transform.position;
@@ -457,7 +477,9 @@ public class PlayerScript : MonoBehaviour
     public void EndDash()
     {
         dashing = false;
+        dashing2.RuntimeValue = false;
         speed /= dashSpeedBoost;
+        collider.isTrigger = false;
         horizontal = 0;
         this.Rigidbody2D.gravityScale = rememberGravity;
     }
@@ -565,36 +587,41 @@ public class PlayerScript : MonoBehaviour
 
     public void Damage(AttackDetails attackDetails)
     {
-        if (dodging && attackDetails.type == TypeDamage.NORMAL)
+        if(attackDetails.type == TypeDamage.TEMPORAL || !dashing)
         {
-            if( Time.time - lastParry <= 0.2f)
+            if (dodging && attackDetails.type == TypeDamage.NORMAL)
             {
-                Debug.Log("Parry");
-                attackDetails.whoHitted.SendMessage("Stun");
+                if (Time.time - lastParry <= 0.2f)
+                {
+                    Debug.Log("Parry");
+                    attackDetails.whoHitted.SendMessage("Stun");
+                }
+                else
+                {
+                    Debug.Log("DamageMitigated");
+                    playerHealth.RuntimeValue -= attackDetails.damageAmount / 2;
+                }
             }
             else
             {
-                Debug.Log("DamageMitigated");
-                playerHealth.RuntimeValue -= attackDetails.damageAmount/2;
+                playerHealth.RuntimeValue -= attackDetails.damageAmount;
+                if (attackDetails.type == TypeDamage.NORMAL && !collider.isTrigger)
+                {
+                    if (this.Rigidbody2D.gravityScale == 0)
+                    {
+                        this.Rigidbody2D.gravityScale = rememberGravity;
+                    }
+                    knockBack.Set(attackDetails.knockbackForce.x * -Mathf.Sign(attackDetails.position.x - transform.position.x), attackDetails.knockbackForce.y);
+                    Rigidbody2D.velocity = knockBack;
+                    
+                }
+
             }
         }
-        else
-        {
-            playerHealth.RuntimeValue -= attackDetails.damageAmount;
-            if (attackDetails.type == TypeDamage.NORMAL)
-            {
-                knockBack.Set(attackDetails.knockbackForce.x * -Mathf.Sign(attackDetails.position.x - transform.position.x), attackDetails.knockbackForce.y);
-                Rigidbody2D.velocity = knockBack;
-            }
-               
-        }
+        
        
 
-    }
-    public void DamagePerSecond(AttackDetails attackDetails)
-    {
-
-    }
+    }    
 
     private void TriggerDefaultAttack()
     {

@@ -9,6 +9,7 @@ public class D_MeleeAttack : ScriptableObject
     public float attackDamage = 10f;
     public Vector2 kncockBackForce = new Vector2(0,0);
     public Rigidbody2D imWhoHitted;
-    public LayerMask whatIsPlayer;
-   
+    public LayerMask whatIsPlayer;    
+    public BoolValue isPlayerDashing;
+
 }

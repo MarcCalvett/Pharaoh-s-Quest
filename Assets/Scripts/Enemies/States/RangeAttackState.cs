@@ -49,12 +49,16 @@ public class RangeAttackState : AttackState
 
         if(stateData.firstShoot.RuntimeValue || Time.time - stateData.lastShoot.RuntimeValue >= stateData.coolDown)
         {
-            projectile = GameObject.Instantiate(stateData.projectile, attackPosition.position, attackPosition.rotation);
-            projectileScript = projectile.GetComponent<Projectile>();
-            projectileScript.FireProjectile(stateData.projectileSpeed, stateData.projectileTravelDistance, stateData.projectileDamage);
+            if (entity.CheckGround())
+            {
+                projectile = GameObject.Instantiate(stateData.projectile, attackPosition.position, attackPosition.rotation);
+                projectileScript = projectile.GetComponent<Projectile>();
+                projectileScript.FireProjectile(stateData.projectileSpeed, stateData.projectileTravelDistance, stateData.projectileDamage);
 
-            stateData.firstShoot.RuntimeValue = false;
-            stateData.lastShoot.RuntimeValue = Time.time;
+                stateData.firstShoot.RuntimeValue = false;
+                stateData.lastShoot.RuntimeValue = Time.time;
+            }
+            
         }
         
     }
