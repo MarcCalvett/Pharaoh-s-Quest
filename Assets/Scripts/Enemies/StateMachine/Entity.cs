@@ -63,8 +63,7 @@ public class Entity : MonoBehaviour
     public virtual void Update()
     {
         stateMachine.currentState.LogicUpdate();
-
-        Debug.Log(CheckPlayerInCloseRangeAction());
+        
 
         anim.SetFloat("yVelocity", rb.velocity.y);
     }

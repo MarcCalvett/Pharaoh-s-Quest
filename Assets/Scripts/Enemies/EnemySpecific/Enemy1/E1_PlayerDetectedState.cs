@@ -34,6 +34,10 @@ public class E1_PlayerDetectedState : PlayerDetectedState
         }
         else if (!isPlayerInMaxAgroRange)
         {
+            //entity.anim.SetBool("lookForPlayer", true);
+            //entity.anim.SetBool("playerDetected", false);           
+            //entity.anim.SetBool("move", false);
+
             stateMachine.ChangeState(enemy.lookForPlayerState);
         }
 

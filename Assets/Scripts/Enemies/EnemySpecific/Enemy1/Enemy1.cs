@@ -61,8 +61,9 @@ public class Enemy1 : Entity
     {
         base.Update();
 
+        Debug.Log(stateMachine.currentState);
         //Debug.Log(stateMachine.currentState);
-        
+
         rb.rotation = 0;
 
         if (rb.bodyType == RigidbodyType2D.Kinematic && !CheckLedge())

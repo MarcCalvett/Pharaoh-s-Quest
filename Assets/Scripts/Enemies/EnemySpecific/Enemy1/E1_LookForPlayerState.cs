@@ -35,6 +35,7 @@ public class E1_LookForPlayerState : LookForPlayerState
         }
         else if (isAllTurnsTimeDone)
         {
+            entity.anim.SetBool("playerDetected", false);
             stateMachine.ChangeState(enemy.moveState);
         }
     }

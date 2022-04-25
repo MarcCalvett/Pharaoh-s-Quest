@@ -48,6 +48,7 @@ public class E2_MeleeAtackState : MeleeAttackState
             }
             else if (!isPlayerInMinAgroRange)
             {
+                entity.anim.SetBool("playerDetected", false);
                 stateMachine.ChangeState(enemy.lookForPlayerState);
             }
 
