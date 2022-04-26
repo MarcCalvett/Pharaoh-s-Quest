@@ -347,8 +347,11 @@ public class PlayerScript : MonoBehaviour
     }
     private void CheckLanding()
     {
+        Vector3 auxiliar;
+        auxiliar = transform.localScale;
         Debug.DrawRay(transform.position, Vector3.down * 0.9f, Color.red);
-        if (Physics2D.Raycast(transform.position, Vector3.down, 0.9f, LayerMask.GetMask("Ground")))
+        Debug.DrawRay(transform.position + new Vector3(Mathf.Sign(auxiliar.x) * 0.86f, 0, 0), Vector3.down * 0.9f, Color.red);
+        if (Physics2D.Raycast(transform.position, Vector3.down, 0.9f, LayerMask.GetMask("Ground")) || Physics2D.Raycast(transform.position + new Vector3(Mathf.Sign(auxiliar.x)*0.86f,0,0), Vector3.down, 0.9f, LayerMask.GetMask("Ground")))
         {
             grounded = true;
 

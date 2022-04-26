@@ -115,7 +115,7 @@ MonoBehaviour:
   m_MinSize: {x: 607, y: 492}
   m_MaxSize: {x: 18002, y: 14042}
   vertical: 0
-  controlID: 149
+  controlID: 90
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -140,7 +140,7 @@ MonoBehaviour:
   m_MinSize: {x: 332, y: 492}
   m_MaxSize: {x: 14002, y: 14042}
   vertical: 1
-  controlID: 43
+  controlID: 140
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -165,7 +165,7 @@ MonoBehaviour:
   m_MinSize: {x: 303, y: 221}
   m_MaxSize: {x: 8003, y: 4021}
   vertical: 0
-  controlID: 44
+  controlID: 141
 --- !u!114 &8
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -185,8 +185,8 @@ MonoBehaviour:
     y: 0
     width: 1530
     height: 790
-  m_MinSize: {x: 101, y: 121}
-  m_MaxSize: {x: 4001, y: 4021}
+  m_MinSize: {x: 100, y: 100}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 16}
   m_Panes:
   - {fileID: 16}
@@ -243,7 +243,7 @@ MonoBehaviour:
   m_MinSize: {x: 332, y: 271}
   m_MaxSize: {x: 14002, y: 10021}
   vertical: 0
-  controlID: 86
+  controlID: 41
 --- !u!114 &11
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -438,10 +438,10 @@ MonoBehaviour:
       e32: 0
       e33: 1
   m_PreviewAnimator: {fileID: 0}
-  m_AnimatorController: {fileID: 9100000, guid: 1611661e9bcb7ab49812b86d80e68c5e,
+  m_AnimatorController: {fileID: 9100000, guid: 371169bec4a52654399fcb1a5e97fbc3,
     type: 2}
   m_BreadCrumbs:
-  - m_Target: {fileID: 7814928245216445954, guid: 1611661e9bcb7ab49812b86d80e68c5e,
+  - m_Target: {fileID: 4184824533670925310, guid: 371169bec4a52654399fcb1a5e97fbc3,
       type: 2}
     m_ScrollPosition: {x: 0, y: 0}
   stateMachineGraph: {fileID: 0}
@@ -583,9 +583,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: -12.0779505, y: -0.4411621, z: -1.9211677}
+    m_Target: {x: -8.356065, y: 0.047688328, z: -7.9228516}
     speed: 2
-    m_Value: {x: -12.0779505, y: -0.4411621, z: -1.9211677}
+    m_Value: {x: -8.356065, y: 0.047688328, z: -7.9228516}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -635,9 +635,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 14.8531275
+    m_Target: 7.8733463
     speed: 2
-    m_Value: 14.8531275
+    m_Value: 7.5343027
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -691,9 +691,9 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 
-      m_LastClickedID: 0
-      m_ExpandedIDs: 16fbffff
+      m_SelectedIDs: 42390000
+      m_LastClickedID: 14658
+      m_ExpandedIDs: 5efbffff
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -782,20 +782,20 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Scenes
+    - Assets/SpriteSheets/Character/elementals_wind_hashashin_v1.0
   m_ViewMode: 1
   m_StartGridSize: 16
   m_LastFolders:
-  - Assets/Scenes
+  - Assets/SpriteSheets/Character/elementals_wind_hashashin_v1.0
   m_LastFoldersGridSize: 16
   m_LastProjectPath: C:\Users\User\Desktop\noseee\Pharaoh-s-Quest
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 79}
-    m_SelectedIDs: e23d0000
-    m_LastClickedID: 15842
-    m_ExpandedIDs: 00000000a03d0000a23d0000a43d0000a63d0000a83d0000aa3d0000ac3d0000ae3d0000b03d0000b23d0000b43d0000b63d0000b83d0000ba3d0000bc3d0000be3d0000c03d0000c23d0000c43d0000c63d0000c83d0000ca3d0000cc3d0000ce3d000000ca9a3b
+    scrollPos: {x: 0, y: 260}
+    m_SelectedIDs: e6a40000
+    m_LastClickedID: 42214
+    m_ExpandedIDs: 00000000a03d0000a23d0000a43d0000a63d0000a83d0000aa3d0000ac3d0000ae3d0000b03d0000b23d0000b43d0000b63d0000b83d0000ba3d0000bc3d0000be3d0000c03d0000c23d0000c43d0000c63d0000c83d0000ca3d0000cc3d0000ce3d0000fc3d0000e4a4000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -851,7 +851,7 @@ MonoBehaviour:
     m_SelectedInstanceIDs: 
     m_LastClickedInstanceID: 0
     m_HadKeyboardFocusLastEvent: 1
-    m_ExpandedInstanceIDs: c623000020a900000a3a000072a70000d8a40000f6390000463a00004aa50000343a00003ca80000aa3a0000
+    m_ExpandedInstanceIDs: c623000020a900000a3a000072a70000d8a40000f6390000463a00004aa50000343a00003ca80000aa3a0000983a0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
