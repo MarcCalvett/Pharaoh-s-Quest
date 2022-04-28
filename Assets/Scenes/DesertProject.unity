@@ -333,8 +333,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 290, y: 25}
+  m_AnchoredPosition: {x: -114.1, y: -52.5}
+  m_SizeDelta: {x: 510.5338, y: 44.011536}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &54147544
 MonoBehaviour:
@@ -438,7 +438,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 48, y: 48}
+  m_SizeDelta: {x: 114.47368, y: 198}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &124404367
 MonoBehaviour:
@@ -512,8 +512,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 290, y: 25}
+  m_AnchoredPosition: {x: -114.1, y: -13.3}
+  m_SizeDelta: {x: 510.5338, y: 44.011536}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &153079690
 MonoBehaviour:
@@ -1292,8 +1292,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -166, y: -89}
-  m_SizeDelta: {x: 300, y: 35}
+  m_AnchoredPosition: {x: -160, y: -80}
+  m_SizeDelta: {x: 742.22534, y: 86.59296}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &258333393
 MonoBehaviour:
@@ -1564,8 +1564,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 300, y: 35}
+  m_AnchoredPosition: {x: -114.1, y: -52.5}
+  m_SizeDelta: {x: 528.1384, y: 61.61615}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &511299137
 MonoBehaviour:
@@ -1639,7 +1639,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 48, y: 48}
+  m_SizeDelta: {x: 114.47368, y: 198}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &539885223
 MonoBehaviour:
@@ -2006,8 +2006,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 290, y: 25}
+  m_AnchoredPosition: {x: -114.1, y: -52.5}
+  m_SizeDelta: {x: 510.5338, y: 44.011536}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &939694274
 MonoBehaviour:
@@ -2110,8 +2110,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 300, y: 35}
+  m_AnchoredPosition: {x: -114.1, y: -13.3}
+  m_SizeDelta: {x: 528.1384, y: 61.61615}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1050564025
 MonoBehaviour:
@@ -3116,7 +3116,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 48, y: 48}
+  m_SizeDelta: {x: 114.47368, y: 198}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1155957011
 MonoBehaviour:
@@ -3489,8 +3489,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -166, y: -41.1}
-  m_SizeDelta: {x: 300, y: 35}
+  m_AnchoredPosition: {x: -160, y: -28.5}
+  m_SizeDelta: {x: 742.22534, y: 86.59296}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1404498912
 CanvasRenderer:
@@ -3550,8 +3550,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 290, y: 25}
+  m_AnchoredPosition: {x: -114.1, y: -13.3}
+  m_SizeDelta: {x: 510.5338, y: 44.011536}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1405929959
 MonoBehaviour:
@@ -5614,7 +5614,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 50.80005, y: -41.099976}
+  m_AnchoredPosition: {x: 40, y: -74}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1653960489

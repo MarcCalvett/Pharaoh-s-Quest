@@ -253,6 +253,7 @@ public class PlayerScript : MonoBehaviour
                     dashing = true;
                     dashing2.RuntimeValue = true;
                     speed *= dashSpeedBoost;
+                    this.Rigidbody2D.constraints = RigidbodyConstraints2D.FreezePositionY;
                     //rememberGravity = Physics2D.gravity;
                     rememberGravity = this.Rigidbody2D.gravityScale;
                     collider.isTrigger = true;
@@ -485,6 +486,9 @@ public class PlayerScript : MonoBehaviour
         collider.isTrigger = false;
         horizontal = 0;
         this.Rigidbody2D.gravityScale = rememberGravity;
+        this.Rigidbody2D.constraints = RigidbodyConstraints2D.None;
+        this.Rigidbody2D.constraints = RigidbodyConstraints2D.FreezeRotation;
+
     }
     public void ThrowTornado()
     {
