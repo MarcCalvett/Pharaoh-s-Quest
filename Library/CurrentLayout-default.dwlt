@@ -74,7 +74,7 @@ MonoBehaviour:
   m_MinSize: {x: 433, y: 271}
   m_MaxSize: {x: 14003, y: 10021}
   vertical: 0
-  controlID: 113
+  controlID: 58
 --- !u!114 &4
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -125,7 +125,7 @@ MonoBehaviour:
   m_MinSize: {x: 709, y: 492}
   m_MaxSize: {x: 18004, y: 14042}
   vertical: 0
-  controlID: 164
+  controlID: 111
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -270,7 +270,7 @@ MonoBehaviour:
   m_MinSize: {x: 433, y: 492}
   m_MaxSize: {x: 14003, y: 14042}
   vertical: 1
-  controlID: 16
+  controlID: 57
 --- !u!114 &12
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -295,7 +295,7 @@ MonoBehaviour:
   m_MinSize: {x: 403, y: 221}
   m_MaxSize: {x: 8003, y: 4021}
   vertical: 0
-  controlID: 17
+  controlID: 143
 --- !u!114 &13
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -388,20 +388,20 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Scripts/Enemies/StateMachine
+    - Assets/Scenes
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Scripts/Enemies/StateMachine
+  - Assets/Scenes
   m_LastFoldersGridSize: -1
   m_LastProjectPath: C:\Users\User\Desktop\noseee\Pharaoh-s-Quest
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 68}
-    m_SelectedIDs: a63d0000
-    m_LastClickedID: 15782
-    m_ExpandedIDs: 00000000563d0000583d00005a3d00005c3d00005e3d0000603d0000623d0000643d0000663d0000683d00006a3d00006c3d00006e3d0000703d0000723d0000743d0000763d0000783d00007a3d00007c3d00007e3d0000803d0000823d0000843d000000ca9a3b
+    scrollPos: {x: 0, y: 0}
+    m_SelectedIDs: 9a3d0000
+    m_LastClickedID: 15770
+    m_ExpandedIDs: 00000000583d00005a3d00005c3d00005e3d0000603d0000623d0000643d0000663d0000683d00006a3d00006c3d00006e3d0000703d0000723d0000743d0000763d0000783d00007c3d00007e3d0000803d0000823d0000843d000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -473,7 +473,7 @@ MonoBehaviour:
       m_IsRenaming: 0
       m_OriginalEventType: 11
       m_IsRenamingFilename: 1
-      m_ClientGUIView: {fileID: 0}
+      m_ClientGUIView: {fileID: 2}
     m_CreateAssetUtility:
       m_EndAction: {fileID: 0}
       m_InstanceID: 0
@@ -522,7 +522,7 @@ MonoBehaviour:
     m_PrefName: Preview_InspectorPreview
   m_PreviewWindow: {fileID: 0}
   m_LastInspectedObjectInstanceID: -1
-  m_LastVerticalScrollValue: 100
+  m_LastVerticalScrollValue: 0
 --- !u!114 &17
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -552,9 +552,9 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 26390000
-      m_LastClickedID: 14630
-      m_ExpandedIDs: 5efbffff
+      m_SelectedIDs: b63d0000
+      m_LastClickedID: 0
+      m_ExpandedIDs: 02daffff3adaffffdadaffff12dbffff4adbffff84dbffff0cdcffffd0dcffff06dfffffa4dfffff02e8ffff18e8ffffd2e8ffffe4e8ffff58e9ffff68e9ffff80eaffff7eebffff90ebffff0aeeffff5ceeffff48efffff60efffff8cefffffb0efffffd0f0ffff6af7ffffc2f8ffff12f9ffff5af9ffff6ef9ffff30faffff4cfaffff5efaffff90faffff5efbffff384800005ab40000b8b4000024b6000028b80000a4bb00001cbd00007abd000056be00006cbe0000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -570,7 +570,7 @@ MonoBehaviour:
         m_IsRenaming: 0
         m_OriginalEventType: 11
         m_IsRenamingFilename: 0
-        m_ClientGUIView: {fileID: 0}
+        m_ClientGUIView: {fileID: 4}
       m_SearchString: 
     m_ExpandedScenes: []
     m_CurrenRootInstanceID: 0
@@ -614,9 +614,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: -17.130919, y: -0.22909077, z: -2.2114604}
+    m_Target: {x: -7.5075417, y: 3.3998594, z: -7.6660156}
     speed: 2
-    m_Value: {x: -17.130919, y: -0.22909077, z: -2.2114604}
+    m_Value: {x: -7.5075417, y: 3.3998594, z: -7.6660156}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -666,9 +666,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 8.420068
+    m_Target: 13.864672
     speed: 2
-    m_Value: 8.420068
+    m_Value: 13.864672
   m_Ortho:
     m_Target: 1
     speed: 2
