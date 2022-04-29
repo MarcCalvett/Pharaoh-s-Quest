@@ -38,6 +38,8 @@ public class Enemy1 : Entity
     private Transform meleeAttackPosition;
 
     private Vector3 posBeforeKnockback;
+    private float velocityY;
+    private float velocityYPast;
 
     public override void Start()
     {
@@ -55,16 +57,28 @@ public class Enemy1 : Entity
 
         posBeforeKnockback.Set(0, 0, 0);
 
+        velocityY = rb.velocity.y;
+
         stateMachine.Initialize(moveState);
     }
     public override void Update()
     {
         base.Update();
 
+        velocityYPast = velocityY;
+        velocityY = rb.velocity.y;
+
         Debug.Log(stateMachine.currentState);
         //Debug.Log(stateMachine.currentState);
 
         rb.rotation = 0;
+
+        if((velocityYPast == velocityY || velocityYPast == rb.velocity.y) && rb.bodyType == RigidbodyType2D.Dynamic && CheckLedge())   //Solucio bug quedarse quiet a dynamic despres del knockback
+        {
+            rb.bodyType = RigidbodyType2D.Kinematic;
+            rb.constraints = RigidbodyConstraints2D.None;
+            rb.constraints = RigidbodyConstraints2D.FreezePositionY;
+        }
 
         if (rb.bodyType == RigidbodyType2D.Kinematic && !CheckLedge())
         {
@@ -78,6 +92,7 @@ public class Enemy1 : Entity
         }
         else if(rb.bodyType == RigidbodyType2D.Dynamic)
         {            
+
             rb.constraints = RigidbodyConstraints2D.FreezePositionX;  //Knockback vertical nomes
         }
         else
