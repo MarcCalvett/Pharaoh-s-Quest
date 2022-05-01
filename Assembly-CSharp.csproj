@@ -67,6 +67,7 @@
     <Compile Include="Assets\Scripts\AnimationToStateMachine.cs" />
     <Compile Include="Assets\Scripts\Background\ParallaxEffect.cs" />
     <Compile Include="Assets\Scripts\Camera\CameraScript.cs" />
+    <Compile Include="Assets\Scripts\Camera\GolemCamera.cs" />
     <Compile Include="Assets\Scripts\Enemies\EnemySpecific\Enemy1\E1_ChargeState.cs" />
     <Compile Include="Assets\Scripts\Enemies\EnemySpecific\Enemy1\E1_DeadState.cs" />
     <Compile Include="Assets\Scripts\Enemies\EnemySpecific\Enemy1\E1_IdleState.cs" />

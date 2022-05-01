@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 
 public class PlayerScript : MonoBehaviour
@@ -27,6 +28,7 @@ public class PlayerScript : MonoBehaviour
     private float lastTreure;
     private float dashSpeedBoost;
     private float timeSwitchSword;
+    public Vector3 spawner;
     private Vector3 rememberPositionForSpaw;
     private Vector3 rememberOriginalPositionForSpaw;
     private Vector2 knockBackVelocities;
@@ -87,6 +89,8 @@ public class PlayerScript : MonoBehaviour
         dashSpeedBoost = 3;
         knockBackVelocities.Set(100, 2);
         originalColor = this.gameObject.GetComponent<Renderer>().material.color;
+
+        transform.position = spawner;
     }
 
     // Update is called once per frame
