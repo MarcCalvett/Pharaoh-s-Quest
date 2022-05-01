@@ -119,6 +119,10 @@
     <Compile Include="Assets\Scripts\HUD\HealthBar.cs" />
     <Compile Include="Assets\Scripts\HUD\HeartsManager.cs" />
     <Compile Include="Assets\Scripts\HUD\StaminaBar.cs" />
+    <Compile Include="Assets\Scripts\Objects\ContextClue.cs" />
+    <Compile Include="Assets\Scripts\Objects\Interactable.cs" />
+    <Compile Include="Assets\Scripts\Objects\ObjectsType\Swords.cs" />
+    <Compile Include="Assets\Scripts\Objects\SignalListener.cs" />
     <Compile Include="Assets\Scripts\Particles\ParticleController.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerScript.cs" />
     <Compile Include="Assets\Scripts\Player\TornadoScript.cs" />
@@ -129,6 +133,7 @@
     <Compile Include="Assets\Scripts\ScriptableObjectsType\FloatValue.cs" />
     <Compile Include="Assets\Scripts\ScriptableObjectsType\IntValue.cs" />
     <Compile Include="Assets\Scripts\ScriptableObjectsType\PlayerAttackValues.cs" />
+    <Compile Include="Assets\Scripts\ScriptableObjectsType\SignalSender.cs" />
     <Compile Include="Assets\Scripts\Structs\AttackDetails.cs" />
     <Compile Include="Assets\Scripts\Structs\EnumTypeDamage.cs" />
     <Compile Include="Assets\Scripts\Structs\InformationMessageSource.cs" />
