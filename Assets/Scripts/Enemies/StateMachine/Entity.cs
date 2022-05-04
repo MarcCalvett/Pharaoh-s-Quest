@@ -29,7 +29,7 @@ public class Entity : MonoBehaviour
     private Transform playerCheck;
     
 
-    private float currentHealth;
+    protected float currentHealth;
 
     private int lastDamageDirection;
 
