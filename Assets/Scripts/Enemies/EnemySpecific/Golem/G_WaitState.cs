@@ -2,17 +2,36 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class G_WaitState : MonoBehaviour
+public class G_WaitState : WaitState
 {
-    // Start is called before the first frame update
-    void Start()
+    private Golem golem;
+    public G_WaitState(Entity entity, FiniteStateMachine stateMachine, string animBoolName, D_WaitState stateData, Golem golem) : base(entity, stateMachine, animBoolName, stateData)
     {
-        
+        this.golem = golem;
     }
 
-    // Update is called once per frame
-    void Update()
+    public override void DoChecks()
     {
-        
+        base.DoChecks();
+    }
+
+    public override void Enter()
+    {
+        base.Enter();
+    }
+
+    public override void Exit()
+    {
+        base.Exit();
+    }
+
+    public override void LogicUpdate()
+    {
+        base.LogicUpdate();
+    }
+
+    public override void PhysicsUpdate()
+    {
+        base.PhysicsUpdate();
     }
 }

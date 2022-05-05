@@ -2,17 +2,43 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class G_SpikeState : MonoBehaviour
+public class G_SpikeState : SpikesState
 {
-    // Start is called before the first frame update
-    void Start()
+    private Golem golem;
+    public G_SpikeState(Entity entity, FiniteStateMachine stateMachine, string animBoolName, D_SpikesState stateData, Golem golem) : base(entity, stateMachine, animBoolName, stateData)
     {
-        
+        this.golem = golem;
     }
 
-    // Update is called once per frame
-    void Update()
+    public override void BackToWait()
     {
-        
+        base.BackToWait();
+
+        stateMachine.ChangeState(golem.waitState);
+    }
+
+    public override void DoChecks()
+    {
+        base.DoChecks();
+    }
+
+    public override void Enter()
+    {
+        base.Enter();
+    }
+
+    public override void Exit()
+    {
+        base.Exit();
+    }
+
+    public override void LogicUpdate()
+    {
+        base.LogicUpdate();
+    }
+
+    public override void PhysicsUpdate()
+    {
+        base.PhysicsUpdate();
     }
 }

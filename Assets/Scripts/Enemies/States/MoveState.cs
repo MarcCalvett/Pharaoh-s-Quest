@@ -16,9 +16,7 @@ public class MoveState : State
 
     public override void DoChecks()
     {
-        base.DoChecks();
-        isDetectingLedge = entity.CheckLedge();
-        isDetectingWall = entity.CheckWall();
+        base.DoChecks();        
         isPlayerInMinAgroRange = entity.CheckPlayerInMinAgroRange();
     }
 

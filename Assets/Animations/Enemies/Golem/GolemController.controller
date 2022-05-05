@@ -38,6 +38,15 @@ AnimatorStateTransition:
   - m_ConditionMode: 1
     m_ConditionEvent: 15sPassedAfterLastPunch
     m_EventTreshold: 0
+  - m_ConditionMode: 2
+    m_ConditionEvent: beam
+    m_EventTreshold: 0
+  - m_ConditionMode: 2
+    m_ConditionEvent: spikes
+    m_EventTreshold: 0
+  - m_ConditionMode: 2
+    m_ConditionEvent: protected
+    m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 4212812388880190333}
   m_Solo: 0
@@ -295,6 +304,15 @@ AnimatorStateTransition:
   - m_ConditionMode: 2
     m_ConditionEvent: healthOver25percent
     m_EventTreshold: 0
+  - m_ConditionMode: 2
+    m_ConditionEvent: beam
+    m_EventTreshold: 0
+  - m_ConditionMode: 2
+    m_ConditionEvent: punch
+    m_EventTreshold: 0
+  - m_ConditionMode: 2
+    m_ConditionEvent: spikes
+    m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -6751294943455281357}
   m_Solo: 0
@@ -438,6 +456,42 @@ AnimatorController:
     m_DefaultInt: 0
     m_DefaultBool: 1
     m_Controller: {fileID: 0}
+  - m_Name: beam
+    m_Type: 4
+    m_DefaultFloat: 0
+    m_DefaultInt: 0
+    m_DefaultBool: 0
+    m_Controller: {fileID: 0}
+  - m_Name: punch
+    m_Type: 4
+    m_DefaultFloat: 0
+    m_DefaultInt: 0
+    m_DefaultBool: 0
+    m_Controller: {fileID: 0}
+  - m_Name: spikes
+    m_Type: 4
+    m_DefaultFloat: 0
+    m_DefaultInt: 0
+    m_DefaultBool: 0
+    m_Controller: {fileID: 0}
+  - m_Name: protected
+    m_Type: 4
+    m_DefaultFloat: 0
+    m_DefaultInt: 0
+    m_DefaultBool: 0
+    m_Controller: {fileID: 0}
+  - m_Name: wait
+    m_Type: 4
+    m_DefaultFloat: 0
+    m_DefaultInt: 0
+    m_DefaultBool: 0
+    m_Controller: {fileID: 0}
+  - m_Name: awaked
+    m_Type: 4
+    m_DefaultFloat: 0
+    m_DefaultInt: 0
+    m_DefaultBool: 0
+    m_Controller: {fileID: 0}
   m_AnimatorLayers:
   - serializedVersion: 5
     m_Name: Base Layer
@@ -464,6 +518,15 @@ AnimatorStateTransition:
     m_EventTreshold: 0
   - m_ConditionMode: 2
     m_ConditionEvent: playerCloseRange
+    m_EventTreshold: 0
+  - m_ConditionMode: 2
+    m_ConditionEvent: punch
+    m_EventTreshold: 0
+  - m_ConditionMode: 2
+    m_ConditionEvent: spikes
+    m_EventTreshold: 0
+  - m_ConditionMode: 2
+    m_ConditionEvent: protected
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 1851698064602657458}
@@ -634,6 +697,15 @@ AnimatorStateTransition:
     m_EventTreshold: 0
   - m_ConditionMode: 1
     m_ConditionEvent: healthOver25percent
+    m_EventTreshold: 0
+  - m_ConditionMode: 2
+    m_ConditionEvent: beam
+    m_EventTreshold: 0
+  - m_ConditionMode: 2
+    m_ConditionEvent: punch
+    m_EventTreshold: 0
+  - m_ConditionMode: 1
+    m_ConditionEvent: protected
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -6915025448758080794}
