@@ -8,14 +8,7 @@ public class G_BeamState : BeamState
     public G_BeamState(Entity entity, FiniteStateMachine stateMachine, string animBoolName, D_BeamState stateData, Golem golem) : base(entity, stateMachine, animBoolName, stateData)
     {
         this.golem = golem;
-    }
-
-    public override void BackToWait()
-    {
-        base.BackToWait();
-
-        stateMachine.ChangeState(golem.waitState);
-    }
+    }       
 
     public override void DoChecks()
     {
@@ -41,4 +34,5 @@ public class G_BeamState : BeamState
     {
         base.PhysicsUpdate();
     }
+    
 }

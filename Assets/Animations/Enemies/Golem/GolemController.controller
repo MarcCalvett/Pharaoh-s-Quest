@@ -35,9 +35,6 @@ AnimatorStateTransition:
   m_PrefabAsset: {fileID: 0}
   m_Name: 
   m_Conditions:
-  - m_ConditionMode: 1
-    m_ConditionEvent: 15sPassedAfterLastPunch
-    m_EventTreshold: 0
   - m_ConditionMode: 2
     m_ConditionEvent: beam
     m_EventTreshold: 0
@@ -46,6 +43,12 @@ AnimatorStateTransition:
     m_EventTreshold: 0
   - m_ConditionMode: 2
     m_ConditionEvent: protected
+    m_EventTreshold: 0
+  - m_ConditionMode: 2
+    m_ConditionEvent: wait
+    m_EventTreshold: 0
+  - m_ConditionMode: 1
+    m_ConditionEvent: punch
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 4212812388880190333}
@@ -127,7 +130,7 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 2
-    m_ConditionEvent: playerCloseRange
+    m_ConditionEvent: goDefenseLoop
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -9206590891804153914}
@@ -196,7 +199,10 @@ AnimatorStateTransition:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: 
-  m_Conditions: []
+  m_Conditions:
+  - m_ConditionMode: 1
+    m_ConditionEvent: goDefenseLoop
+    m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 2079653637639052681}
   m_Solo: 0
@@ -245,7 +251,10 @@ AnimatorStateTransition:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: 
-  m_Conditions: []
+  m_Conditions:
+  - m_ConditionMode: 1
+    m_ConditionEvent: wait
+    m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -8669913377818474084}
   m_Solo: 0
@@ -296,15 +305,6 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 2
-    m_ConditionEvent: 15sPassedAfterLastPunch
-    m_EventTreshold: 0
-  - m_ConditionMode: 1
-    m_ConditionEvent: playerCloseRange
-    m_EventTreshold: 0
-  - m_ConditionMode: 2
-    m_ConditionEvent: healthOver25percent
-    m_EventTreshold: 0
-  - m_ConditionMode: 2
     m_ConditionEvent: beam
     m_EventTreshold: 0
   - m_ConditionMode: 2
@@ -312,6 +312,12 @@ AnimatorStateTransition:
     m_EventTreshold: 0
   - m_ConditionMode: 2
     m_ConditionEvent: spikes
+    m_EventTreshold: 0
+  - m_ConditionMode: 2
+    m_ConditionEvent: wait
+    m_EventTreshold: 0
+  - m_ConditionMode: 1
+    m_ConditionEvent: protected
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -6751294943455281357}
@@ -386,7 +392,13 @@ AnimatorStateTransition:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: 
-  m_Conditions: []
+  m_Conditions:
+  - m_ConditionMode: 2
+    m_ConditionEvent: spikes
+    m_EventTreshold: 0
+  - m_ConditionMode: 1
+    m_ConditionEvent: wait
+    m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -8669913377818474084}
   m_Solo: 0
@@ -408,7 +420,13 @@ AnimatorStateTransition:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: 
-  m_Conditions: []
+  m_Conditions:
+  - m_ConditionMode: 1
+    m_ConditionEvent: wait
+    m_EventTreshold: 0
+  - m_ConditionMode: 2
+    m_ConditionEvent: punch
+    m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -8669913377818474084}
   m_Solo: 0
@@ -436,25 +454,7 @@ AnimatorController:
     m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
-    m_DefaultBool: 1
-    m_Controller: {fileID: 0}
-  - m_Name: 15sPassedAfterLastPunch
-    m_Type: 4
-    m_DefaultFloat: 0
-    m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
-  - m_Name: playerCloseRange
-    m_Type: 4
-    m_DefaultFloat: 0
-    m_DefaultInt: 0
-    m_DefaultBool: 0
-    m_Controller: {fileID: 0}
-  - m_Name: healthOver25percent
-    m_Type: 4
-    m_DefaultFloat: 0
-    m_DefaultInt: 0
-    m_DefaultBool: 1
     m_Controller: {fileID: 0}
   - m_Name: beam
     m_Type: 4
@@ -492,6 +492,18 @@ AnimatorController:
     m_DefaultInt: 0
     m_DefaultBool: 0
     m_Controller: {fileID: 0}
+  - m_Name: dead
+    m_Type: 4
+    m_DefaultFloat: 0
+    m_DefaultInt: 0
+    m_DefaultBool: 0
+    m_Controller: {fileID: 0}
+  - m_Name: goDefenseLoop
+    m_Type: 4
+    m_DefaultFloat: 0
+    m_DefaultInt: 0
+    m_DefaultBool: 0
+    m_Controller: {fileID: 0}
   m_AnimatorLayers:
   - serializedVersion: 5
     m_Name: Base Layer
@@ -514,12 +526,6 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 2
-    m_ConditionEvent: 15sPassedAfterLastPunch
-    m_EventTreshold: 0
-  - m_ConditionMode: 2
-    m_ConditionEvent: playerCloseRange
-    m_EventTreshold: 0
-  - m_ConditionMode: 2
     m_ConditionEvent: punch
     m_EventTreshold: 0
   - m_ConditionMode: 2
@@ -527,6 +533,12 @@ AnimatorStateTransition:
     m_EventTreshold: 0
   - m_ConditionMode: 2
     m_ConditionEvent: protected
+    m_EventTreshold: 0
+  - m_ConditionMode: 2
+    m_ConditionEvent: wait
+    m_EventTreshold: 0
+  - m_ConditionMode: 1
+    m_ConditionEvent: beam
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 1851698064602657458}
@@ -644,7 +656,13 @@ AnimatorStateTransition:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: 
-  m_Conditions: []
+  m_Conditions:
+  - m_ConditionMode: 2
+    m_ConditionEvent: protected
+    m_EventTreshold: 0
+  - m_ConditionMode: 1
+    m_ConditionEvent: wait
+    m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -8669913377818474084}
   m_Solo: 0
@@ -666,7 +684,13 @@ AnimatorStateTransition:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: 
-  m_Conditions: []
+  m_Conditions:
+  - m_ConditionMode: 1
+    m_ConditionEvent: wait
+    m_EventTreshold: 0
+  - m_ConditionMode: 2
+    m_ConditionEvent: beam
+    m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -8669913377818474084}
   m_Solo: 0
@@ -690,22 +714,19 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 2
-    m_ConditionEvent: 15sPassedAfterLastPunch
-    m_EventTreshold: 0
-  - m_ConditionMode: 1
-    m_ConditionEvent: playerCloseRange
-    m_EventTreshold: 0
-  - m_ConditionMode: 1
-    m_ConditionEvent: healthOver25percent
-    m_EventTreshold: 0
-  - m_ConditionMode: 2
     m_ConditionEvent: beam
     m_EventTreshold: 0
   - m_ConditionMode: 2
     m_ConditionEvent: punch
     m_EventTreshold: 0
-  - m_ConditionMode: 1
+  - m_ConditionMode: 2
     m_ConditionEvent: protected
+    m_EventTreshold: 0
+  - m_ConditionMode: 2
+    m_ConditionEvent: wait
+    m_EventTreshold: 0
+  - m_ConditionMode: 1
+    m_ConditionEvent: spikes
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -6915025448758080794}

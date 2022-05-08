@@ -10,14 +10,7 @@ public class G_ThrowPunch : ThrowPunchState
     {
         this.golem = golem;
     }
-
-    public override void BackToWait()
-    {
-        base.BackToWait();
-
-        stateMachine.ChangeState(golem.waitState);
-    }
-
+    
     public override void DoChecks()
     {
         base.DoChecks();
@@ -31,6 +24,8 @@ public class G_ThrowPunch : ThrowPunchState
     public override void Exit()
     {
         base.Exit();
+
+        golem.timeArmController = Time.time;
     }
 
     public override void LogicUpdate()

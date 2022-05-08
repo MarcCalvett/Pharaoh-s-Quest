@@ -8,14 +8,7 @@ public class G_SpikeState : SpikesState
     public G_SpikeState(Entity entity, FiniteStateMachine stateMachine, string animBoolName, D_SpikesState stateData, Golem golem) : base(entity, stateMachine, animBoolName, stateData)
     {
         this.golem = golem;
-    }
-
-    public override void BackToWait()
-    {
-        base.BackToWait();
-
-        stateMachine.ChangeState(golem.waitState);
-    }
+    }      
 
     public override void DoChecks()
     {
@@ -25,6 +18,8 @@ public class G_SpikeState : SpikesState
     public override void Enter()
     {
         base.Enter();
+
+        golem.GrowSpikes();
     }
 
     public override void Exit()
@@ -41,4 +36,6 @@ public class G_SpikeState : SpikesState
     {
         base.PhysicsUpdate();
     }
+
+    
 }

@@ -5,9 +5,19 @@ using UnityEngine;
 public class Golem : Entity
 {
     [SerializeField]
-    protected BoolValue swordsTaken;
-    [SerializeField]
-    protected BoolValue imAlive;
+    private GameObject laser;
+    
+    public BoolValue swordsTaken;
+    
+    public BoolValue imAlive;
+
+    public BoolValue cameraShake;
+
+    public float timeShakeDuration;
+
+    public float timeArmController;
+
+    public bool firstLoop = true;
 
     public G_BeamState beamState { get; private set; }
     public G_ProtectState protectState { get; private set; }
@@ -16,6 +26,7 @@ public class Golem : Entity
     public G_WaitState waitState { get; private set; }
     public G_SleepState sleepState { get; private set; }
     public G_AwakeState awakeState { get; private set; }
+    public G_DeadState deadState { get; private set; }
 
     [SerializeField]
     private D_BeamState beamStateData;
@@ -31,10 +42,19 @@ public class Golem : Entity
     private D_SleepState sleepStateData;
     [SerializeField]
     private D_AwakeState awakeStateData;
+    [SerializeField]
+    private D_DeadState deadStateData;
 
+    [SerializeField]
+    BoolValue laserOn;
+    [SerializeField]
+    private GameObject ArmMissile;
+    public GameObject spikes;
     public override void Start()
     {
         base.Start();
+
+        laser.SetActive(false);
 
         beamState = new G_BeamState(this, stateMachine, "beam", beamStateData, this);
         waitState = new G_WaitState(this, stateMachine, "wait", waitStateData, this);
@@ -42,10 +62,20 @@ public class Golem : Entity
         spikesState = new G_SpikeState(this, stateMachine, "spikes", spikesStateData, this);
         throwPunchState = new G_ThrowPunch(this, stateMachine, "punch", throwPunchStateData, this);
         awakeState = new G_AwakeState(this, stateMachine, "awaked", awakeStateData, this);
-        sleepState = new G_SleepState(this, stateMachine, "sleep", sleepStateData, this);
+        sleepState = new G_SleepState(this, stateMachine, "Sleep", sleepStateData, this);
+        deadState = new G_DeadState(this, stateMachine, "dead", deadStateData, this);
 
-        stateMachine.Initialize(sleepState);
 
+        if (imAlive.RuntimeValue)
+        {
+            stateMachine.Initialize(sleepState);
+        }
+        else
+        {
+            Destroy(this.gameObject);
+        }
+
+        Flip();
         rb.constraints = RigidbodyConstraints2D.FreezeAll;
     }
 
@@ -56,10 +86,27 @@ public class Golem : Entity
         if(currentHealth <= 0)
         {
             imAlive.RuntimeValue = false;
-            //GO Dead
+            stateMachine.ChangeState(deadState);
         }
 
+        if(stateMachine.currentState == protectState)
+        {
+            imProtected = true;
+        }
+        else
+        {
+            imProtected = false;
+        }
 
+        if (swordsTaken.RuntimeValue)
+        {
+            imSleep = false;
+        }
+        else
+        {
+            imSleep = true;
+        }
+        //Debug.Log(CheckPlayerInCloseRangeAction());
     }
 
     public override void FixedUpdate()
@@ -131,8 +178,46 @@ public class Golem : Entity
     {
         base.Stun();
     }
+    public void Awaked()
+    {
+        stateMachine.ChangeState(waitState);
+    }
+    public void ShootArmMissile()
+    {
+        Vector3 armOrigin = new Vector3(4f, -0.87f, 0);
+        GameObject Arm = Instantiate(ArmMissile, armOrigin, Quaternion.identity);
+            
+    }
+    public void BackToWait()
+    {       
 
-    
+        stateMachine.ChangeState(waitState);
+    }
+    public void GoProtLoop()
+    {
+        anim.SetBool("goDefenseLoop", true);
+    }
+    public void OutProtLoop()
+    {
+        anim.SetBool("goDefenseLoop", false);
 
-    
+    }
+    public void GrowSpikes()
+    {
+        Vector3 spikesOrigin = new Vector3(-4.145001f, -1.34f, 0);
+        GameObject spikesTrap = Instantiate(spikes, spikesOrigin, Quaternion.identity);
+    }
+    public void ShootLaser()
+    {
+        laser.SetActive(true);
+        laserOn.RuntimeValue = true;
+    }
+    public void EndLaser()
+    {
+        laser.SetActive(false);
+        laserOn.RuntimeValue = false;
+    }
+
+
+
 }

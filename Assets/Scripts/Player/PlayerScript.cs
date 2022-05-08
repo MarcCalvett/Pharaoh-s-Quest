@@ -60,6 +60,10 @@ public class PlayerScript : MonoBehaviour
     private float recoverStaminaTime;
     private InformationMessageSource infoMessage;
     private Color originalColor;
+    [SerializeField]
+    private FloatValue playerXPos;
+    [SerializeField]
+    private FloatValue playerYPos;
     [HideInInspector]public bool grounded;
     [HideInInspector] Collider2D collider;
     [SerializeField] private PlayerAttackValues values;
@@ -124,6 +128,9 @@ public class PlayerScript : MonoBehaviour
             WaitForStamina();
         }
 
+        playerXPos.RuntimeValue = this.transform.position.x;
+        playerYPos.RuntimeValue = this.transform.position.y;
+        
         //if (knockBack.x != 0 && Rigidbody2D.gravityScale == 0)
         //{
         //    collider.isTrigger = false;

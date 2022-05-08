@@ -10,14 +10,7 @@ public class G_ProtectState : ProtectState
     {
         this.golem = golem;
     }
-
-    public override void BackToWait()
-    {
-        base.BackToWait();
-
-        stateMachine.ChangeState(golem.waitState);
-    }
-
+        
     public override void DoChecks()
     {
         base.DoChecks();
@@ -36,6 +29,11 @@ public class G_ProtectState : ProtectState
     public override void LogicUpdate()
     {
         base.LogicUpdate();
+
+        if(!entity.CheckPlayerInCloseRangeAction() && entity.anim.GetBool("goDefenseLoop"))
+        {
+            golem.OutProtLoop();
+        }
     }
 
     public override void PhysicsUpdate()

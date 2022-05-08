@@ -14,6 +14,7 @@ public class Entity : MonoBehaviour
     public GameObject aliveGO { get; private set; }
     public AnimationToStateMachine atsm { get; private set; }
 
+    public bool imSleep, imProtected;
 
     public Transform landingSpot;
 
@@ -29,7 +30,7 @@ public class Entity : MonoBehaviour
     private Transform playerCheck;
     
 
-    protected float currentHealth;
+    public float currentHealth;
 
     private int lastDamageDirection;
 
@@ -128,7 +129,7 @@ public class Entity : MonoBehaviour
     }
     public virtual void Damage(InformationMessageSource informationMessage)
     {
-        if (!isDead)
+        if (!isDead && !imSleep && !imProtected)
         {
             currentHealth -= informationMessage.damage;
 

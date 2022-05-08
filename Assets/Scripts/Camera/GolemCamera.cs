@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using EZCameraShake;
 
 public class GolemCamera : MonoBehaviour
 {
@@ -10,6 +11,8 @@ public class GolemCamera : MonoBehaviour
     public bool playerInRange;
     public Vector2 leftRightLimits;
     public float cameraYPosition;
+    public BoolValue cameraShakeOn;
+    
 
     // Start is called before the first frame update
     void Start()
@@ -19,12 +22,18 @@ public class GolemCamera : MonoBehaviour
         auxiliar.z = -10f;
 
         transform.position = auxiliar;
+        
     }
     //-8.67
     // Update is called once per frame
     void Update()
     {
-        if (!player.GetComponent<PlayerScript>().spaWindSword)
+        
+        if (cameraShakeOn.RuntimeValue)
+        {
+            CameraShaker.Instance.ShakeOnce(0.5f,4f,.1f,2f);
+        }
+        else
         {
             //if(player.transform.position.x >= leftRightLimits.x && player.transform.position.x <= leftRightLimits.y)
             //{

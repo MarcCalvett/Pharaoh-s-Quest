@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class Swords : Interactable
 {
-    public BoolValue swordsTaken;  
+    public BoolValue swordsTaken;
+    public BoolValue cameraShake;
     
     void Update()
     {
@@ -15,6 +16,7 @@ public class Swords : Interactable
         else if (Input.GetKeyDown(KeyCode.B) && playerInRange)
         {
             swordsTaken.RuntimeValue = true;
+            cameraShake.RuntimeValue = true;
             Destroy(this.gameObject);
         }
     }
