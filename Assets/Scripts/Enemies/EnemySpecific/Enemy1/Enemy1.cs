@@ -68,7 +68,7 @@ public class Enemy1 : Entity
         velocityYPast = velocityY;
         velocityY = rb.velocity.y;
 
-        Debug.Log(stateMachine.currentState);
+        //Debug.Log(stateMachine.currentState);
         //Debug.Log(stateMachine.currentState);
 
         rb.rotation = 0;

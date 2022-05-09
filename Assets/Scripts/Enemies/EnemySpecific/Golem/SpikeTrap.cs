@@ -18,16 +18,20 @@ public class SpikeTrap : MonoBehaviour
     [SerializeField]
     Vector3 minPosition;
 
-    bool detectPlayer;
+    Collider2D player;
+    
     float timeController;
+    float damageTimeController;
     float startTime;
+
+    bool playerIn;
 
     private void Start()
     {
         position = Position.RAISING;
         timeController = Time.time;
-        detectPlayer = false;
-
+        playerIn = false;
+        damageTimeController = 0;
         attackDetails.damageAmount = damage;
         attackDetails.knockbackForce = Vector2.zero;
         attackDetails.position = transform.position;
@@ -36,6 +40,8 @@ public class SpikeTrap : MonoBehaviour
     }
     private void Update()
     {
+        if (playerIn)
+            DamagePlayer();
         switch (position)
         {
             case Position.RAISING:
@@ -55,7 +61,7 @@ public class SpikeTrap : MonoBehaviour
 
     void Raise()
     {
-        detectPlayer = false;
+        
 
         if (Time.time - timeController >= 0.1f)
         {
@@ -79,7 +85,7 @@ public class SpikeTrap : MonoBehaviour
     }
     void Bury()
     {
-        detectPlayer = false;
+        
 
         if (Time.time - timeController >= 0.1f)
         {
@@ -99,21 +105,31 @@ public class SpikeTrap : MonoBehaviour
     {
         if(Time.time - startTime >= timeUP)
         {
-            detectPlayer = false;
+           
             position = Position.BURYING;
-        }
-        else
-        {
-            detectPlayer = true;
-        }
+        }        
     }
-    private void OnCollisionStay2D(Collision2D collision)
-    {
-        if(collision.gameObject.CompareTag("Player") && Time.time - timeController >= 1 && detectPlayer)
-        {
-            timeController = Time.time;
 
-            collision.rigidbody.SendMessage("Damage", attackDetails);
+    void DamagePlayer()
+    {
+        if (Time.time - damageTimeController >= 0.1f)
+        {
+            damageTimeController = Time.time;
+            player.attachedRigidbody.SendMessage("Damage", attackDetails);
         }
     }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            playerIn = true;
+            player = collision;
+        }
+    }
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Player"))
+            playerIn = false;
+    }
+
 }

@@ -43,13 +43,16 @@ public class Golem : Entity
     [SerializeField]
     private D_AwakeState awakeStateData;
     [SerializeField]
-    private D_DeadState deadStateData;
+    private D_DeadState deadStateData;    
 
     [SerializeField]
     BoolValue laserOn;
     [SerializeField]
     private GameObject ArmMissile;
     public GameObject spikes;
+    [SerializeField]
+    FloatValue laserDirection;
+
     public override void Start()
     {
         base.Start();
@@ -204,11 +207,12 @@ public class Golem : Entity
     }
     public void GrowSpikes()
     {
-        Vector3 spikesOrigin = new Vector3(-4.145001f, -1.34f, 0);
+        Vector3 spikesOrigin = new Vector3(3.51f, -3.27f, 0);
         GameObject spikesTrap = Instantiate(spikes, spikesOrigin, Quaternion.identity);
     }
     public void ShootLaser()
     {
+        laserDirection.RuntimeValue = laserDirection.initialValue;
         laser.SetActive(true);
         laserOn.RuntimeValue = true;
     }

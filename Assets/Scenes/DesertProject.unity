@@ -2939,9 +2939,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1530275551}
   - component: {fileID: 1530275550}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: Grid
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4120,6 +4120,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5821930841664188933, guid: 59c1075ee298a9c48a0f0b53043b835d,
+        type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5821930841664188933, guid: 59c1075ee298a9c48a0f0b53043b835d,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5821930841664188933, guid: 59c1075ee298a9c48a0f0b53043b835d,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5821930841664188933, guid: 59c1075ee298a9c48a0f0b53043b835d,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5821930842082990496, guid: 59c1075ee298a9c48a0f0b53043b835d,
         type: 3}
       propertyPath: m_Name
@@ -4228,6 +4248,46 @@ PrefabInstance:
     - target: {fileID: 5821930842082990508, guid: 59c1075ee298a9c48a0f0b53043b835d,
         type: 3}
       propertyPath: m_Pivot.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5821930842137791921, guid: 59c1075ee298a9c48a0f0b53043b835d,
+        type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5821930842137791921, guid: 59c1075ee298a9c48a0f0b53043b835d,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5821930842137791921, guid: 59c1075ee298a9c48a0f0b53043b835d,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5821930842137791921, guid: 59c1075ee298a9c48a0f0b53043b835d,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5821930842796339609, guid: 59c1075ee298a9c48a0f0b53043b835d,
+        type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5821930842796339609, guid: 59c1075ee298a9c48a0f0b53043b835d,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5821930842796339609, guid: 59c1075ee298a9c48a0f0b53043b835d,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5821930842796339609, guid: 59c1075ee298a9c48a0f0b53043b835d,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
