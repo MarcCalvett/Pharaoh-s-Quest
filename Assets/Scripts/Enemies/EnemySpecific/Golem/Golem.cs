@@ -109,6 +109,11 @@ public class Golem : Entity
         {
             imSleep = true;
         }
+
+        if(stateMachine.currentState == deadState && laserOn.RuntimeValue)
+        {
+            laserOn.RuntimeValue = false;
+        }
         //Debug.Log(CheckPlayerInCloseRangeAction());
     }
 

@@ -66,7 +66,7 @@ public class Entity : MonoBehaviour
         stateMachine.currentState.LogicUpdate();       
        
 
-        anim.SetFloat("yVelocity", rb.velocity.y);
+        //anim.SetFloat("yVelocity", rb.velocity.y);
     }
 
     public virtual void FixedUpdate()

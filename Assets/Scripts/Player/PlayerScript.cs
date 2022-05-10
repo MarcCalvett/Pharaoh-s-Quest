@@ -7,12 +7,13 @@ using UnityEngine.SceneManagement;
 
 public class PlayerScript : MonoBehaviour
 {
+    float dashTime;
 
     public GameObject tornadoPrefab;
     public float jumpForce;
     public float speed;
-        
-
+    [SerializeField]
+    private Collider2D colliderForDashes;
     private Rigidbody2D Rigidbody2D;
     private Animator animator;
     private float horizontal;    
@@ -127,6 +128,9 @@ public class PlayerScript : MonoBehaviour
         {
             WaitForStamina();
         }
+
+        if(dashing)
+        CheckCollision();
 
         playerXPos.RuntimeValue = this.transform.position.x;
         playerYPos.RuntimeValue = this.transform.position.y;
@@ -259,6 +263,7 @@ public class PlayerScript : MonoBehaviour
                 playerStamina.RuntimeValue -= 15;
                 if (playerStamina.RuntimeValue > 0)
                 {
+                    dashTime = Time.time;
                     animator.SetBool("dash", true);
                     animator.SetBool("running", false);
                     dashing = true;
@@ -491,6 +496,7 @@ public class PlayerScript : MonoBehaviour
     }
     public void EndDash()
     {
+        Debug.Log(Time.time - dashTime);
         dashing = false;
         dashing2.RuntimeValue = false;
         speed /= dashSpeedBoost;
@@ -748,7 +754,8 @@ public class PlayerScript : MonoBehaviour
         //Gizmos.DrawWireSphere(specialAttack.transform.position, values.specialAttackRadius);
         //Gizmos.DrawWireSphere(specialWindAttack[0].transform.position, values.specialWindAttackRadius);
         //Gizmos.DrawWireSphere(specialWindAttack[1].transform.position, values.specialWindAttackRadius);
-        Gizmos.DrawWireSphere(specialWindAttack[2].transform.position, values.specialWindAttackRadius);
+        Gizmos.DrawWireSphere(specialWindAttack[2].transform.position, values.specialWindAttackRadius);        
+        Gizmos.DrawCube(colliderForDashes.bounds.center + new Vector3(0.3f, 0, 0) * Mathf.Sign(transform.localScale.x), colliderForDashes.bounds.size - new Vector3(0, 0.2f));
 
     }
     public void OnCollisionExit2D(Collision2D collision)
@@ -766,7 +773,20 @@ public class PlayerScript : MonoBehaviour
             applyKnockBack.RuntimeValue = true;
         }
     }
+    void CheckCollision()
+    {
+        Collider2D[] detectedObjects;
+        detectedObjects = Physics2D.OverlapBoxAll(colliderForDashes.bounds.center + new Vector3(0.3f, 0, 0) * Mathf.Sign(transform.localScale.x), colliderForDashes.bounds.size - new Vector3(0, 0.2f), 0);
 
+        foreach (Collider2D collider in detectedObjects)
+        {
+            if (collider.gameObject.CompareTag("MapLimit"))
+            {
+                Rigidbody2D.constraints = RigidbodyConstraints2D.FreezePositionX;                
+                break;
+            }
+        }
+    }
     private void IntoxicatedColor()
     {
         float r =0f;
