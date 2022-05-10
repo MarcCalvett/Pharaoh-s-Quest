@@ -101,6 +101,7 @@ public class PlayerScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        Debug.Log(Rigidbody2D.gravityScale);
         if (intoxicated.RuntimeValue)
         {
             IntoxicatedColor();
@@ -151,14 +152,17 @@ public class PlayerScript : MonoBehaviour
         if(knockBack.x != 0 && !collider.isTrigger && Rigidbody2D.gravityScale != 0)
         {
             
-            if(Rigidbody2D.velocity.y == 0 )
+            if(Rigidbody2D.velocity.y == 0)
             {
                 knockBack.Set(0, 0);
             }
             Rigidbody2D.velocity = this.Rigidbody2D.velocity;
+
         }
         else
         {
+            if (!grounded)
+                CheckCollisionInAir();
             Rigidbody2D.velocity = new Vector2(horizontal * speed * cancelMovement /* * _aplicator + 1.5f * aplicator*knockBack.x*-Mathf.Sign(Rigidbody2D.velocity.x) */, Rigidbody2D.velocity.y);
             //Rigidbody2D.AddForceAtPosition(knockBack, transform.position);        
         }
@@ -750,6 +754,7 @@ public class PlayerScript : MonoBehaviour
     }
     public void OnDrawGizmos()
     {
+        
         //Gizmos.DrawWireSphere(defaultAttack.transform.position, values.defaultAttackRadius);
         //Gizmos.DrawWireSphere(specialAttack.transform.position, values.specialAttackRadius);
         //Gizmos.DrawWireSphere(specialWindAttack[0].transform.position, values.specialWindAttackRadius);
@@ -787,6 +792,20 @@ public class PlayerScript : MonoBehaviour
             }
         }
     }
+    void CheckCollisionInAir()
+    {
+        Collider2D[] detectedObjects;
+        detectedObjects = Physics2D.OverlapBoxAll(colliderForDashes.bounds.center + new Vector3(0.3f, 0, 0) * Mathf.Sign(transform.localScale.x), colliderForDashes.bounds.size, 0);
+
+        foreach (Collider2D collider in detectedObjects)
+        {
+            if (collider.gameObject.CompareTag("MapLimit") || collider.gameObject.CompareTag("Enemy"))
+            {
+                horizontal = 0;
+                break;
+            }
+        }
+    }
     private void IntoxicatedColor()
     {
         float r =0f;
@@ -802,5 +821,5 @@ public class PlayerScript : MonoBehaviour
     private void OriginalColor()
     {
         this.gameObject.GetComponent<Renderer>().material.color = originalColor;
-    }
+    }    
 }

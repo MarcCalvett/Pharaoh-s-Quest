@@ -260,7 +260,7 @@ GameObject:
   - component: {fileID: 119996257}
   - component: {fileID: 119996256}
   - component: {fileID: 119996255}
-  m_Layer: 10
+  m_Layer: 0
   m_Name: StunEffect
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -379,7 +379,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &197679434
 Transform:
   m_ObjectHideFlags: 0
@@ -388,7 +388,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 197679433}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -9.253, y: -0.3782828, z: 1}
+  m_LocalPosition: {x: -9.253, y: -0.3782828, z: 13}
   m_LocalScale: {x: 10, y: 4.56596, z: 1}
   m_Children: []
   m_Father: {fileID: 1848747288}
@@ -432,7 +432,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: -10
+  m_SortingOrder: -6
   m_Sprite: {fileID: 21300000, guid: 5c941124cf2c1044093abb1752d4d9b4, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -2181,7 +2181,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 709907852}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -12.876433, y: -0.58303195, z: 0}
+  m_LocalPosition: {x: -12.876433, y: -0.58303195, z: 1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1969536891}
@@ -7218,7 +7218,7 @@ GameObject:
   - component: {fileID: 1296428775}
   - component: {fileID: 1296428774}
   - component: {fileID: 1296428773}
-  m_Layer: 10
+  m_Layer: 0
   m_Name: LaserGun
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8448,7 +8448,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1918851235}
-  m_Layer: 10
+  m_Layer: 0
   m_Name: LaserFirePoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8463,7 +8463,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1918851234}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.243, y: 0.166, z: 0}
+  m_LocalPosition: {x: 0.243, y: 0.166, z: -0.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1296428772}
@@ -9099,7 +9099,7 @@ GameObject:
   - component: {fileID: 1984699017}
   - component: {fileID: 1984699016}
   - component: {fileID: 1984699018}
-  m_Layer: 10
+  m_Layer: 0
   m_Name: LaserFirePointAnimation
   m_TagString: Untagged
   m_Icon: {fileID: 0}

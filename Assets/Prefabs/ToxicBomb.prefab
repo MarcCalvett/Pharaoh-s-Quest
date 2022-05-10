@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8007083087736100509}
-  m_Layer: 10
+  m_Layer: 0
   m_Name: DamagePosition
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -43,7 +43,7 @@ GameObject:
   - component: {fileID: 2186060185279775492}
   - component: {fileID: 4110868692583286889}
   - component: {fileID: 457511209075718697}
-  m_Layer: 10
+  m_Layer: 0
   m_Name: ToxicBomb
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -159,6 +159,7 @@ MonoBehaviour:
     m_Bits: 512
   damagePosition: {fileID: 8007083087736100509}
   playerDashing: {fileID: 11400000, guid: 3c18a5b1356a8d14481a52371c5488c8, type: 2}
+  remoteVelocity: 0
   toxicGas: {fileID: 1973923583675883794, guid: 38527bffbf2cece4fa7dad020d8aeadf,
     type: 3}
 --- !u!95 &457511209075718697

@@ -4093,6 +4093,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Skeleton
       objectReference: {fileID: 0}
+    - target: {fileID: 2220483702763359656, guid: 52e30dc980b7c3c41a5e59477f866d4a,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2220483702763359661, guid: 52e30dc980b7c3c41a5e59477f866d4a,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -4460,6 +4465,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9100988691308915859, guid: 15ce85f34b1bd5847a8c1742e4a56a29,
+        type: 3}
+      propertyPath: m_Interpolate
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 9100988691308915862, guid: 15ce85f34b1bd5847a8c1742e4a56a29,
         type: 3}
       propertyPath: spawner.x
@@ -4470,6 +4480,11 @@ PrefabInstance:
       propertyPath: spawner.y
       value: 0.2
       objectReference: {fileID: 0}
+    - target: {fileID: 9100988691308915862, guid: 15ce85f34b1bd5847a8c1742e4a56a29,
+        type: 3}
+      propertyPath: colliderForDashes
+      value: 
+      objectReference: {fileID: 9100988690594892318}
     - target: {fileID: 9100988691308915863, guid: 15ce85f34b1bd5847a8c1742e4a56a29,
         type: 3}
       propertyPath: m_Name
@@ -4477,3 +4492,9 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 15ce85f34b1bd5847a8c1742e4a56a29, type: 3}
+--- !u!61 &9100988690594892318 stripped
+BoxCollider2D:
+  m_CorrespondingSourceObject: {fileID: 9100988691308915856, guid: 15ce85f34b1bd5847a8c1742e4a56a29,
+    type: 3}
+  m_PrefabInstance: {fileID: 9100988690594892317}
+  m_PrefabAsset: {fileID: 0}

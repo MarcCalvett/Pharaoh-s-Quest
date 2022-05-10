@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 2718411128118989911}
   - component: {fileID: 2718411128118989910}
   - component: {fileID: 2718411128118989909}
-  - component: {fileID: 2718411128118989931}
   - component: {fileID: 2718411128118989930}
   - component: {fileID: 2718411128118989929}
   - component: {fileID: 2718411128118989928}
@@ -106,20 +105,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &2718411128118989931
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2718411128118989908}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ce9316351c6404d4dbe0c4c247164552, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 4
-  damage: 0
 --- !u!50 &2718411128118989930
 Rigidbody2D:
   serializedVersion: 4
@@ -169,5 +154,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce9316351c6404d4dbe0c4c247164552, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 2
+  speed: 4
   damage: 10
+  colliderForDamage: {fileID: 2718411128118989929}
+  whatIsEnemy:
+    serializedVersion: 2
+    m_Bits: 1024
