@@ -49,12 +49,15 @@ public class PlayerScript : MonoBehaviour
     private bool spaNormalSword;
     private bool attackingWind;
     private bool dashing;
+    private bool dashingS;
     public bool spaWindSword;
     public BoolValue intoxicated;
     public BoolValue rechargingStamina;
     public BoolValue imAttacking;
     public BoolValue applyKnockBack;
     public BoolValue dashing2;
+    [SerializeField]
+    public BoolValue swordsTaken;
     private int aplicator;
     private int _aplicator;
     public Vector2 knockBack;
@@ -83,12 +86,13 @@ public class PlayerScript : MonoBehaviour
         collider = GetComponent<Collider2D>();
         dodging = false;       
         windSwordInHand = false;
-        windSwordTaken = true;
+        windSwordTaken = swordsTaken.RuntimeValue;
         attacking = false;        
         spaNormalSword = false;
         attackingWind = false;
         spaWindSword = false;
         dashing = false;
+        dashingS = false;
         cancelMovement = 1;
         scrollSpeedBoost = 2;
         dashSpeedBoost = 3;
@@ -101,6 +105,8 @@ public class PlayerScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        windSwordTaken = swordsTaken.RuntimeValue;
+
         Debug.Log(Rigidbody2D.gravityScale);
         if (intoxicated.RuntimeValue)
         {
@@ -130,7 +136,7 @@ public class PlayerScript : MonoBehaviour
             WaitForStamina();
         }
 
-        if(dashing)
+        if(dashingS)
         CheckCollision();
 
         playerXPos.RuntimeValue = this.transform.position.x;
@@ -271,6 +277,7 @@ public class PlayerScript : MonoBehaviour
                     animator.SetBool("dash", true);
                     animator.SetBool("running", false);
                     dashing = true;
+                    dashingS = true;
                     dashing2.RuntimeValue = true;
                     speed *= dashSpeedBoost;
                     this.Rigidbody2D.constraints = RigidbodyConstraints2D.FreezePositionY;
@@ -502,6 +509,7 @@ public class PlayerScript : MonoBehaviour
     {
         Debug.Log(Time.time - dashTime);
         dashing = false;
+        dashingS = false;
         dashing2.RuntimeValue = false;
         speed /= dashSpeedBoost;
         collider.isTrigger = false;

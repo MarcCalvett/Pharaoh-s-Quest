@@ -52,6 +52,10 @@ public class Golem : Entity
     public GameObject spikes;
     [SerializeField]
     FloatValue laserDirection;
+    [SerializeField]
+    FloatValue health;
+    [SerializeField]
+    public GameObject healthBar;
 
     public override void Start()
     {
@@ -77,6 +81,8 @@ public class Golem : Entity
         {
             Destroy(this.gameObject);
         }
+        currentHealth = health.initialValue;
+
 
         Flip();
         rb.constraints = RigidbodyConstraints2D.FreezeAll;
@@ -85,6 +91,8 @@ public class Golem : Entity
     public override void Update()
     {
         base.Update();
+
+        Debug.Log(stateMachine.currentState);
 
         if(currentHealth <= 0)
         {
@@ -104,6 +112,8 @@ public class Golem : Entity
         if (swordsTaken.RuntimeValue)
         {
             imSleep = false;
+            
+            healthBar.SetActive(true);
         }
         else
         {
@@ -115,6 +125,9 @@ public class Golem : Entity
             laserOn.RuntimeValue = false;
         }
         //Debug.Log(CheckPlayerInCloseRangeAction());
+
+        health.RuntimeValue = currentHealth;
+
     }
 
     public override void FixedUpdate()

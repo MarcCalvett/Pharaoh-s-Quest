@@ -152,6 +152,7 @@
     <Compile Include="Assets\Scripts\Enemies\States\StunState.cs" />
     <Compile Include="Assets\Scripts\Enemies\States\UnbuildedState.cs" />
     <Compile Include="Assets\Scripts\Enemies\StunScript.cs" />
+    <Compile Include="Assets\Scripts\HUD\GolemHealthBar.cs" />
     <Compile Include="Assets\Scripts\HUD\HealthBar.cs" />
     <Compile Include="Assets\Scripts\HUD\HeartsManager.cs" />
     <Compile Include="Assets\Scripts\HUD\StaminaBar.cs" />
