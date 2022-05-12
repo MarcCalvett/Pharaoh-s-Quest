@@ -177,7 +177,8 @@
     <Compile Include="Assets\Scripts\Structs\AttackDetails.cs" />
     <Compile Include="Assets\Scripts\Structs\EnumTypeDamage.cs" />
     <Compile Include="Assets\Scripts\Structs\InformationMessageSource.cs" />
-    <Compile Include="Assets\Scripts\Traps\SpikeFalldownTrap.cs" />
+    <Compile Include="Assets\Scripts\Traps\Rockdown.cs" />
+    <Compile Include="Assets\Scripts\Traps\SwingAxe.cs" />
     <Reference Include="UnityEngine">
       <HintPath>C:/Program Files/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
     </Reference>
