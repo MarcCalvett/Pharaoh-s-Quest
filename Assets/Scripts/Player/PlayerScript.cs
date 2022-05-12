@@ -107,7 +107,7 @@ public class PlayerScript : MonoBehaviour
     {
         windSwordTaken = swordsTaken.RuntimeValue;
 
-        Debug.Log(Rigidbody2D.gravityScale);
+        //Debug.Log(Rigidbody2D.gravityScale);
         if (intoxicated.RuntimeValue)
         {
             IntoxicatedColor();
