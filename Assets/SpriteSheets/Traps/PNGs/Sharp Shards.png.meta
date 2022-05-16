@@ -134,6 +134,93 @@ TextureImporter:
   - first:
       213: 7737010418235399493
     second: Sharp Shards_43
+  - first:
+      213: 8306710155789846747
+    second: Sharp Shards_0
+  - first:
+      213: 7371871786806318059
+    second: Sharp Shards_1
+  - first:
+      213: 1422514603855625699
+    second: Sharp Shards_2
+  - first:
+      213: -7534850826213681056
+    second: Sharp Shards_3
+  - first:
+      213: 7873226810366328027
+    second: Sharp Shards_4
+  - first:
+      213: 2828110096034273463
+    second: Sharp Shards_5
+  - first:
+      213: 6293824156637405971
+    second: Sharp Shards_6
+  - first:
+      213: 5854271667937646515
+    second: Sharp Shards_7
+  - first:
+      213: 6439331424834196949
+    second: Sharp Shards_8
+  - first:
+      213: -8103733181711417679
+    second: Sharp Shards_9
+  - first:
+      213: 1194634201665299608
+    second: Sharp Shards_10
+  - first:
+      213: -2038586557524176244
+    second: Sharp Shards_11
+  - first:
+      213: 7560346029171556764
+    second: Sharp Shards_12
+  - first:
+      213: -8519242076907381910
+    second: Sharp Shards_13
+  - first:
+      213: -4076283917032271414
+    second: Sharp Shards_14
+  - first:
+      213: -5187631972363677897
+    second: Sharp Shards_15
+  - first:
+      213: -5834091423883314973
+    second: Sharp Shards_16
+  - first:
+      213: -1156921003719272348
+    second: Sharp Shards_17
+  - first:
+      213: 6207708238688973186
+    second: Sharp Shards_18
+  - first:
+      213: -9023035368365902144
+    second: Sharp Shards_19
+  - first:
+      213: 8882738127997299938
+    second: Sharp Shards_20
+  - first:
+      213: -3095941356789827913
+    second: Sharp Shards_21
+  - first:
+      213: -7320378119518575035
+    second: Sharp Shards_22
+  - first:
+      213: -234009364071500922
+    second: Sharp Shards_23
+  - first:
+      213: 7119578418298698501
+    second: Sharp Shards_24
+  - first:
+      213: -3692208610517842239
+    second: Sharp Shards_25
+  - first:
+      213: -8382439322963129288
+    second: Sharp Shards_26
+  - first:
+      213: 1111375001067449487
+    second: Sharp Shards_27
+  - first:
+      213: 3671164959271693164
+    second: Sharp Shards_28
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -223,9 +310,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 16
+        y: 0
         width: 16
-        height: 16
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -233,8 +320,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8b4d6acf0e9a9eee0800000000000000
-      internalID: -1231266239332559688
+      spriteID: bd8cbf730ec574370800000000000000
+      internalID: 8306710155789846747
       vertices: []
       indices: 
       edges: []
@@ -244,9 +331,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 16
-        y: 16
+        y: 0
         width: 16
-        height: 16
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -254,8 +341,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: cabf125d7227dac70800000000000000
-      internalID: 8983962347079072684
+      spriteID: be3905e05562e4660800000000000000
+      internalID: 7371871786806318059
       vertices: []
       indices: 
       edges: []
@@ -265,9 +352,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 32
-        y: 16
+        y: 0
         width: 16
-        height: 16
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -275,8 +362,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7b60fcb27a4cc24a0800000000000000
-      internalID: -6616697530240530761
+      spriteID: 3edbe92de79cdb310800000000000000
+      internalID: 1422514603855625699
       vertices: []
       indices: 
       edges: []
@@ -286,9 +373,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 48
-        y: 16
+        y: 0
         width: 16
-        height: 16
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -296,8 +383,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1add60417e6b92800800000000000000
-      internalID: 588202329938255265
+      spriteID: 06899fb4815de6790800000000000000
+      internalID: -7534850826213681056
       vertices: []
       indices: 
       edges: []
@@ -307,9 +394,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 64
-        y: 16
+        y: 0
         width: 16
-        height: 16
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -317,8 +404,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d66570c76399d9610800000000000000
-      internalID: 1629627099466126957
+      spriteID: bdc77f3e112534d60800000000000000
+      internalID: 7873226810366328027
       vertices: []
       indices: 
       edges: []
@@ -328,9 +415,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 80
-        y: 16
+        y: 0
         width: 16
-        height: 16
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -338,8 +425,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b2cdcdd213a88dc10800000000000000
-      internalID: 2078563171858963499
+      spriteID: 7b891dbf5277f3720800000000000000
+      internalID: 2828110096034273463
       vertices: []
       indices: 
       edges: []
@@ -349,9 +436,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 96
-        y: 16
+        y: 0
         width: 16
-        height: 16
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -359,8 +446,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 71fe91418d7c568f0800000000000000
-      internalID: -547812048791539945
+      spriteID: 313252f69b7285750800000000000000
+      internalID: 6293824156637405971
       vertices: []
       indices: 
       edges: []
@@ -370,9 +457,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 112
-        y: 16
+        y: 0
         width: 16
-        height: 16
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -380,8 +467,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fe7df13c8a0afde90800000000000000
-      internalID: -6998698649221867537
+      spriteID: 3b79e02901d8e3150800000000000000
+      internalID: 5854271667937646515
       vertices: []
       indices: 
       edges: []
@@ -391,9 +478,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 128
-        y: 16
+        y: 0
         width: 16
-        height: 16
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -401,8 +488,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3db7f42e360adf800800000000000000
-      internalID: 647850272270285779
+      spriteID: 5d5904850d91d5950800000000000000
+      internalID: 6439331424834196949
       vertices: []
       indices: 
       edges: []
@@ -412,9 +499,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 144
-        y: 16
+        y: 0
         width: 16
-        height: 16
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -422,8 +509,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f51890cff5af81360800000000000000
-      internalID: 7140732499353239903
+      spriteID: 1be7b8d4b91c98f80800000000000000
+      internalID: -8103733181711417679
       vertices: []
       indices: 
       edges: []
@@ -433,9 +520,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 160
-        y: 16
+        y: 0
         width: 16
-        height: 16
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -443,8 +530,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2deb96f8b66a2adf0800000000000000
-      internalID: -170390854988874030
+      spriteID: 894eaca1a71349010800000000000000
+      internalID: 1194634201665299608
       vertices: []
       indices: 
       edges: []
@@ -454,9 +541,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 176
-        y: 16
+        y: 0
         width: 16
-        height: 16
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -464,8 +551,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7ae4f96fb60cc6cc0800000000000000
-      internalID: -3716384022555832665
+      spriteID: c8292eaa35c75b3e0800000000000000
+      internalID: -2038586557524176244
       vertices: []
       indices: 
       edges: []
@@ -475,9 +562,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 192
-        y: 16
+        y: 0
         width: 16
-        height: 16
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -485,8 +572,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 264558234115bb9a0800000000000000
-      internalID: -6216285713466043294
+      spriteID: c914ec738aebbe860800000000000000
+      internalID: 7560346029171556764
       vertices: []
       indices: 
       edges: []
@@ -496,9 +583,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 208
-        y: 16
+        y: 0
         width: 16
-        height: 16
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -506,8 +593,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 318855b38b7852300800000000000000
-      internalID: 226736581591271443
+      spriteID: a6bdf5ac77295c980800000000000000
+      internalID: -8519242076907381910
       vertices: []
       indices: 
       edges: []
@@ -517,9 +604,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 224
-        y: 16
+        y: 0
         width: 16
-        height: 16
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -527,8 +614,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2a9ffc5a7a47c8d20800000000000000
-      internalID: 3282126491836479906
+      spriteID: ac157a1ef512e67c0800000000000000
+      internalID: -4076283917032271414
       vertices: []
       indices: 
       edges: []
@@ -538,9 +625,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 240
-        y: 16
+        y: 0
         width: 16
-        height: 16
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -548,8 +635,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 450c7ca8c4fd925a0800000000000000
-      internalID: -6545455063567450028
+      spriteID: 73fcdc5d434d108b0800000000000000
+      internalID: -5187631972363677897
       vertices: []
       indices: 
       edges: []
@@ -559,9 +646,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 256
-        y: 16
+        y: 0
         width: 16
-        height: 16
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -569,8 +656,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4cdc924a6b579d980800000000000000
-      internalID: -8513644193268511292
+      spriteID: 3e83844a2c4290fa0800000000000000
+      internalID: -5834091423883314973
       vertices: []
       indices: 
       edges: []
@@ -580,9 +667,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 272
-        y: 16
+        y: 0
         width: 16
-        height: 16
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -590,8 +677,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a665f916bb20ed320800000000000000
-      internalID: 2584506239977215594
+      spriteID: 468df1c0a7ac1ffe0800000000000000
+      internalID: -1156921003719272348
       vertices: []
       indices: 
       edges: []
@@ -601,9 +688,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 288
-        y: 16
+        y: 0
         width: 16
-        height: 16
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -611,8 +698,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2e3f169a0692e9d30800000000000000
-      internalID: 4440031777769255906
+      spriteID: 2817254d0c5362650800000000000000
+      internalID: 6207708238688973186
       vertices: []
       indices: 
       edges: []
@@ -622,9 +709,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 304
-        y: 16
+        y: 0
         width: 16
-        height: 16
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -632,8 +719,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ae57c2fa80f1f4660800000000000000
-      internalID: 7372145237187917290
+      spriteID: 0c6b3c8732db7c280800000000000000
+      internalID: -9023035368365902144
       vertices: []
       indices: 
       edges: []
@@ -643,9 +730,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 320
-        y: 16
+        y: 0
         width: 16
-        height: 16
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -653,8 +740,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: cbc38730be839e000800000000000000
-      internalID: 65646251600264380
+      spriteID: 2ece810c343d54b70800000000000000
+      internalID: 8882738127997299938
       vertices: []
       indices: 
       edges: []
@@ -664,30 +751,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 336
-        y: 16
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 59a2ef8e20e69f540800000000000000
-      internalID: 5042182216595942037
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Sharp Shards_22
-      rect:
-        serializedVersion: 2
-        x: 0
         y: 0
         width: 16
-        height: 16
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -695,449 +761,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d94e23d12545b60e0800000000000000
-      internalID: -2275632475051727715
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Sharp Shards_23
-      rect:
-        serializedVersion: 2
-        x: 16
-        y: 0
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: aa314dc415dbab520800000000000000
-      internalID: 2718693481950483370
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Sharp Shards_24
-      rect:
-        serializedVersion: 2
-        x: 32
-        y: 0
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 3a6ca3938cbd58810800000000000000
-      internalID: 1767060081812883107
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Sharp Shards_25
-      rect:
-        serializedVersion: 2
-        x: 48
-        y: 0
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 5c51f737a3304ae30800000000000000
-      internalID: 4513736276112774597
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Sharp Shards_26
-      rect:
-        serializedVersion: 2
-        x: 64
-        y: 0
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: a15fb456562c145e0800000000000000
-      internalID: -1927045424790899430
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Sharp Shards_27
-      rect:
-        serializedVersion: 2
-        x: 80
-        y: 0
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 7ca7b9623fcac8c80800000000000000
-      internalID: -8319084251335394617
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Sharp Shards_28
-      rect:
-        serializedVersion: 2
-        x: 96
-        y: 0
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 58ce6ef40a37dab80800000000000000
-      internalID: -8381916199094129531
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Sharp Shards_29
-      rect:
-        serializedVersion: 2
-        x: 112
-        y: 0
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: bab752fae25b97730800000000000000
-      internalID: 3997425356379618219
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Sharp Shards_30
-      rect:
-        serializedVersion: 2
-        x: 128
-        y: 0
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: fef88626cea7f6450800000000000000
-      internalID: 6084216777282719727
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Sharp Shards_31
-      rect:
-        serializedVersion: 2
-        x: 144
-        y: 0
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: f7ee5fafc6833dc40800000000000000
-      internalID: 5535830407686516351
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Sharp Shards_32
-      rect:
-        serializedVersion: 2
-        x: 160
-        y: 0
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: f48cc2e7d727419b0800000000000000
-      internalID: -5110333793845327793
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Sharp Shards_33
-      rect:
-        serializedVersion: 2
-        x: 176
-        y: 0
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: d8041319334606e40800000000000000
-      internalID: 5647624105364635789
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Sharp Shards_34
-      rect:
-        serializedVersion: 2
-        x: 192
-        y: 0
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: f56a08a750b03e970800000000000000
-      internalID: 8782875816460592735
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Sharp Shards_35
-      rect:
-        serializedVersion: 2
-        x: 208
-        y: 0
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: af28de8b654c940d0800000000000000
-      internalID: -3438000963771858182
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Sharp Shards_36
-      rect:
-        serializedVersion: 2
-        x: 224
-        y: 0
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 448791e57eec73290800000000000000
-      internalID: -7910626727341492156
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Sharp Shards_37
-      rect:
-        serializedVersion: 2
-        x: 240
-        y: 0
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: c58ceebb021bd4e80800000000000000
-      internalID: -8192697392967006116
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Sharp Shards_38
-      rect:
-        serializedVersion: 2
-        x: 256
-        y: 0
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: ae9d095057d73ded0800000000000000
-      internalID: -2390429035645576726
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Sharp Shards_39
-      rect:
-        serializedVersion: 2
-        x: 272
-        y: 0
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 0fe5313b6bc186b50800000000000000
-      internalID: 6586546026043367152
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Sharp Shards_40
-      rect:
-        serializedVersion: 2
-        x: 288
-        y: 0
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: fb54f646bf5033650800000000000000
-      internalID: 6211314888353990079
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Sharp Shards_41
-      rect:
-        serializedVersion: 2
-        x: 304
-        y: 0
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: a68aada7061d68220800000000000000
-      internalID: 2487906056476993642
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Sharp Shards_42
-      rect:
-        serializedVersion: 2
-        x: 320
-        y: 0
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: fd6b1cc0f477d5330800000000000000
-      internalID: 3701245650168559327
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Sharp Shards_43
-      rect:
-        serializedVersion: 2
-        x: 336
-        y: 0
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 54dda62abf16f5b60800000000000000
-      internalID: 7737010418235399493
+      spriteID: 7b6f91f2db10905d0800000000000000
+      internalID: -3095941356789827913
       vertices: []
       indices: 
       edges: []

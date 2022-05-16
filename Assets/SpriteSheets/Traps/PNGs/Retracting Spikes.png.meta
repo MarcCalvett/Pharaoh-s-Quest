@@ -122,6 +122,48 @@ TextureImporter:
   - first:
       213: 9102085673763946850
     second: Retracting Spikes_39
+  - first:
+      213: 4685812821897551034
+    second: Retracting Spikes_0
+  - first:
+      213: 4494641171516787325
+    second: Retracting Spikes_1
+  - first:
+      213: -2199387706798279510
+    second: Retracting Spikes_2
+  - first:
+      213: 7665631039450877699
+    second: Retracting Spikes_3
+  - first:
+      213: 4273590124521983125
+    second: Retracting Spikes_4
+  - first:
+      213: 7334691956549064051
+    second: Retracting Spikes_5
+  - first:
+      213: -4856728670029691240
+    second: Retracting Spikes_6
+  - first:
+      213: -7635764538423458118
+    second: Retracting Spikes_7
+  - first:
+      213: 3520096732956312603
+    second: Retracting Spikes_8
+  - first:
+      213: -5273249067666367298
+    second: Retracting Spikes_9
+  - first:
+      213: 5451929788365199250
+    second: Retracting Spikes_10
+  - first:
+      213: -7953307414283043654
+    second: Retracting Spikes_11
+  - first:
+      213: 6407526720466276504
+    second: Retracting Spikes_12
+  - first:
+      213: 5213254944282356014
+    second: Retracting Spikes_13
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -210,10 +252,10 @@ TextureImporter:
       name: Retracting Spikes_0
       rect:
         serializedVersion: 2
-        x: 224
-        y: 16
-        width: 16
-        height: 16
+        x: 0
+        y: 0
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -221,8 +263,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d33f227470c0c7650800000000000000
-      internalID: 6231869209771701053
+      spriteID: abc9c2d5fe9570140800000000000000
+      internalID: 4685812821897551034
       vertices: []
       indices: 
       edges: []
@@ -231,10 +273,10 @@ TextureImporter:
       name: Retracting Spikes_1
       rect:
         serializedVersion: 2
-        x: 240
-        y: 16
-        width: 16
-        height: 16
+        x: 32
+        y: 0
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -242,8 +284,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2d6cb8e22a1451830800000000000000
-      internalID: 4041208405456307922
+      spriteID: d7a8a15f45c206e30800000000000000
+      internalID: 4494641171516787325
       vertices: []
       indices: 
       edges: []
@@ -252,10 +294,10 @@ TextureImporter:
       name: Retracting Spikes_2
       rect:
         serializedVersion: 2
-        x: 256
-        y: 16
-        width: 16
-        height: 16
+        x: 64
+        y: 0
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -263,8 +305,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f9c956420cb15ec70800000000000000
-      internalID: 8999629942428114079
+      spriteID: aa47de498843a71e0800000000000000
+      internalID: -2199387706798279510
       vertices: []
       indices: 
       edges: []
@@ -273,10 +315,10 @@ TextureImporter:
       name: Retracting Spikes_3
       rect:
         serializedVersion: 2
-        x: 272
-        y: 16
-        width: 16
-        height: 16
+        x: 96
+        y: 0
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -284,8 +326,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: cfd19ef5404552030800000000000000
-      internalID: 3469271465724550652
+      spriteID: 30f8dade0dac16a60800000000000000
+      internalID: 7665631039450877699
       vertices: []
       indices: 
       edges: []
@@ -294,10 +336,10 @@ TextureImporter:
       name: Retracting Spikes_4
       rect:
         serializedVersion: 2
-        x: 288
-        y: 16
-        width: 16
-        height: 16
+        x: 128
+        y: 0
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -305,8 +347,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 49e4e5ecc6e13ec10800000000000000
-      internalID: 2081540905442889364
+      spriteID: 59c00c76397de4b30800000000000000
+      internalID: 4273590124521983125
       vertices: []
       indices: 
       edges: []
@@ -315,10 +357,10 @@ TextureImporter:
       name: Retracting Spikes_5
       rect:
         serializedVersion: 2
-        x: 304
-        y: 16
-        width: 16
-        height: 16
+        x: 160
+        y: 0
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -326,8 +368,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e30de99bd9dd2e190800000000000000
-      internalID: -7934535923979595714
+      spriteID: 375950f397f0ac560800000000000000
+      internalID: 7334691956549064051
       vertices: []
       indices: 
       edges: []
@@ -336,10 +378,10 @@ TextureImporter:
       name: Retracting Spikes_6
       rect:
         serializedVersion: 2
-        x: 320
-        y: 16
-        width: 16
-        height: 16
+        x: 192
+        y: 0
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -347,8 +389,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6cc579abf3e976aa0800000000000000
-      internalID: -6167787168109994810
+      spriteID: 896cc64b10f699cb0800000000000000
+      internalID: -4856728670029691240
       vertices: []
       indices: 
       edges: []
@@ -357,10 +399,10 @@ TextureImporter:
       name: Retracting Spikes_7
       rect:
         serializedVersion: 2
-        x: 336
-        y: 16
-        width: 16
-        height: 16
+        x: 224
+        y: 0
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -368,8 +410,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bc8f9dd769fc90d00800000000000000
-      internalID: 939510242546940107
+      spriteID: ab6cebabb90580690800000000000000
+      internalID: -7635764538423458118
       vertices: []
       indices: 
       edges: []
@@ -378,10 +420,10 @@ TextureImporter:
       name: Retracting Spikes_8
       rect:
         serializedVersion: 2
-        x: 352
-        y: 16
-        width: 16
-        height: 16
+        x: 256
+        y: 0
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -389,8 +431,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 002fd4545b03b56b0800000000000000
-      internalID: -5306594180816047616
+      spriteID: b14cfde0455e9d030800000000000000
+      internalID: 3520096732956312603
       vertices: []
       indices: 
       edges: []
@@ -399,10 +441,10 @@ TextureImporter:
       name: Retracting Spikes_9
       rect:
         serializedVersion: 2
-        x: 368
-        y: 16
-        width: 16
-        height: 16
+        x: 288
+        y: 0
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -410,8 +452,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 24fe88a9b2581a0f0800000000000000
-      internalID: -1107457611033678014
+      spriteID: ebc169d69e7a1d6b0800000000000000
+      internalID: -5273249067666367298
       vertices: []
       indices: 
       edges: []
@@ -420,10 +462,10 @@ TextureImporter:
       name: Retracting Spikes_10
       rect:
         serializedVersion: 2
-        x: 384
-        y: 16
-        width: 16
-        height: 16
+        x: 320
+        y: 0
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -431,8 +473,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: be3fb7c80c5e6eb10800000000000000
-      internalID: 2010546898820920299
+      spriteID: 297d0e7c14529ab40800000000000000
+      internalID: 5451929788365199250
       vertices: []
       indices: 
       edges: []
@@ -441,10 +483,10 @@ TextureImporter:
       name: Retracting Spikes_11
       rect:
         serializedVersion: 2
-        x: 400
-        y: 16
-        width: 16
-        height: 16
+        x: 352
+        y: 0
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -452,8 +494,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4c2ab2bb5ac507f80800000000000000
-      internalID: -8110881062014704956
+      spriteID: abcbd2e8b0d20a190800000000000000
+      internalID: -7953307414283043654
       vertices: []
       indices: 
       edges: []
@@ -462,10 +504,10 @@ TextureImporter:
       name: Retracting Spikes_12
       rect:
         serializedVersion: 2
-        x: 0
+        x: 384
         y: 0
-        width: 16
-        height: 16
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -473,8 +515,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4e697376ddeef8c00800000000000000
-      internalID: 905204684811638500
+      spriteID: 890573e8a9b1ce850800000000000000
+      internalID: 6407526720466276504
       vertices: []
       indices: 
       edges: []
@@ -483,535 +525,10 @@ TextureImporter:
       name: Retracting Spikes_13
       rect:
         serializedVersion: 2
-        x: 16
-        y: 0
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 05ac45e29c8e19580800000000000000
-      internalID: -8822014244278711728
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Retracting Spikes_14
-      rect:
-        serializedVersion: 2
-        x: 32
-        y: 0
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: ab4759f566ad6e5f0800000000000000
-      internalID: -727654156548606790
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Retracting Spikes_15
-      rect:
-        serializedVersion: 2
-        x: 48
-        y: 0
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: bd533bb8b485e5b60800000000000000
-      internalID: 7736718291358660059
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Retracting Spikes_16
-      rect:
-        serializedVersion: 2
-        x: 64
-        y: 0
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 1355b6e6f1c724470800000000000000
-      internalID: 8377394731300902193
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Retracting Spikes_17
-      rect:
-        serializedVersion: 2
-        x: 80
-        y: 0
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 735ca9ba11f81e180800000000000000
-      internalID: -9087825267000687305
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Retracting Spikes_18
-      rect:
-        serializedVersion: 2
-        x: 96
-        y: 0
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 50712cdca33f36190800000000000000
-      internalID: -7970259481629944059
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Retracting Spikes_19
-      rect:
-        serializedVersion: 2
-        x: 112
-        y: 0
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 2b955a2894b7c8320800000000000000
-      internalID: 2561557843721673138
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Retracting Spikes_20
-      rect:
-        serializedVersion: 2
-        x: 128
-        y: 0
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: eeaa84b53f7001770800000000000000
-      internalID: 8579366031930731246
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Retracting Spikes_21
-      rect:
-        serializedVersion: 2
-        x: 144
-        y: 0
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 690373bc67d23b080800000000000000
-      internalID: -9172938027784785770
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Retracting Spikes_22
-      rect:
-        serializedVersion: 2
-        x: 160
-        y: 0
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 626d97a80e6800140800000000000000
-      internalID: 4683891911419352614
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Retracting Spikes_23
-      rect:
-        serializedVersion: 2
-        x: 176
-        y: 0
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: b7f12d1e9c9a407f0800000000000000
-      internalID: -647205761892343941
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Retracting Spikes_24
-      rect:
-        serializedVersion: 2
-        x: 192
-        y: 0
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 29be7fb11574cdd50800000000000000
-      internalID: 6763359154090797970
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Retracting Spikes_25
-      rect:
-        serializedVersion: 2
-        x: 208
-        y: 0
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 33e78e9bbeaa4f3b0800000000000000
-      internalID: -5479566917189992909
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Retracting Spikes_26
-      rect:
-        serializedVersion: 2
-        x: 224
-        y: 0
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: edd9821fac0210430800000000000000
-      internalID: 3747312420950416862
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Retracting Spikes_27
-      rect:
-        serializedVersion: 2
-        x: 240
-        y: 0
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: cec95f7e5fed315c0800000000000000
-      internalID: -4245804875940258580
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Retracting Spikes_28
-      rect:
-        serializedVersion: 2
-        x: 256
-        y: 0
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: a8d54892b71347520800000000000000
-      internalID: 2698836481749048714
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Retracting Spikes_29
-      rect:
-        serializedVersion: 2
-        x: 272
-        y: 0
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 82b96b9f2b1f3e6b0800000000000000
-      internalID: -5268101388097381592
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Retracting Spikes_30
-      rect:
-        serializedVersion: 2
-        x: 288
-        y: 0
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: fed08e704cd798580800000000000000
-      internalID: -8824383713956065809
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Retracting Spikes_31
-      rect:
-        serializedVersion: 2
-        x: 304
-        y: 0
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: fd017b8c7f7f9db40800000000000000
-      internalID: 5465672266387230943
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Retracting Spikes_32
-      rect:
-        serializedVersion: 2
-        x: 320
-        y: 0
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 2cc5f4de87b85f150800000000000000
-      internalID: 5905779837860011202
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Retracting Spikes_33
-      rect:
-        serializedVersion: 2
-        x: 336
-        y: 0
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 4b7fb938d38e815a0800000000000000
-      internalID: -6550230307111700556
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Retracting Spikes_34
-      rect:
-        serializedVersion: 2
-        x: 352
-        y: 0
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: dc881929fc8c2c680800000000000000
-      internalID: -8736199533302544179
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Retracting Spikes_35
-      rect:
-        serializedVersion: 2
-        x: 368
-        y: 0
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 04a10c74e5d9df620800000000000000
-      internalID: 2809574770805316160
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Retracting Spikes_36
-      rect:
-        serializedVersion: 2
-        x: 384
-        y: 0
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: d4c0f1a431cf0b2a0800000000000000
-      internalID: -6723597083886023603
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Retracting Spikes_37
-      rect:
-        serializedVersion: 2
-        x: 400
-        y: 0
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 427bb771a52f5ca50800000000000000
-      internalID: 6540900502580475684
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Retracting Spikes_38
-      rect:
-        serializedVersion: 2
         x: 416
         y: 0
-        width: 16
-        height: 16
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1019,29 +536,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a85337a7fd06ce950800000000000000
-      internalID: 6479660476827645322
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Retracting Spikes_39
-      rect:
-        serializedVersion: 2
-        x: 432
-        y: 0
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 2614fd302ba115e70800000000000000
-      internalID: 9102085673763946850
+      spriteID: e29af7530c3395840800000000000000
+      internalID: 5213254944282356014
       vertices: []
       indices: 
       edges: []

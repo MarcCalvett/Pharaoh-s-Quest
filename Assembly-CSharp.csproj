@@ -739,7 +739,10 @@
     <Compile Include="Assets\EZ Camera Shake\Scripts\Utilities\CameraUtilities.cs" />
     <Compile Include="Assets\Scripts\AnimationToStateMachine.cs" />
     <Compile Include="Assets\Scripts\Background\ParallaxEffect.cs" />
+    <Compile Include="Assets\Scripts\Background\ParallaxUpDpwn.cs" />
+    <Compile Include="Assets\Scripts\Camera\Camera2script.cs" />
     <Compile Include="Assets\Scripts\Camera\CameraManager.cs" />
+    <Compile Include="Assets\Scripts\Camera\CameraSample.cs" />
     <Compile Include="Assets\Scripts\Camera\CameraScript.cs" />
     <Compile Include="Assets\Scripts\Camera\CameraShake.cs" />
     <Compile Include="Assets\Scripts\Camera\GolemCamera.cs" />
@@ -817,6 +820,7 @@
     <Compile Include="Assets\Scripts\Enemies\States\StunState.cs" />
     <Compile Include="Assets\Scripts\Enemies\States\UnbuildedState.cs" />
     <Compile Include="Assets\Scripts\Enemies\StunScript.cs" />
+    <Compile Include="Assets\Scripts\GameInfo\Info.cs" />
     <Compile Include="Assets\Scripts\HUD\GolemHealthBar.cs" />
     <Compile Include="Assets\Scripts\HUD\HealthBar.cs" />
     <Compile Include="Assets\Scripts\HUD\HeartsManager.cs" />
@@ -834,6 +838,7 @@
     <Compile Include="Assets\Scripts\Projectiles\ProjectileSpecific\GolemArm\Explosion.cs" />
     <Compile Include="Assets\Scripts\Projectiles\ProjectileSpecific\ToxicBomb\ToxicBomb.cs" />
     <Compile Include="Assets\Scripts\Projectiles\ProjectileSpecific\ToxicBomb\ToxicGas.cs" />
+    <Compile Include="Assets\Scripts\SceneManager\SceneLoader.cs" />
     <Compile Include="Assets\Scripts\ScriptableObjectsType\BoolValue.cs" />
     <Compile Include="Assets\Scripts\ScriptableObjectsType\FloatValue.cs" />
     <Compile Include="Assets\Scripts\ScriptableObjectsType\IntValue.cs" />
@@ -842,7 +847,10 @@
     <Compile Include="Assets\Scripts\Structs\AttackDetails.cs" />
     <Compile Include="Assets\Scripts\Structs\EnumTypeDamage.cs" />
     <Compile Include="Assets\Scripts\Structs\InformationMessageSource.cs" />
+    <Compile Include="Assets\Scripts\Traps\FallingFloor.cs" />
+    <Compile Include="Assets\Scripts\Traps\HiddenSpears.cs" />
     <Compile Include="Assets\Scripts\Traps\Rockdown.cs" />
+    <Compile Include="Assets\Scripts\Traps\SharpSpikes.cs" />
     <Compile Include="Assets\Scripts\Traps\SwingAxe.cs" />
     <Reference Include="UnityEngine">
       <HintPath>C:/Program Files/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
