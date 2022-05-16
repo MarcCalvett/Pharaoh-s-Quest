@@ -75,6 +75,8 @@ public class PlayerScript : MonoBehaviour
     [SerializeField] private GameObject defaultAttackWind;
     [SerializeField] private GameObject specialAttack;
     [SerializeField] private GameObject[] specialWindAttack;
+    [SerializeField] FloatValue xRespawn;
+    [SerializeField] FloatValue yRespawn;
 
 
 
@@ -99,6 +101,7 @@ public class PlayerScript : MonoBehaviour
         knockBackVelocities.Set(100, 2);
         originalColor = this.gameObject.GetComponent<Renderer>().material.color;
 
+        spawner = new Vector3(xRespawn.RuntimeValue, yRespawn.RuntimeValue, 0);
         transform.position = spawner;
     }
 
