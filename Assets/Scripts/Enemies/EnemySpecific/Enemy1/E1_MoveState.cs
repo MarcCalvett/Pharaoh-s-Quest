@@ -23,7 +23,8 @@ public class E1_MoveState : MoveState
     public override void LogicUpdate()
     {
         base.LogicUpdate();
-               
+        //isDetectingLedge = enemy.CheckGround();
+        //isDetectingWall = enemy.CheckWall();
         
     }
 
@@ -37,6 +38,7 @@ public class E1_MoveState : MoveState
         }
         else if (isDetectingWall || !isDetectingLedge)
         {
+            Debug.Log(isDetectingLedge);            
             enemy.idleState.SetFlipAfterIdle(true);
             stateMachine.ChangeState(enemy.idleState);
         }

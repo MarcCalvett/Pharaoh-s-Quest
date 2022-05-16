@@ -7,8 +7,11 @@ public class TornadoScript : MonoBehaviour
     public float speed;
     public float damage;
     private Rigidbody2D Rigidbody2D;
+    [SerializeField] CapsuleCollider2D colliderForDamage;
+    [SerializeField] LayerMask whatIsEnemy;
     private Vector3 direction;
     private InformationMessageSource infoMessage;
+    List<Collider2D> colliders = new List<Collider2D>();
     // Start is called before the first frame update
     void Start()
     {
@@ -18,7 +21,7 @@ public class TornadoScript : MonoBehaviour
     // Update is called once per frame
     private void FixedUpdate()
     {
-        
+        ApplyDamage();
     }
     public void SetDirection(Vector3 _direction)
     {
@@ -41,17 +44,25 @@ public class TornadoScript : MonoBehaviour
         }
         
     }
-    private void OnTriggerEnter2D(Collider2D collision)
+    void ApplyDamage()
     {
-        if (collision.gameObject.CompareTag("Enemy") && collision.attachedRigidbody.bodyType == RigidbodyType2D.Kinematic)
+
+        Collider2D[] detectedObjects;
+        detectedObjects = Physics2D.OverlapCapsuleAll((Vector2)transform.position + new Vector2(colliderForDamage.offset.x, colliderForDamage.offset.y), colliderForDamage.size, CapsuleDirection2D.Vertical, whatIsEnemy);
+
+        foreach(Collider2D collider in detectedObjects)
         {
-            infoMessage.damage = damage;
-            infoMessage.position = transform.position;
-            infoMessage.hoop = false;
-            infoMessage.objectTag = this.gameObject.tag;
-            collision.SendMessage("Damage", infoMessage);
-            Debug.Log("enter");
+            if (colliders.Contains(collider) == false)
+            {
+                infoMessage.damage = damage;
+                infoMessage.position = transform.position;
+                infoMessage.hoop = false;
+                infoMessage.objectTag = this.gameObject.tag;
+                collider.SendMessage("Damage", infoMessage);
+
+                colliders.Add(collider);
+            }
         }
-    }
+    }    
 
 }

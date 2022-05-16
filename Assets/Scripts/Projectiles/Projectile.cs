@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Projectile : MonoBehaviour
 {
-    private AttackDetails attackDetails;
+    protected AttackDetails attackDetails;
 
     private float speed;
     private float travelDistance;
@@ -14,7 +14,8 @@ public class Projectile : MonoBehaviour
     [SerializeField]
     private float damageRadius;
 
-    private Rigidbody2D rb;
+    protected Rigidbody2D rb;
+    protected bool destroy;
 
     private bool isGravityOn;
     protected bool hasHitGround;
@@ -29,15 +30,24 @@ public class Projectile : MonoBehaviour
     [SerializeField]
     private BoolValue playerDashing;
 
+    [SerializeField]
+    private bool remoteVelocity;
+
     protected virtual void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        rb.gravityScale = 0.0f;
-        rb.velocity = transform.right * speed;
+
+        if (!remoteVelocity)
+        {
+            rb.gravityScale = 0.0f;
+            rb.velocity = transform.right * speed;
+        }        
 
         isGravityOn = false;
 
         xStartPos = transform.position.x;
+
+        
     }
 
     protected virtual void Update()
@@ -45,12 +55,13 @@ public class Projectile : MonoBehaviour
         if (!hasHitGround)
         {
             attackDetails.position = transform.position;
-            if (isGravityOn)
+            if (isGravityOn || remoteVelocity)
             {
                 float angle = Mathf.Atan2(rb.velocity.y, rb.velocity.x) * Mathf.Rad2Deg;
-                transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
+                transform.rotation = Quaternion.AngleAxis(angle, new Vector3(0,0,1));
             }
         }
+        
     }
 
     protected virtual void FixedUpdate()
@@ -60,13 +71,14 @@ public class Projectile : MonoBehaviour
             Collider2D damageHit = Physics2D.OverlapCircle(damagePosition.position, damageRadius, whatIsPlayer);
             Collider2D groundHit = Physics2D.OverlapCircle(damagePosition.position, damageRadius, whatIsGround);
 
-
+            
             
 
             if (damageHit && !playerDashing.RuntimeValue)
             {
                 hasHitPlayer = true;
                 damageHit.transform.SendMessage("Damage", attackDetails);
+                destroy = true;
                 //Destroy(gameObject);
                 
             }
@@ -78,7 +90,7 @@ public class Projectile : MonoBehaviour
                 rb.velocity = Vector2.zero;
             }
 
-            if (Mathf.Abs(xStartPos - transform.position.x) >= travelDistance && !isGravityOn)
+            if (Mathf.Abs(xStartPos - transform.position.x) >= travelDistance && !isGravityOn && !remoteVelocity)
             {
                 isGravityOn = true;
                 rb.gravityScale = gravity;

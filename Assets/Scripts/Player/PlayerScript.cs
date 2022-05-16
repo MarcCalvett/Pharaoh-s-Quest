@@ -2,16 +2,18 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 
 public class PlayerScript : MonoBehaviour
 {
+    float dashTime;
 
     public GameObject tornadoPrefab;
     public float jumpForce;
     public float speed;
-        
-
+    [SerializeField]
+    private Collider2D colliderForDashes;
     private Rigidbody2D Rigidbody2D;
     private Animator animator;
     private float horizontal;    
@@ -27,6 +29,7 @@ public class PlayerScript : MonoBehaviour
     private float lastTreure;
     private float dashSpeedBoost;
     private float timeSwitchSword;
+    public Vector3 spawner;
     private Vector3 rememberPositionForSpaw;
     private Vector3 rememberOriginalPositionForSpaw;
     private Vector2 knockBackVelocities;
@@ -46,18 +49,25 @@ public class PlayerScript : MonoBehaviour
     private bool spaNormalSword;
     private bool attackingWind;
     private bool dashing;
+    private bool dashingS;
     public bool spaWindSword;
     public BoolValue intoxicated;
     public BoolValue rechargingStamina;
     public BoolValue imAttacking;
     public BoolValue applyKnockBack;
     public BoolValue dashing2;
+    [SerializeField]
+    public BoolValue swordsTaken;
     private int aplicator;
     private int _aplicator;
     public Vector2 knockBack;
     private float recoverStaminaTime;
     private InformationMessageSource infoMessage;
     private Color originalColor;
+    [SerializeField]
+    private FloatValue playerXPos;
+    [SerializeField]
+    private FloatValue playerYPos;
     [HideInInspector]public bool grounded;
     [HideInInspector] Collider2D collider;
     [SerializeField] private PlayerAttackValues values;
@@ -76,22 +86,28 @@ public class PlayerScript : MonoBehaviour
         collider = GetComponent<Collider2D>();
         dodging = false;       
         windSwordInHand = false;
-        windSwordTaken = true;
+        windSwordTaken = swordsTaken.RuntimeValue;
         attacking = false;        
         spaNormalSword = false;
         attackingWind = false;
         spaWindSword = false;
         dashing = false;
+        dashingS = false;
         cancelMovement = 1;
         scrollSpeedBoost = 2;
         dashSpeedBoost = 3;
         knockBackVelocities.Set(100, 2);
         originalColor = this.gameObject.GetComponent<Renderer>().material.color;
+
+        transform.position = spawner;
     }
 
     // Update is called once per frame
     void Update()
     {
+        windSwordTaken = swordsTaken.RuntimeValue;
+
+        //Debug.Log(Rigidbody2D.gravityScale);
         if (intoxicated.RuntimeValue)
         {
             IntoxicatedColor();
@@ -120,6 +136,12 @@ public class PlayerScript : MonoBehaviour
             WaitForStamina();
         }
 
+        if(dashingS)
+        CheckCollision();
+
+        playerXPos.RuntimeValue = this.transform.position.x;
+        playerYPos.RuntimeValue = this.transform.position.y;
+        
         //if (knockBack.x != 0 && Rigidbody2D.gravityScale == 0)
         //{
         //    collider.isTrigger = false;
@@ -136,14 +158,17 @@ public class PlayerScript : MonoBehaviour
         if(knockBack.x != 0 && !collider.isTrigger && Rigidbody2D.gravityScale != 0)
         {
             
-            if(Rigidbody2D.velocity.y == 0 )
+            if(Rigidbody2D.velocity.y == 0)
             {
                 knockBack.Set(0, 0);
             }
             Rigidbody2D.velocity = this.Rigidbody2D.velocity;
+
         }
         else
         {
+            if (!grounded)
+                CheckCollisionInAir();
             Rigidbody2D.velocity = new Vector2(horizontal * speed * cancelMovement /* * _aplicator + 1.5f * aplicator*knockBack.x*-Mathf.Sign(Rigidbody2D.velocity.x) */, Rigidbody2D.velocity.y);
             //Rigidbody2D.AddForceAtPosition(knockBack, transform.position);        
         }
@@ -248,9 +273,11 @@ public class PlayerScript : MonoBehaviour
                 playerStamina.RuntimeValue -= 15;
                 if (playerStamina.RuntimeValue > 0)
                 {
+                    dashTime = Time.time;
                     animator.SetBool("dash", true);
                     animator.SetBool("running", false);
                     dashing = true;
+                    dashingS = true;
                     dashing2.RuntimeValue = true;
                     speed *= dashSpeedBoost;
                     this.Rigidbody2D.constraints = RigidbodyConstraints2D.FreezePositionY;
@@ -480,7 +507,9 @@ public class PlayerScript : MonoBehaviour
     }
     public void EndDash()
     {
+        Debug.Log(Time.time - dashTime);
         dashing = false;
+        dashingS = false;
         dashing2.RuntimeValue = false;
         speed /= dashSpeedBoost;
         collider.isTrigger = false;
@@ -733,11 +762,13 @@ public class PlayerScript : MonoBehaviour
     }
     public void OnDrawGizmos()
     {
+        
         //Gizmos.DrawWireSphere(defaultAttack.transform.position, values.defaultAttackRadius);
         //Gizmos.DrawWireSphere(specialAttack.transform.position, values.specialAttackRadius);
         //Gizmos.DrawWireSphere(specialWindAttack[0].transform.position, values.specialWindAttackRadius);
         //Gizmos.DrawWireSphere(specialWindAttack[1].transform.position, values.specialWindAttackRadius);
-        Gizmos.DrawWireSphere(specialWindAttack[2].transform.position, values.specialWindAttackRadius);
+        Gizmos.DrawWireSphere(specialWindAttack[2].transform.position, values.specialWindAttackRadius);        
+        Gizmos.DrawCube(colliderForDashes.bounds.center + new Vector3(0.3f, 0, 0) * Mathf.Sign(transform.localScale.x), colliderForDashes.bounds.size - new Vector3(0, 0.2f));
 
     }
     public void OnCollisionExit2D(Collision2D collision)
@@ -755,7 +786,34 @@ public class PlayerScript : MonoBehaviour
             applyKnockBack.RuntimeValue = true;
         }
     }
+    void CheckCollision()
+    {
+        Collider2D[] detectedObjects;
+        detectedObjects = Physics2D.OverlapBoxAll(colliderForDashes.bounds.center + new Vector3(0.3f, 0, 0) * Mathf.Sign(transform.localScale.x), colliderForDashes.bounds.size - new Vector3(0, 0.2f), 0);
 
+        foreach (Collider2D collider in detectedObjects)
+        {
+            if (collider.gameObject.CompareTag("MapLimit"))
+            {
+                Rigidbody2D.constraints = RigidbodyConstraints2D.FreezePositionX;                
+                break;
+            }
+        }
+    }
+    void CheckCollisionInAir()
+    {
+        Collider2D[] detectedObjects;
+        detectedObjects = Physics2D.OverlapBoxAll(colliderForDashes.bounds.center + new Vector3(0.3f, 0, 0) * Mathf.Sign(transform.localScale.x), colliderForDashes.bounds.size, 0);
+
+        foreach (Collider2D collider in detectedObjects)
+        {
+            if (collider.gameObject.CompareTag("MapLimit") || collider.gameObject.CompareTag("Enemy"))
+            {
+                horizontal = 0;
+                break;
+            }
+        }
+    }
     private void IntoxicatedColor()
     {
         float r =0f;
@@ -771,5 +829,5 @@ public class PlayerScript : MonoBehaviour
     private void OriginalColor()
     {
         this.gameObject.GetComponent<Renderer>().material.color = originalColor;
-    }
+    }    
 }
