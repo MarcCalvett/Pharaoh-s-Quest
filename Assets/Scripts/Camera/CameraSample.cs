@@ -15,14 +15,14 @@ public class CameraSample : MonoBehaviour
     {
         if(player.transform.position.y <= -6.9)
         {
-            minSpot = new Vector2(-34, 1);
-            maxSpot = new Vector2(34, 1);
+            minSpot = new Vector2(30.79f, -1.24f);
+            maxSpot = new Vector2(30.79f, -1.24f);
         }
         else
         {
-            minSpot = new Vector2(-34, 1);
-            maxSpot = new Vector2(34, 1);
-        }
+            minSpot = new Vector2(-43.03f, 1);
+            maxSpot = new Vector2(42.8f, 1);
+        }        
         Vector3 aux;
         Vector3 nextPos = player.transform.position;
         nextPos.z = -10;
