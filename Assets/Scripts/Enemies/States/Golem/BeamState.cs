@@ -35,12 +35,13 @@ public class BeamState : State
         base.PhysicsUpdate();
     }
 
-    public void LaserON()
+    public virtual void LaserON()
     {
         Debug.Log("LaserON");
+        
     }
 
-    public void LaserOFF()
+    public virtual void LaserOFF()
     {
         Debug.Log("LaserOFF");
     }

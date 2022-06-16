@@ -11,7 +11,7 @@ public class CameraSample : MonoBehaviour
     GameObject player;
 
     
-    private void FixedUpdate()
+    private void Update()
     {
         if(player.transform.position.y <= -6.9)
         {

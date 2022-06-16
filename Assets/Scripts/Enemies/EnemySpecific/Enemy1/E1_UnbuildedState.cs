@@ -18,17 +18,29 @@ public class E1_UnbuildedState : UnbuildedState
     public override void Enter()
     {
         base.Enter();
+
+        //enemy.rb.constraints = RigidbodyConstraints2D.FreezePositionY;
+        enemy.GetComponent<BoxCollider2D>().isTrigger = true;
+        enemy.rb.bodyType = RigidbodyType2D.Dynamic;
     }
 
     public override void Exit()
     {
         base.Exit();
+
+        
+        enemy.GetComponent<BoxCollider2D>().isTrigger = false;
+        enemy.rb.bodyType = RigidbodyType2D.Kinematic;
     }
 
     public override void LogicUpdate()
     {
         base.LogicUpdate();
 
+        if(!enemy.GetComponent<BoxCollider2D>().isTrigger && entity.CheckGround())
+        {
+            enemy.rb.constraints = RigidbodyConstraints2D.FreezePositionY;
+        }
         if (stateData.enemyFinished)
         {
             stateData.enemyFinished = false;

@@ -57,6 +57,17 @@ public class Golem : Entity
     [SerializeField]
     public GameObject healthBar;
 
+
+    public AudioSource laserAudio;
+    public AudioSource protectAudio;
+    public AudioSource hitAudio;
+    public AudioSource explosioPunyAudio;
+    public AudioSource despertarAudio;
+    
+
+
+
+
     public override void Start()
     {
         base.Start();
@@ -173,6 +184,7 @@ public class Golem : Entity
     public override void Damage(InformationMessageSource informationMessage)
     {
         base.Damage(informationMessage);
+        //hitAudio.Play();
     }
 
     public override void DamageHop(float velocity)

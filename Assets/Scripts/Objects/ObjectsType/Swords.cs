@@ -6,6 +6,7 @@ public class Swords : Interactable
 {
     public BoolValue swordsTaken;
     public BoolValue cameraShake;
+    public AudioSource bossMusic;
     
     void Update()
     {
@@ -17,6 +18,7 @@ public class Swords : Interactable
         {
             swordsTaken.RuntimeValue = true;
             cameraShake.RuntimeValue = true;
+            bossMusic.Play();
             Destroy(this.gameObject);
         }
     }

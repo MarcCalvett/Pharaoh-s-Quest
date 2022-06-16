@@ -19,6 +19,7 @@ public class G_ProtectState : ProtectState
     public override void Enter()
     {
         base.Enter();
+        //golem.protectAudio.Play();
     }
 
     public override void Exit()

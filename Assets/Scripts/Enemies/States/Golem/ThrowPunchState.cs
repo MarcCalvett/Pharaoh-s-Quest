@@ -24,6 +24,7 @@ public class ThrowPunchState : State
     public override void Exit()
     {
         base.Exit();
+        
     }
 
     public override void LogicUpdate()

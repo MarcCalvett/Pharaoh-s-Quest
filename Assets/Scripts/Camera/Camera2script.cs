@@ -12,8 +12,8 @@ public class Camera2script : MonoBehaviour
 
     private void Start()
     {
-        minSpot = new Vector2(3.84f, 6.73f);
-        maxSpot = new Vector2(3.84f, 6.73f);
+        minSpot = new Vector2(12.13f, 8.89f);//new Vector2(3.84f, 6.73f);
+        maxSpot = new Vector2(12.13f, 8.89f);//new Vector2(3.84f, 6.73f);
 
         transform.position = minSpot;
     }

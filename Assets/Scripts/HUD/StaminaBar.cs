@@ -61,9 +61,9 @@ public class StaminaBar : MonoBehaviour
                 updateTime = Time.time;
                 recoverTime = Time.time;
             }
-            else
+            else if(Time.time > recoverTime + 0.3f)
             {
-                playerStamina.RuntimeValue += 0.02f;                
+                playerStamina.RuntimeValue += 2f;                
                 barraGasto.fillAmount = barraDeStamina.fillAmount;
                 recoverTime = Time.time;
             }            

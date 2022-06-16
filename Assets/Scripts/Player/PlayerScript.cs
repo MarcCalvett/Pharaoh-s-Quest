@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.SceneManagement;
+ using UnityEngine.SceneManagement;
 
 
 public class PlayerScript : MonoBehaviour
@@ -29,6 +29,8 @@ public class PlayerScript : MonoBehaviour
     private float lastTreure;
     private float dashSpeedBoost;
     private float timeSwitchSword;
+    public GameObject deathChunkParticle;
+    public GameObject deathBloodParticle;
     public Vector3 spawner;
     private Vector3 rememberPositionForSpaw;
     private Vector3 rememberOriginalPositionForSpaw;
@@ -51,6 +53,7 @@ public class PlayerScript : MonoBehaviour
     private bool dashing;
     private bool dashingS;
     public bool spaWindSword;
+    private bool applyingScrollBoost;
     public BoolValue intoxicated;
     public BoolValue rechargingStamina;
     public BoolValue imAttacking;
@@ -77,7 +80,7 @@ public class PlayerScript : MonoBehaviour
     [SerializeField] private GameObject[] specialWindAttack;
     [SerializeField] FloatValue xRespawn;
     [SerializeField] FloatValue yRespawn;
-
+    private float deathCtr;
 
 
     // Start is called before the first frame update
@@ -95,11 +98,13 @@ public class PlayerScript : MonoBehaviour
         spaWindSword = false;
         dashing = false;
         dashingS = false;
+        applyingScrollBoost = false;
         cancelMovement = 1;
-        scrollSpeedBoost = 2;
+        scrollSpeedBoost = 1.5f;
         dashSpeedBoost = 3;
         knockBackVelocities.Set(100, 2);
         originalColor = this.gameObject.GetComponent<Renderer>().material.color;
+        deathCtr = 0;
 
         spawner = new Vector3(xRespawn.RuntimeValue, yRespawn.RuntimeValue, 0);
         transform.position = spawner;
@@ -108,7 +113,30 @@ public class PlayerScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        
+
         windSwordTaken = swordsTaken.RuntimeValue;
+
+        if(playerHealth.RuntimeValue <= 0 && playerLives.RuntimeValue <= 0)
+        {
+            if(deathCtr == 0)
+            {
+                Vector3 aux = this.transform.position;
+                aux.z = -9.5f;
+                GameObject.Instantiate(deathBloodParticle, aux, deathBloodParticle.transform.rotation);
+                GameObject.Instantiate(deathChunkParticle, aux, deathChunkParticle.transform.rotation);
+                this.GetComponent<SpriteRenderer>().enabled = false;
+                deathCtr = Time.time;
+            }
+            else if (Time.time - deathCtr >= 4f)
+            {
+                SceneManager.LoadScene("Credits");
+                this.gameObject.SetActive(false);
+            }
+           
+        }  
+
+        
 
         //Debug.Log(Rigidbody2D.gravityScale);
         if (intoxicated.RuntimeValue)
@@ -160,6 +188,7 @@ public class PlayerScript : MonoBehaviour
     {
         if(knockBack.x != 0 && !collider.isTrigger && Rigidbody2D.gravityScale != 0)
         {
+            cancelMovement = 1;
             
             if(Rigidbody2D.velocity.y == 0)
             {
@@ -167,13 +196,17 @@ public class PlayerScript : MonoBehaviour
             }
             Rigidbody2D.velocity = this.Rigidbody2D.velocity;
 
+            //Debug.Log("SI");
+
         }
         else
         {
             if (!grounded)
                 CheckCollisionInAir();
-            Rigidbody2D.velocity = new Vector2(horizontal * speed * cancelMovement /* * _aplicator + 1.5f * aplicator*knockBack.x*-Mathf.Sign(Rigidbody2D.velocity.x) */, Rigidbody2D.velocity.y);
-            //Rigidbody2D.AddForceAtPosition(knockBack, transform.position);        
+            Rigidbody2D.velocity = new Vector2(horizontal * speed * cancelMovement, Rigidbody2D.velocity.y);
+            //Rigidbody2D.AddForceAtPosition(knockBack, transform.position);      
+            //Debug.Log("NO");
+
         }
 
         //{
@@ -218,7 +251,7 @@ public class PlayerScript : MonoBehaviour
                 {
                     if(Time.time > recoverStaminaTime + 0.02f)
                     {
-                        playerStamina.RuntimeValue -= 0.02f;
+                        playerStamina.RuntimeValue -= 0;
                         recoverStaminaTime = Time.time;
                     }
                     horizontal = -1;
@@ -227,7 +260,7 @@ public class PlayerScript : MonoBehaviour
                 {
                     if (Time.time > recoverStaminaTime + 0.02f)
                     {
-                        playerStamina.RuntimeValue -= 0.02f;
+                        playerStamina.RuntimeValue -= 0;
                         recoverStaminaTime = Time.time;
                     }
                     horizontal = 1;
@@ -241,7 +274,7 @@ public class PlayerScript : MonoBehaviour
         }        
         if (Input.GetKey(KeyCode.Space) && grounded && Time.time > lastJump + 0.5 && animator.GetBool("scroll") == false && cancelMovement != 0 && !spaWindSword && animator.GetBool("dash") == false)
         {
-            playerStamina.RuntimeValue -= 15;
+            playerStamina.RuntimeValue -= 0;
             if (playerStamina.RuntimeValue > 0)
             {
                 Jump();
@@ -267,7 +300,13 @@ public class PlayerScript : MonoBehaviour
                 {
                     animator.SetBool("scroll", true);
                     animator.SetBool("running", false);
-                    speed *= scrollSpeedBoost;
+
+                    if (!applyingScrollBoost)
+                    {
+                        speed *= scrollSpeedBoost;
+                        applyingScrollBoost = true;
+                    }
+                    
                 }                
                 lastScroll = Time.time;
             }
@@ -282,6 +321,7 @@ public class PlayerScript : MonoBehaviour
                     dashing = true;
                     dashingS = true;
                     dashing2.RuntimeValue = true;
+                    
                     speed *= dashSpeedBoost;
                     this.Rigidbody2D.constraints = RigidbodyConstraints2D.FreezePositionY;
                     //rememberGravity = Physics2D.gravity;
@@ -380,9 +420,24 @@ public class PlayerScript : MonoBehaviour
     {
         Vector3 auxiliar;
         auxiliar = transform.localScale;
-        Debug.DrawRay(transform.position, Vector3.down * 0.9f, Color.red);
-        Debug.DrawRay(transform.position + new Vector3(Mathf.Sign(auxiliar.x) * 0.86f, 0, 0), Vector3.down * 0.9f, Color.red);
-        if (Physics2D.Raycast(transform.position, Vector3.down, 0.9f, LayerMask.GetMask("Ground")) || Physics2D.Raycast(transform.position + new Vector3(Mathf.Sign(auxiliar.x)*0.86f,0,0), Vector3.down, 0.9f, LayerMask.GetMask("Ground")))
+
+        Vector3 auxiliar2;
+        auxiliar2.x = GetComponent<BoxCollider2D>().bounds.min.x;
+        auxiliar2.y = transform.position.y;
+        auxiliar2.z = transform.position.z;
+
+        Vector3 auxiliar3;
+        auxiliar3.x = GetComponent<BoxCollider2D>().bounds.max.x;
+        auxiliar3.y = transform.position.y;
+        auxiliar3.z = transform.position.z;
+
+        //Debug.DrawRay(transform.position, Vector3.down * 0.9f, Color.red);
+        //Debug.DrawRay(transform.position + new Vector3(Mathf.Sign(auxiliar.x) * 0.86f, 0, 0), Vector3.down * 0.9f, Color.red);
+        Debug.DrawRay(auxiliar2, Vector3.down * 0.9f, Color.red);
+        Debug.DrawRay(auxiliar3, Vector3.down * 0.9f, Color.red);
+
+
+        if (Physics2D.Raycast(auxiliar2, Vector3.down, 0.9f, LayerMask.GetMask("Ground")) || Physics2D.Raycast(auxiliar3, Vector3.down, 0.9f, LayerMask.GetMask("Ground")))
         {
             grounded = true;
 
@@ -432,7 +487,7 @@ public class PlayerScript : MonoBehaviour
     {
         attacking = false;
         imAttacking.RuntimeValue = false;
-        //cancelMovement = 1;
+        cancelMovement = 1;
     }
     public void EndDefaultAttackWind()
     {
@@ -450,7 +505,7 @@ public class PlayerScript : MonoBehaviour
         dashing = false;
         dashing2.RuntimeValue = false;
         imAttacking.RuntimeValue = false;
-        //cancelMovement = 1;
+        cancelMovement = 1;
     }
     public void EndParry()
     {
@@ -496,7 +551,7 @@ public class PlayerScript : MonoBehaviour
     {
         spaNormalSword = false;
         imAttacking.RuntimeValue = false;
-        //cancelMovement = 1;
+        cancelMovement = 1;
     }
     public void ParryStarted()
     {
@@ -506,11 +561,12 @@ public class PlayerScript : MonoBehaviour
     public void EndScroll()
     {
         speed /= scrollSpeedBoost;
+        applyingScrollBoost = false;
         horizontal = 0;
     }
     public void EndDash()
     {
-        Debug.Log(Time.time - dashTime);
+        //Debug.Log(Time.time - dashTime);
         dashing = false;
         dashingS = false;
         dashing2.RuntimeValue = false;
@@ -810,7 +866,12 @@ public class PlayerScript : MonoBehaviour
 
         foreach (Collider2D collider in detectedObjects)
         {
-            if (collider.gameObject.CompareTag("MapLimit") || collider.gameObject.CompareTag("Enemy"))
+            if (collider.gameObject.CompareTag("MapLimit"))
+            {
+                horizontal = 0;
+                break;
+            }
+            else if (collider.gameObject.CompareTag("Enemy") && collider.attachedRigidbody.bodyType == RigidbodyType2D.Kinematic)
             {
                 horizontal = 0;
                 break;

@@ -1,0 +1,16 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 883f7e846d3710148ac2549cf5501302, type: 3}
+  m_Name: M_IddleStateData
+  m_EditorClassIdentifier: 
+  timeToTimerAttackController: {fileID: 11400000, guid: 119c02fd7308f2d4ca495d03a9da1dae,
+    type: 2}

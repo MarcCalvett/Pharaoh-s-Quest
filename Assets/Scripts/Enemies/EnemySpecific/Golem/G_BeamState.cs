@@ -34,5 +34,14 @@ public class G_BeamState : BeamState
     {
         base.PhysicsUpdate();
     }
-    
+    public override void LaserON()
+    {
+        base.LaserON();
+      //  golem.laserAudio.Play();
+    }
+    public override void LaserOFF()
+    {
+        base.LaserOFF();
+       // golem.laserAudio.Stop();
+    }
 }

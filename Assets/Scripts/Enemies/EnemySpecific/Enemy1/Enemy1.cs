@@ -65,6 +65,8 @@ public class Enemy1 : Entity
     {
         base.Update();
 
+        //Debug.Log(stateMachine.currentState);
+
         velocityYPast = velocityY;
         velocityY = rb.velocity.y;
 
@@ -72,12 +74,20 @@ public class Enemy1 : Entity
         //Debug.Log(stateMachine.currentState);
 
         rb.rotation = 0;
+        
+        
 
-        if((velocityYPast == velocityY || velocityYPast == rb.velocity.y) && rb.bodyType == RigidbodyType2D.Dynamic && CheckLedge())   //Solucio bug quedarse quiet a dynamic despres del knockback
+        if ((velocityYPast == velocityY || velocityYPast == rb.velocity.y) && rb.bodyType == RigidbodyType2D.Dynamic && CheckLedge())   //Solucio bug quedarse quiet a dynamic despres del knockback
         {
             rb.bodyType = RigidbodyType2D.Kinematic;
             rb.constraints = RigidbodyConstraints2D.None;
             rb.constraints = RigidbodyConstraints2D.FreezePositionY;
+            //if(stateMachine.currentState == unbuildedState)
+            //{
+            //    rb.bodyType = RigidbodyType2D.Dynamic;
+            //    rb.constraints = RigidbodyConstraints2D.FreezePositionY;
+            //    GetComponent<BoxCollider2D>().isTrigger = true;
+            //}
         }
 
         if (rb.bodyType == RigidbodyType2D.Kinematic && !CheckLedge())
@@ -86,7 +96,7 @@ public class Enemy1 : Entity
         }
 
 
-        if(rb.bodyType == RigidbodyType2D.Dynamic && rb.velocity.y == 0)
+        if(rb.bodyType == RigidbodyType2D.Dynamic && rb.velocity.y == 0 && stateMachine.currentState != unbuildedState)
         {
             rb.bodyType = RigidbodyType2D.Kinematic;          //Si esta en repos en y que pasi a kinematic (cas de que se li acaba de aplicar un knockback)
         }
@@ -98,6 +108,10 @@ public class Enemy1 : Entity
         else
         {
             rb.constraints = RigidbodyConstraints2D.None; //Si no esta en knockback que pugui moures en x
+            if(stateMachine.currentState == unbuildedState)
+            {
+                rb.constraints = RigidbodyConstraints2D.FreezePositionY;
+            }
         }
 
         if(stateMachine.currentState != stunState && this.gameObject.GetComponent<Renderer>().material.color != originalColor)
@@ -106,6 +120,19 @@ public class Enemy1 : Entity
         }
         if (stateMachine.currentState != stunState && StunStars.GetComponent<Renderer>().enabled){
             StunStars.GetComponent<Renderer>().enabled = false;
+        }
+
+        if (stateMachine.currentState == unbuildedState)
+        {
+            GetComponent<BoxCollider2D>().isTrigger = true;
+            rb.bodyType = RigidbodyType2D.Dynamic;
+            if(CheckGround())
+            rb.constraints = RigidbodyConstraints2D.FreezePositionY;
+
+        }
+        else
+        {
+            GetComponent<BoxCollider2D>().isTrigger = false;
         }
 
     }

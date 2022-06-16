@@ -133,6 +133,8 @@ public class Entity : MonoBehaviour
         {
             currentHealth -= informationMessage.damage;
 
+
+
             if (informationMessage.hoop)
             {
                 DamageHop(entityData.damageHopSpeed);
