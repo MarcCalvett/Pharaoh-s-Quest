@@ -38,7 +38,7 @@ public class E1_MoveState : MoveState
         }
         else if (isDetectingWall || !isDetectingLedge)
         {
-            Debug.Log(isDetectingLedge);            
+            //Debug.Log(isDetectingLedge);            
             enemy.idleState.SetFlipAfterIdle(true);
             stateMachine.ChangeState(enemy.idleState);
         }

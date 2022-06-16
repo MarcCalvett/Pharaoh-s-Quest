@@ -688,12 +688,12 @@ public class PlayerScript : MonoBehaviour
             {
                 if (Time.time - lastParry <= 0.2f)
                 {
-                    Debug.Log("Parry");
+                    //Debug.Log("Parry");
                     attackDetails.whoHitted.SendMessage("Stun");
                 }
                 else
                 {
-                    Debug.Log("DamageMitigated");
+                    //Debug.Log("DamageMitigated");
                     playerHealth.RuntimeValue -= attackDetails.damageAmount / 2;
                 }
             }

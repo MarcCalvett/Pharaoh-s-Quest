@@ -65,7 +65,8 @@ public class Enemy1 : Entity
     {
         base.Update();
 
-        //Debug.Log(stateMachine.currentState);
+        Debug.Log(stateMachine.currentState);
+
 
         velocityYPast = velocityY;
         velocityY = rb.velocity.y;
@@ -163,6 +164,7 @@ public class Enemy1 : Entity
         if (healthOut)
         {
             isDead = true;
+
             stateMachine.ChangeState(unbuildedState);
             healthOut = false;
         }
@@ -193,7 +195,7 @@ public class Enemy1 : Entity
         //stateMachine.ChangeState(cha);
         unbuildedStateData.enemyFinished = false;
         isDead = false;
-        stateMachine.Initialize(moveState);
+        stateMachine.ChangeState(moveState);
     }
 
     public override void Stun()
@@ -213,7 +215,7 @@ public class Enemy1 : Entity
         this.gameObject.GetComponent<Renderer>().material.color = freeze;
 
         
-        stateMachine.Initialize(stunState);
+        stateMachine.ChangeState(stunState);
     }
     public override void StopStun()
     {
@@ -223,6 +225,10 @@ public class Enemy1 : Entity
 
         this.gameObject.GetComponent<Renderer>().material.color = originalColor;
         //this.gameObject.GetComponent<Renderer>().material.color = new Color(0, 0, 0);
-        stateMachine.Initialize(moveState);
+        if (currentHealth > 0)
+            stateMachine.ChangeState(moveState);
+        else
+            stateMachine.ChangeState(unbuildedState);
+
     }
 }

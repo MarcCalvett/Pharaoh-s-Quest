@@ -19,9 +19,14 @@ public class E1_UnbuildedState : UnbuildedState
     {
         base.Enter();
 
+        
+
         //enemy.rb.constraints = RigidbodyConstraints2D.FreezePositionY;
         enemy.GetComponent<BoxCollider2D>().isTrigger = true;
         enemy.rb.bodyType = RigidbodyType2D.Dynamic;
+        
+
+        //Debug.Log("in");
     }
 
     public override void Exit()
@@ -31,6 +36,8 @@ public class E1_UnbuildedState : UnbuildedState
         
         enemy.GetComponent<BoxCollider2D>().isTrigger = false;
         enemy.rb.bodyType = RigidbodyType2D.Kinematic;
+
+        Debug.Log("out");
     }
 
     public override void LogicUpdate()
