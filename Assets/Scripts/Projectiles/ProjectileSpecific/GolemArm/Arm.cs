@@ -6,7 +6,13 @@ public class Arm : Projectile
 {
     [SerializeField]
     GameObject explosion;
-    
+
+    [SerializeField]
+    AudioSource flyingAudio;
+    [SerializeField]
+    FloatValue effectsVolume;
+    [SerializeField]
+    BoolValue gamePaused;
     [SerializeField]
     private float velocity;
     [SerializeField]
@@ -58,9 +64,18 @@ public class Arm : Projectile
 
         attackDetails.position = transform.position;
 
-        
+        flyingAudio.volume = effectsVolume.RuntimeValue * 1f;
 
-        if(Time.time - timeController < 1)
+        if (flyingAudio.isPlaying && gamePaused.RuntimeValue)
+        {
+            flyingAudio.Pause();
+        }
+        if (!flyingAudio.isPlaying && !gamePaused.RuntimeValue && flyingAudio.time != 0f)
+        {
+            flyingAudio.UnPause();
+        }
+
+        if (Time.time - timeController < 1)
         {
             direction.Set(-1, 1);
         }

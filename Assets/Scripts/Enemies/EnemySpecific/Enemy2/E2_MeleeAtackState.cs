@@ -19,6 +19,8 @@ public class E2_MeleeAtackState : MeleeAttackState
     public override void Enter()
     {
         base.Enter();
+
+        enemy.meleeAttackSound.Play();
     }
 
     public override void Exit()

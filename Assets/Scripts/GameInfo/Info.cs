@@ -11,6 +11,8 @@ public class Info : MonoBehaviour
     FloatValue[] floatInfo;
     [SerializeField]
     IntValue[] intInfo;
+    [SerializeField]
+    ColorValue playerColor;
 
     private void Awake()
     {
@@ -38,6 +40,7 @@ public class Info : MonoBehaviour
             {
                 value.RuntimeValue = value.initialValue;
             }
+            playerColor.colorSaved.RuntimeValue = playerColor.colorSaved.initialValue;
         }
     }
 }

@@ -10,6 +10,13 @@ public class FallingFloor : MonoBehaviour
     Animator anim;
     [SerializeField]
     BoxCollider2D myCollider2D;
+    [SerializeField]
+    AudioSource groundSound;
+    [SerializeField]
+    FloatValue effectsVolume;
+    [SerializeField]
+    BoolValue gamePaused;
+
 
     bool fall;
 
@@ -19,6 +26,20 @@ public class FallingFloor : MonoBehaviour
         myCollider2D.isTrigger = false;
         fall = false;
         timeController = 0;
+    }
+
+    private void Update()
+    {
+        groundSound.volume = 1f * effectsVolume.RuntimeValue;
+
+        if (groundSound.isPlaying && gamePaused.RuntimeValue)
+        {
+            groundSound.Pause();
+        }
+        if (!groundSound.isPlaying && !gamePaused.RuntimeValue && groundSound.time != 0)
+        {
+            groundSound.UnPause();
+        }
     }
     private void FixedUpdate()
     {
@@ -33,6 +54,7 @@ public class FallingFloor : MonoBehaviour
         if (collision.gameObject.CompareTag("Player"))
         {
             fall = true;
+            groundSound.Play();
             timeController = Time.time;
         }
     }

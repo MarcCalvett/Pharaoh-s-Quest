@@ -6,7 +6,17 @@ public class ToDamageMommy : MonoBehaviour
 {
     public GameObject deathChunkParticle;
     public GameObject deathBloodParticle;
-    public GameObject damageReceiver;
+    public GameObject damageReceiver;   
+    public AudioSource susurrosIdle;
+    
+    public FloatValue effectsVolume;
+    
+    public BoolValue gamePaused;
+
+    private void Update()
+    {
+        susurrosIdle.volume = 1f * effectsVolume.RuntimeValue;
+    }
     public void Damage(InformationMessageSource informationMessage)
     {
         damageReceiver.GetComponent<Mummy>().Damage(informationMessage);

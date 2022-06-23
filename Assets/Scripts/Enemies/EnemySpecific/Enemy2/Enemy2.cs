@@ -40,6 +40,10 @@ public class Enemy2 : Entity
     private Transform rangedAttackPosition;
     private Vector3 posBeforeKnockback;
 
+    public AudioSource meleeAttackSound;
+    public AudioSource jumpSound;
+    public AudioSource stunedSound;
+
     public override void Start()
     {
         base.Start();
@@ -96,6 +100,37 @@ public class Enemy2 : Entity
 
         //Debug.Log(stateMachine.currentState);
         //Debug.Log(CheckGround());
+
+        meleeAttackSound.volume = effectsVolume.RuntimeValue * 1f;
+        jumpSound.volume = effectsVolume.RuntimeValue * 1f;
+        stunedSound.volume = effectsVolume.RuntimeValue * 1f;
+
+        if (meleeAttackSound.isPlaying && gamePaused.RuntimeValue)
+        {
+            meleeAttackSound.Pause();
+        }
+        if (!meleeAttackSound.isPlaying && !gamePaused.RuntimeValue && meleeAttackSound.time != 0f)
+        {
+            meleeAttackSound.UnPause();
+        }
+
+        if (jumpSound.isPlaying && gamePaused.RuntimeValue)
+        {
+            jumpSound.Pause();
+        }
+        if (!jumpSound.isPlaying && !gamePaused.RuntimeValue && jumpSound.time != 0f)
+        {
+            jumpSound.UnPause();
+        }
+
+        if (stunedSound.isPlaying && gamePaused.RuntimeValue)
+        {
+            stunedSound.Pause();
+        }
+        if (!stunedSound.isPlaying && !gamePaused.RuntimeValue && stunedSound.time != 0f)
+        {
+            stunedSound.UnPause();
+        }
 
         rb.rotation = 0;
 

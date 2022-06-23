@@ -41,6 +41,11 @@ public class Enemy1 : Entity
     private float velocityY;
     private float velocityYPast;
 
+    
+    public AudioSource unbuildedSound;
+    public AudioSource meleeAttackSound;
+    public AudioSource stunedSound;
+
     public override void Start()
     {
         base.Start();
@@ -65,8 +70,38 @@ public class Enemy1 : Entity
     {
         base.Update();
 
-        Debug.Log(stateMachine.currentState);
+        //Debug.Log(stateMachine.currentState);
 
+        unbuildedSound.volume = effectsVolume.RuntimeValue * 1f;
+        meleeAttackSound.volume = effectsVolume.RuntimeValue * 1f;
+        stunedSound.volume = effectsVolume.RuntimeValue * 1f;
+
+        if (unbuildedSound.isPlaying && gamePaused.RuntimeValue)
+        {
+            unbuildedSound.Pause();
+        }
+        if (!unbuildedSound.isPlaying && !gamePaused.RuntimeValue && unbuildedSound.time != 0f)
+        {
+            unbuildedSound.UnPause();
+        }
+
+        if (meleeAttackSound.isPlaying && gamePaused.RuntimeValue)
+        {
+            meleeAttackSound.Pause();
+        }
+        if (!meleeAttackSound.isPlaying && !gamePaused.RuntimeValue && meleeAttackSound.time != 0f)
+        {
+            meleeAttackSound.UnPause();
+        }
+
+        if (stunedSound.isPlaying && gamePaused.RuntimeValue)
+        {
+            stunedSound.Pause();
+        }
+        if (!stunedSound.isPlaying && !gamePaused.RuntimeValue && stunedSound.time != 0f)
+        {
+            stunedSound.UnPause();
+        }
 
         velocityYPast = velocityY;
         velocityY = rb.velocity.y;

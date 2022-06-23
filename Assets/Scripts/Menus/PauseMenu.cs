@@ -11,6 +11,8 @@ public class PauseMenu : MonoBehaviour
     public bool isPaused;
     public KeyCode pauseKey;
     public GameObject[] UI;
+    [SerializeField]
+    BoolValue gamePaused;
 
     void Start()
     {
@@ -39,6 +41,8 @@ public class PauseMenu : MonoBehaviour
 
     public void PauseGame()
     {
+        gamePaused.RuntimeValue = true;
+
         //pauseMenu.SetActive(true);
         foreach (GameObject part in menuParts)
         {
@@ -54,6 +58,8 @@ public class PauseMenu : MonoBehaviour
 
     public void ResumeGame()
     {
+        gamePaused.RuntimeValue = false;
+
         //pauseMenu.SetActive(false);
         foreach (GameObject part in menuParts)
         {
@@ -69,12 +75,18 @@ public class PauseMenu : MonoBehaviour
 
     public void GoToMainMenu()
     {
-        Time.timeScale = 1f;
-        SceneManager.LoadScene("MainMenu");
+        Time.timeScale = 1f;        
+        StartCoroutine(BackToMenu());
+        //gamePaused.RuntimeValue = false;
     }
 
     public void QuitGame()
     {
         Application.Quit();
+    }
+    private IEnumerator BackToMenu()
+    {        
+        yield return new WaitForSeconds(0.5f);
+        SceneManager.LoadScene("MainMenu");
     }
 }

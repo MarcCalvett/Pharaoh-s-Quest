@@ -9,10 +9,38 @@ public class CameraSample : MonoBehaviour
 
     [SerializeField]
     GameObject player;
+    [SerializeField]
+    AudioSource sampleMusic;
+    [SerializeField]
+    FloatValue musicVolume;
+    [SerializeField]
+    BoolValue paused;
+    [SerializeField]
+    FloatValue effectsVolume;
+    [SerializeField]
+    AudioSource buttonEffect;
+    [SerializeField]
+    FloatValue timeSampleMusic;
 
-    
+    private void Start()
+    {
+        sampleMusic.time = timeSampleMusic.RuntimeValue;
+    }
+
     private void Update()
     {
+        if (paused.RuntimeValue && sampleMusic.isPlaying)
+        {
+            sampleMusic.Pause();
+        }
+        else if(!paused.RuntimeValue && !sampleMusic.isPlaying)
+        {
+            sampleMusic.Play();
+        }
+        
+        sampleMusic.volume = 1 * musicVolume.RuntimeValue;
+        buttonEffect.volume = 1 * effectsVolume.RuntimeValue;
+
         if(player.transform.position.y <= -6.9)
         {
             minSpot = new Vector2(30.79f, -1.24f);
@@ -65,5 +93,14 @@ public class CameraSample : MonoBehaviour
 
             transform.position = nextPos;
         }
+        timeSampleMusic.RuntimeValue = sampleMusic.time;
+    }
+    public void ButtonOn()
+    {
+        buttonEffect.Play();
+    }
+    public void StopMusic()
+    {
+        sampleMusic.Stop();
     }
 }

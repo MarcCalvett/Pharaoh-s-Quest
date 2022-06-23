@@ -10,6 +10,12 @@ public class HiddenSpears : MonoBehaviour
     float damage;
     [SerializeField]
     LayerMask whatIsPlayer;
+    [SerializeField]
+    AudioSource spearSound;
+    [SerializeField]
+    FloatValue effectsVolume;
+    [SerializeField]
+    BoolValue gamePaused;
 
     private float timeController;
     AttackDetails attackDetails;
@@ -25,6 +31,20 @@ public class HiddenSpears : MonoBehaviour
 
         timeController = 0;
         detection = false;
+    }
+
+    private void Update()
+    {
+        spearSound.volume = 1f * effectsVolume.RuntimeValue;
+
+        if (spearSound.isPlaying && gamePaused.RuntimeValue)
+        {
+            spearSound.Pause();
+        }
+        if (!spearSound.isPlaying && !gamePaused.RuntimeValue && spearSound.time != 0)
+        {
+            spearSound.UnPause();
+        }
     }
 
     private void FixedUpdate()
@@ -46,6 +66,7 @@ public class HiddenSpears : MonoBehaviour
     public void DetectionOn()
     {
         detection = true;
+        spearSound.Play();
     }
     public void DetectionOff()
     {
@@ -56,4 +77,5 @@ public class HiddenSpears : MonoBehaviour
     {
         Gizmos.DrawCube(myCollider2D.bounds.center, myCollider2D.bounds.size);
     }
+    
 }

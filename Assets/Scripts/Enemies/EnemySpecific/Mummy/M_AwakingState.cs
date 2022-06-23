@@ -28,6 +28,9 @@ public class M_AwakingState : AwakinngState
         mummy.Body.GetComponent<Animator>().SetBool("awaking", true);
 
         timeAwakingCtr = Time.time;
+
+        mummy.awakeSound.Play();
+        mummy.DarkMagicAwaking.Play();
     }
 
     public override void Exit()

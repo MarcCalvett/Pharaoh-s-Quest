@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 67cf17a3d9603304f8606facaf4dab7e, type: 3}
-  m_Name: GolemHealth
+  m_Name: TimeSampleMusic
   m_EditorClassIdentifier: 
-  initialValue: 500
-  RuntimeValue: 360
+  initialValue: 0
+  RuntimeValue: 0

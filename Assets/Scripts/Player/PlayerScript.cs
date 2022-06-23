@@ -51,7 +51,7 @@ public class PlayerScript : MonoBehaviour
     private bool spaNormalSword;
     private bool attackingWind;
     private bool dashing;
-    private bool dashingS;
+    private bool dashingS;    
     public bool spaWindSword;
     private bool applyingScrollBoost;
     public BoolValue intoxicated;
@@ -65,8 +65,7 @@ public class PlayerScript : MonoBehaviour
     private int _aplicator;
     public Vector2 knockBack;
     private float recoverStaminaTime;
-    private InformationMessageSource infoMessage;
-    private Color originalColor;
+    private InformationMessageSource infoMessage;    
     [SerializeField]
     private FloatValue playerXPos;
     [SerializeField]
@@ -80,6 +79,23 @@ public class PlayerScript : MonoBehaviour
     [SerializeField] private GameObject[] specialWindAttack;
     [SerializeField] FloatValue xRespawn;
     [SerializeField] FloatValue yRespawn;
+    [SerializeField] AudioSource weakAttackSound;
+    [SerializeField] AudioSource strongAttackSound;
+    [SerializeField] AudioSource windAttackSound;
+    [SerializeField] FloatValue effectsVolume;
+    [SerializeField] BoolValue gamePaused;
+    [SerializeField] AudioSource parrySound;
+    [SerializeField] AudioSource semiParrySound;
+    [SerializeField] AudioSource desertWalkSound;
+    [SerializeField] AudioSource interiorWalkSound;
+    [SerializeField] AudioSource rollingAudio;
+    [SerializeField] AudioSource dashingAudio;
+    [SerializeField] AudioSource takeDamage;
+    [SerializeField] AudioSource takeDamagePoison;
+    [SerializeField] AudioSource playerJump;
+  
+    
+
     private float deathCtr;
 
 
@@ -102,22 +118,171 @@ public class PlayerScript : MonoBehaviour
         cancelMovement = 1;
         scrollSpeedBoost = 1.5f;
         dashSpeedBoost = 3;
-        knockBackVelocities.Set(100, 2);
-        originalColor = this.gameObject.GetComponent<Renderer>().material.color;
+        knockBackVelocities.Set(100, 2);      
+        intoxicated.RuntimeValue = intoxicated.initialValue;
         deathCtr = 0;
+        
 
         spawner = new Vector3(xRespawn.RuntimeValue, yRespawn.RuntimeValue, 0);
         transform.position = spawner;
-    }
-
+    }   
     // Update is called once per frame
     void Update()
     {
-        
+        //Debug.Log(horizontal);
+        //Debug.Log(grounded);
+        Debug.Log(intoxicated.RuntimeValue);
 
         windSwordTaken = swordsTaken.RuntimeValue;
 
-        if(playerHealth.RuntimeValue <= 0 && playerLives.RuntimeValue <= 0)
+        interiorWalkSound.volume = 1f * effectsVolume.RuntimeValue;
+        desertWalkSound.volume = 1f * effectsVolume.RuntimeValue;
+        rollingAudio.volume = 1f * effectsVolume.RuntimeValue;
+        dashingAudio.volume = 1f * effectsVolume.RuntimeValue;
+        takeDamage.volume = 1f * effectsVolume.RuntimeValue;
+        takeDamagePoison.volume = 1f * effectsVolume.RuntimeValue;
+        playerJump.volume = 1f * effectsVolume.RuntimeValue;
+
+        if (playerJump.isPlaying && gamePaused.RuntimeValue)
+        {
+            playerJump.Pause();
+        }
+        if (playerJump.time != 0 && !playerJump.isPlaying && !gamePaused.RuntimeValue)
+        {
+            playerJump.UnPause();
+        }
+
+        if (takeDamagePoison.isPlaying && gamePaused.RuntimeValue)
+        {
+            takeDamagePoison.Pause();
+        }
+        if (takeDamagePoison.time != 0 && !takeDamagePoison.isPlaying && !gamePaused.RuntimeValue)
+        {
+            takeDamagePoison.UnPause();
+        }
+
+        if (takeDamage.isPlaying && gamePaused.RuntimeValue)
+        {
+            takeDamage.Pause();
+        }
+        if(takeDamage.time != 0 && !takeDamage.isPlaying && !gamePaused.RuntimeValue)
+        {
+            takeDamage.UnPause();
+        }
+
+        if (horizontal != 0 && grounded && !dashing && !applyingScrollBoost)
+        {
+            if(SceneManager.GetActiveScene().name == "DesertProject" && !desertWalkSound.isPlaying && !gamePaused.RuntimeValue)
+            {
+                desertWalkSound.Play();
+            }
+            if ((SceneManager.GetActiveScene().name == "Lvl3" || SceneManager.GetActiveScene().name == "Lvl2" || SceneManager.GetActiveScene().name == "Lvl2.1") && !interiorWalkSound.isPlaying && !gamePaused.RuntimeValue)
+            {
+                interiorWalkSound.Play();
+            }
+        }
+        else
+        {
+            if (desertWalkSound.isPlaying)
+            {
+                desertWalkSound.Pause();
+                //desertWalkSound.time = 0;
+            }
+
+            if (interiorWalkSound.isPlaying)
+            {
+                interiorWalkSound.Pause();
+                //interiorWalkSound.time = 0;
+            }
+
+        }
+
+        if(!rollingAudio.isPlaying && !gamePaused.RuntimeValue && applyingScrollBoost)
+        {
+            rollingAudio.Play();
+        }
+        if(gamePaused.RuntimeValue && rollingAudio.isPlaying)
+        {
+            rollingAudio.Pause();            
+        }
+
+        if (!dashingAudio.isPlaying && !gamePaused.RuntimeValue && dashing2.RuntimeValue)
+        {
+            dashingAudio.Play();
+        }
+        if (gamePaused.RuntimeValue && dashingAudio.isPlaying)
+        {
+            dashingAudio.Pause();            
+        }
+
+        if (desertWalkSound.isPlaying && gamePaused.RuntimeValue)
+        {
+            desertWalkSound.Pause();
+        }
+        
+
+        if (interiorWalkSound.isPlaying && gamePaused.RuntimeValue)
+        {
+            interiorWalkSound.Pause();
+        }
+        
+
+        weakAttackSound.volume = effectsVolume.RuntimeValue * 1f;
+
+        if (weakAttackSound.isPlaying && gamePaused.RuntimeValue)
+        {
+            weakAttackSound.Pause();
+        }
+        if (!weakAttackSound.isPlaying && !gamePaused.RuntimeValue && weakAttackSound.time != 0f)
+        {
+            weakAttackSound.UnPause();
+        }
+
+        strongAttackSound.volume = effectsVolume.RuntimeValue * 1f;
+
+        if (strongAttackSound.isPlaying && gamePaused.RuntimeValue)
+        {
+            strongAttackSound.Pause();
+        }
+        if (!strongAttackSound.isPlaying && !gamePaused.RuntimeValue && strongAttackSound.time != 0f)
+        {
+            strongAttackSound.UnPause();
+        }
+
+        windAttackSound.volume = effectsVolume.RuntimeValue * 1f;
+
+        if (windAttackSound.isPlaying && gamePaused.RuntimeValue)
+        {
+            windAttackSound.Pause();
+        }
+        if (!windAttackSound.isPlaying && !gamePaused.RuntimeValue && windAttackSound.time != 0f)
+        {
+            windAttackSound.UnPause();
+        }
+
+        parrySound.volume = effectsVolume.RuntimeValue * 1f;
+
+        if (parrySound.isPlaying && gamePaused.RuntimeValue)
+        {
+            parrySound.Pause();
+        }
+        if (!parrySound.isPlaying && !gamePaused.RuntimeValue && parrySound.time != 0f)
+        {
+            parrySound.UnPause();
+        }
+
+        semiParrySound.volume = effectsVolume.RuntimeValue * 1f;
+
+        if (semiParrySound.isPlaying && gamePaused.RuntimeValue)
+        {
+            semiParrySound.Pause();
+        }
+        if (!semiParrySound.isPlaying && !gamePaused.RuntimeValue && semiParrySound.time != 0f)
+        {
+            semiParrySound.UnPause();
+        }
+
+        if (playerHealth.RuntimeValue <= 0 && playerLives.RuntimeValue <= 0)
         {
             if(deathCtr == 0)
             {
@@ -172,7 +337,7 @@ public class PlayerScript : MonoBehaviour
 
         playerXPos.RuntimeValue = this.transform.position.x;
         playerYPos.RuntimeValue = this.transform.position.y;
-        
+
         //if (knockBack.x != 0 && Rigidbody2D.gravityScale == 0)
         //{
         //    collider.isTrigger = false;
@@ -182,6 +347,10 @@ public class PlayerScript : MonoBehaviour
         //{
 
         //}
+        if (!intoxicated.RuntimeValue)
+        {
+            this.gameObject.GetComponent<SpriteRenderer>().color = Color.white;
+        }
 
     }
     private void FixedUpdate()
@@ -400,6 +569,7 @@ public class PlayerScript : MonoBehaviour
     }
     private void Jump()
     {
+        playerJump.Play();
         Rigidbody2D.AddForce(Vector2.up * jumpForce);
     }
     private void Orientation()
@@ -518,6 +688,7 @@ public class PlayerScript : MonoBehaviour
         imAttacking.RuntimeValue = true;
         cancelMovement = 0;
         animator.SetBool("defaultAttack", false);
+        weakAttackSound.Play();
     }
     public void DefaultAttackWindStarted()
     {
@@ -531,6 +702,7 @@ public class PlayerScript : MonoBehaviour
         imAttacking.RuntimeValue = true;
         animator.SetBool("spaNS", false);
         cancelMovement = 0;
+        strongAttackSound.Play();
     }
     public void SPAttackWindSwordStarted()
     {
@@ -636,11 +808,15 @@ public class PlayerScript : MonoBehaviour
     }
     public void ReturnOrigin()
     {
+        //dashingAudio.time = 0;
+        //dashingAudio.Play();
         transform.position = rememberOriginalPositionForSpaw;
+
     }    
     public void DashToSecondPoint()
-    {       
-
+    {
+        dashingAudio.time = 0;
+        dashingAudio.Play();
         if (transform.localScale.x > 0)
         {
             horizontal = 1;
@@ -671,7 +847,9 @@ public class PlayerScript : MonoBehaviour
         transform.position = aux;
     }
     public void ReturnFirstPoint()
-    {        
+    {
+        dashingAudio.time = 0;
+        dashingAudio.Play();
         transform.position = rememberPositionForSpaw;
     }    
     public void RechargeLoop()
@@ -684,22 +862,33 @@ public class PlayerScript : MonoBehaviour
     {
         if(attackDetails.type == TypeDamage.TEMPORAL || !dashing)
         {
+            
             if (dodging && attackDetails.type == TypeDamage.NORMAL)
             {
                 if (Time.time - lastParry <= 0.2f)
                 {
                     //Debug.Log("Parry");
                     attackDetails.whoHitted.SendMessage("Stun");
+                    parrySound.Play();
                 }
                 else
                 {
                     //Debug.Log("DamageMitigated");
                     playerHealth.RuntimeValue -= attackDetails.damageAmount / 2;
+                    semiParrySound.Play();
                 }
             }
             else
             {
                 playerHealth.RuntimeValue -= attackDetails.damageAmount;
+                if (!intoxicated.RuntimeValue)
+                {
+                    takeDamage.Play();  
+                }
+                else
+                {
+                    takeDamagePoison.Play();
+                }
                 if (attackDetails.type == TypeDamage.NORMAL && !collider.isTrigger)
                 {
                     if (this.Rigidbody2D.gravityScale == 0)
@@ -752,6 +941,8 @@ public class PlayerScript : MonoBehaviour
     }
     private void TriggerSpecialAttack()
     {
+        
+
         Collider2D[] detectedObjects = Physics2D.OverlapCircleAll(specialAttack.transform.position, values.specialAttackRadius, values.whatIsEnemy);
 
         infoMessage.damage = values.specialAttackDamage;
@@ -764,9 +955,11 @@ public class PlayerScript : MonoBehaviour
             //collider.attachedRigidbody.bodyType = RigidbodyType2D.Dynamic;
             collider.transform.SendMessage("Damage", infoMessage);
         }
+
     }
     private void TriggerSpecialWindAttack()
     {
+        windAttackSound.Play();
         Collider2D[] detectedObjects;
         switch (values.specialAttackStep)
         {
@@ -888,10 +1081,11 @@ public class PlayerScript : MonoBehaviour
         Color intoxicated = new Color(r, g, b, a);
 
 
-        this.gameObject.GetComponent<Renderer>().material.color = intoxicated;
+        this.gameObject.GetComponent<SpriteRenderer>().color = intoxicated;
     }
-    private void OriginalColor()
+    public void OriginalColor()
     {
-        this.gameObject.GetComponent<Renderer>().material.color = originalColor;
+        this.gameObject.GetComponent<SpriteRenderer>().color = Color.white;
+        
     }    
 }

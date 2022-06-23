@@ -26,6 +26,7 @@ public class E2_DodgeState : DodgeState
         if (CheckGroundWhereLanding())
         {
             entity.SetVelocity(stateData.dodgeSpeed, stateData.dodgeAngle, -entity.facingDirection);
+            enemy.jumpSound.Play();
         }
         else
         {

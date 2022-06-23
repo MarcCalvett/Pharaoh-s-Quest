@@ -19,6 +19,7 @@ public class G_AwakeState : AwakeState
     public override void Enter()
     {
         base.Enter();
+        golem.despertarAudio.Play();
     }
 
     public override void Exit()

@@ -5,6 +5,8 @@ using UnityEngine;
 public class G_ThrowPunch : ThrowPunchState
 {
     private Golem golem;
+    float timeToLaunch;
+    bool launched;
 
     public G_ThrowPunch(Entity entity, FiniteStateMachine stateMachine, string animBoolName, D_ThrowPunchState stateData, Golem golem) : base(entity, stateMachine, animBoolName, stateData)
     {
@@ -19,6 +21,9 @@ public class G_ThrowPunch : ThrowPunchState
     public override void Enter()
     {
         base.Enter();
+        timeToLaunch = Time.time;
+        
+        launched = false;
     }
 
     public override void Exit()
@@ -26,12 +31,19 @@ public class G_ThrowPunch : ThrowPunchState
         base.Exit();
 
         golem.timeArmController = Time.time;
-       // golem.explosioPunyAudio.Play();
+        golem.missileLaunchAudio.Pause();
+        golem.missileLaunchAudio.time = 0;
+        
     }
 
     public override void LogicUpdate()
     {
         base.LogicUpdate();
+        if(Time.time-timeToLaunch>=0.5f && !launched)
+        {
+            golem.missileLaunchAudio.Play();
+            launched = true;
+        }
     }
 
     public override void PhysicsUpdate()

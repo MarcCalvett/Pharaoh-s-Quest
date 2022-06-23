@@ -20,11 +20,17 @@ public class E1_MeleeAttackState : MeleeAttackState
     public override void Enter()
     {
         base.Enter();
+        enemy.meleeAttackSound.Play();
     }
 
     public override void Exit()
     {
         base.Exit();
+        if (enemy.meleeAttackSound.isPlaying)
+        {
+            enemy.meleeAttackSound.Pause();
+            enemy.meleeAttackSound.time = 0f;
+        }
     }
 
     public override void FinishAttack()

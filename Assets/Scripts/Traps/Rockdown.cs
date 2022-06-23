@@ -26,6 +26,12 @@ public class Rockdown : MonoBehaviour
     [SerializeField] float damage;
     [SerializeField] LayerMask whatisGround;
     [SerializeField] LayerMask whatisPlayer;
+    [SerializeField]
+    AudioSource rockSound;
+    [SerializeField]
+    FloatValue effectsVolume;
+    [SerializeField]
+    BoolValue gamePaused;
 
     void Start()
     {
@@ -59,6 +65,7 @@ public class Rockdown : MonoBehaviour
     }
     void TrapCrackedState()
     {
+        rockSound.Play();
         anim.SetBool("fall", false);
         anim.SetBool("cracked", true);
         state = TrapState.CRACKED;
@@ -67,6 +74,7 @@ public class Rockdown : MonoBehaviour
     }
     void Update()
     {
+        rockSound.volume = 1f * effectsVolume.RuntimeValue;
         //Debug.Log(state);
         if (state == TrapState.FIXED && Time.time - timeController >= timeToFall)
         {
@@ -89,6 +97,15 @@ public class Rockdown : MonoBehaviour
             {
                 TrapInitalState();
             }
+        }
+
+        if(rockSound.isPlaying && gamePaused.RuntimeValue)
+        {
+            rockSound.Pause();
+        }
+        if(!rockSound.isPlaying && !gamePaused.RuntimeValue && rockSound.time != 0)
+        {
+            rockSound.UnPause();
         }
     }
     void FixedUpdate()

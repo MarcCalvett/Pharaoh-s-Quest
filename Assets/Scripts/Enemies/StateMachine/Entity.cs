@@ -36,7 +36,12 @@ public class Entity : MonoBehaviour
 
     private Vector2 velocityWorkSpace;
 
-
+    [SerializeField]
+    AudioSource getDamage;
+    [SerializeField]
+    protected BoolValue gamePaused;
+    [SerializeField]
+    protected FloatValue effectsVolume;
 
     protected Color originalColor;
 
@@ -63,9 +68,18 @@ public class Entity : MonoBehaviour
 
     public virtual void Update()
     {
-        stateMachine.currentState.LogicUpdate();       
-       
+        stateMachine.currentState.LogicUpdate();
 
+        getDamage.volume = effectsVolume.RuntimeValue * 1f;
+       
+        if(getDamage.isPlaying && gamePaused.RuntimeValue)
+        {
+            getDamage.Pause();
+        }
+        if(!getDamage.isPlaying && !gamePaused.RuntimeValue && getDamage.time != 0f)
+        {
+            getDamage.UnPause();
+        }
         //anim.SetFloat("yVelocity", rb.velocity.y);
     }
 
@@ -132,7 +146,7 @@ public class Entity : MonoBehaviour
         if (!isDead && !imSleep && !imProtected)
         {
             currentHealth -= informationMessage.damage;
-
+            getDamage.Play();
 
 
             if (informationMessage.hoop)

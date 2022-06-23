@@ -17,6 +17,12 @@ public class SpikeTrap : MonoBehaviour
     Vector3 higherPosition;
     [SerializeField]
     Vector3 minPosition;
+    [SerializeField]
+    AudioSource spikesMovementEffect;
+    [SerializeField]
+    BoolValue gamePaused;
+    [SerializeField]
+    FloatValue effectsVolume;
 
     Collider2D player;
     
@@ -40,21 +46,45 @@ public class SpikeTrap : MonoBehaviour
     }
     private void Update()
     {
+        spikesMovementEffect.volume = 1f * effectsVolume.RuntimeValue;
+
+        if (spikesMovementEffect.isPlaying && gamePaused.RuntimeValue)
+        {
+            spikesMovementEffect.Pause();
+        }
+        if (!spikesMovementEffect.isPlaying && !gamePaused.RuntimeValue && spikesMovementEffect.time != 0f)
+        {
+            spikesMovementEffect.UnPause();
+        }
+
         if (playerIn)
             DamagePlayer();
         switch (position)
         {
             case Position.RAISING:
                 Raise();
+                if(!spikesMovementEffect.isPlaying && !gamePaused.RuntimeValue)
+                {
+                    spikesMovementEffect.Play();
+                }
                 break;
             case Position.TOP:
                 SpikesUp();
+                if (spikesMovementEffect.isPlaying)
+                {
+                    spikesMovementEffect.Pause();
+                    spikesMovementEffect.time = 0;
+                }
                 break;
             case Position.BOTTOM:
                 Destroy(this.gameObject);
                 break;
             case Position.BURYING:
                 Bury();
+                if (!spikesMovementEffect.isPlaying && !gamePaused.RuntimeValue)
+                {
+                    spikesMovementEffect.Play();
+                }
                 break;
         }
     }

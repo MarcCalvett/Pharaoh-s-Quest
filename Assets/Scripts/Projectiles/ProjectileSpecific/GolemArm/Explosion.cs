@@ -7,6 +7,12 @@ public class Explosion : MonoBehaviour
     bool detectDamage;
     bool damageApplied;
     [SerializeField]
+    AudioSource explosionSound;
+    [SerializeField]
+    FloatValue effectsVolume;
+    [SerializeField]
+    BoolValue gamePaused;
+    [SerializeField]
     private float damage;
     [SerializeField]
     private float damageRadius;
@@ -28,6 +34,17 @@ public class Explosion : MonoBehaviour
     }
     private void Update()
     {
+        explosionSound.volume = effectsVolume.RuntimeValue * 1f;
+
+        if (explosionSound.isPlaying && gamePaused.RuntimeValue)
+        {
+            explosionSound.Pause();
+        }
+        if (!explosionSound.isPlaying && !gamePaused.RuntimeValue && explosionSound.time != 0f)
+        {
+            explosionSound.UnPause();
+        }
+
         attackDetails.position = transform.position;
 
         Collider2D damageHit = Physics2D.OverlapCircle(transform.position, damageRadius, whatIsPlayer);

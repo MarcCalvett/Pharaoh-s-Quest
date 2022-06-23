@@ -24,12 +24,15 @@ public class G_WaitState : WaitState
         base.Enter();
 
         timeController = Time.time;
+        golem.golemIdleAudio.Play();
     }
 
     public override void Exit()
     {
         base.Exit();
-        
+        golem.golemIdleAudio.Pause();
+        golem.golemIdleAudio.time = 0;
+
     }
 
     public override void LogicUpdate()

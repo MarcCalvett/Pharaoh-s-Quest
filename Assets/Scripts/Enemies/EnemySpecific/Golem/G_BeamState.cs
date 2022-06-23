@@ -18,11 +18,15 @@ public class G_BeamState : BeamState
     public override void Enter()
     {
         base.Enter();
+        golem.laserAudio.Play();
     }
 
     public override void Exit()
     {
         base.Exit();
+        golem.laserAudio.Pause();
+        golem.laserAudio.time = 0;
+
     }
 
     public override void LogicUpdate()

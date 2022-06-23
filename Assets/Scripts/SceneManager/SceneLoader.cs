@@ -13,6 +13,7 @@ public class SceneLoader : MonoBehaviour
     FloatValue yRespawn;
     [SerializeField]
     Vector2 nextRespawnWanted;
+    
 
 
     private void Start()
@@ -23,6 +24,8 @@ public class SceneLoader : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
+           
+
             xRespawn.RuntimeValue = nextRespawnWanted.x;
             yRespawn.RuntimeValue = nextRespawnWanted.y;
 

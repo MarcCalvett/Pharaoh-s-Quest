@@ -52,6 +52,12 @@ public class Mummy : Entity
     private float deathTimeCtr;
     private bool deathCount;
 
+    
+
+    public AudioSource awakeSound;
+    public AudioSource DarkMagicAwaking;
+
+
     public override void Start()
     {
         base.Start();
@@ -78,6 +84,9 @@ public class Mummy : Entity
     public override void Update()
     {
         base.Update();
+
+        awakeSound.volume = effectsVolume.RuntimeValue * 1f;
+        DarkMagicAwaking.volume = effectsVolume.RuntimeValue;
 
         Debug.Log(Time.time - deathTimeCtr);
         if(Time.time - deathTimeCtr >= 3 && deathCount)
@@ -116,6 +125,24 @@ public class Mummy : Entity
             }
            
             
+        }
+
+        if (awakeSound.isPlaying && gamePaused.RuntimeValue)
+        {
+            awakeSound.Pause();
+        }
+        if (!awakeSound.isPlaying && !gamePaused.RuntimeValue && awakeSound.time != 0f)
+        {
+            awakeSound.UnPause();
+        }
+
+        if (DarkMagicAwaking.isPlaying && gamePaused.RuntimeValue)
+        {
+            DarkMagicAwaking.Pause();
+        }
+        if (!DarkMagicAwaking.isPlaying && !gamePaused.RuntimeValue && DarkMagicAwaking.time != 0f)
+        {
+            DarkMagicAwaking.UnPause();
         }
 
 

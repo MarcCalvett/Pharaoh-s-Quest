@@ -9,8 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 67cf17a3d9603304f8606facaf4dab7e, type: 3}
-  m_Name: MummyHealth
+  m_Script: {fileID: 11500000, guid: 9b8a6bb3f97cf4044b638e5dd6b89a14, type: 3}
+  m_Name: LastSwordState
   m_EditorClassIdentifier: 
-  initialValue: 500
-  RuntimeValue: 500
+  initialValue: 0
+  RuntimeValue: 0

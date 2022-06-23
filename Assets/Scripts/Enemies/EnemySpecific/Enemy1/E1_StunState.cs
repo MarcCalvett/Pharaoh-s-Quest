@@ -17,12 +17,15 @@ public class E1_StunState : StunState
 
     public override void Enter()
     {
-        base.Enter();        
+        base.Enter();
+        enemy.stunedSound.Play();
     }
 
     public override void Exit()
     {
         base.Exit();
+        enemy.stunedSound.Pause();
+        enemy.stunedSound.time = 0;
     }
 
     public override void LogicUpdate()

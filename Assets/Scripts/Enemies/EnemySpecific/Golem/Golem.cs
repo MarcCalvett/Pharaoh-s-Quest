@@ -59,12 +59,11 @@ public class Golem : Entity
 
 
     public AudioSource laserAudio;
-    public AudioSource protectAudio;
-    public AudioSource hitAudio;
-    public AudioSource explosioPunyAudio;
+    public AudioSource protectAudio;  
     public AudioSource despertarAudio;
-    
-
+    public AudioSource golemIdleAudio;
+    public AudioSource missileLaunchAudio;
+    //public AudioSource spikesGrowthAudio;
 
 
 
@@ -105,7 +104,62 @@ public class Golem : Entity
 
         Debug.Log(stateMachine.currentState);
 
-        if(currentHealth <= 0)
+        despertarAudio.volume = effectsVolume.RuntimeValue * 1f;
+
+        if (despertarAudio.isPlaying && gamePaused.RuntimeValue)
+        {
+            despertarAudio.Pause();
+        }
+        if (!despertarAudio.isPlaying && !gamePaused.RuntimeValue && despertarAudio.time != 0f)
+        {
+            despertarAudio.UnPause();
+        }
+
+        golemIdleAudio.volume = effectsVolume.RuntimeValue * 1f;
+
+        if (golemIdleAudio.isPlaying && gamePaused.RuntimeValue)
+        {
+            golemIdleAudio.Pause();
+        }
+        if (!golemIdleAudio.isPlaying && !gamePaused.RuntimeValue && golemIdleAudio.time != 0f)
+        {
+            golemIdleAudio.UnPause();
+        }
+
+        laserAudio.volume = effectsVolume.RuntimeValue * 1f;
+
+        if (laserAudio.isPlaying && gamePaused.RuntimeValue)
+        {
+            laserAudio.Pause();
+        }
+        if (!laserAudio.isPlaying && !gamePaused.RuntimeValue && laserAudio.time != 0f)
+        {
+            laserAudio.UnPause();
+        }
+
+        missileLaunchAudio.volume = effectsVolume.RuntimeValue * 1f;
+
+        if (missileLaunchAudio.isPlaying && gamePaused.RuntimeValue)
+        {
+            missileLaunchAudio.Pause();
+        }
+        if (!missileLaunchAudio.isPlaying && !gamePaused.RuntimeValue && missileLaunchAudio.time != 0f)
+        {
+            missileLaunchAudio.UnPause();
+        }
+
+        protectAudio.volume = effectsVolume.RuntimeValue * 1f;
+
+        if (protectAudio.isPlaying && gamePaused.RuntimeValue)
+        {
+            protectAudio.Pause();
+        }
+        if (!protectAudio.isPlaying && !gamePaused.RuntimeValue && protectAudio.time != 0f)
+        {
+            protectAudio.UnPause();
+        }
+
+        if (currentHealth <= 0)
         {
             imAlive.RuntimeValue = false;
             stateMachine.ChangeState(deadState);
@@ -245,11 +299,13 @@ public class Golem : Entity
         laserDirection.RuntimeValue = laserDirection.initialValue;
         laser.SetActive(true);
         laserOn.RuntimeValue = true;
+        
     }
     public void EndLaser()
     {
         laser.SetActive(false);
         laserOn.RuntimeValue = false;
+        
     }
 
 

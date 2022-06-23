@@ -19,6 +19,12 @@ public class SwingAxe : MonoBehaviour
     float limitAngle;
     [SerializeField]
     LayerMask whatisPlayer;
+    [SerializeField]
+    AudioSource axeSound;
+    [SerializeField]
+    FloatValue effectsVolume;
+    [SerializeField]
+    BoolValue gamePaused;
 
 
     void Start()
@@ -36,7 +42,8 @@ public class SwingAxe : MonoBehaviour
     }
     private void Update()
     {
-        if(currentAngle >= 82)
+        axeSound.volume = 1f * effectsVolume.RuntimeValue;
+        if (currentAngle >= 82)
         {
             currentAngle = 82;
             timesSwinged++;
@@ -54,6 +61,18 @@ public class SwingAxe : MonoBehaviour
         else
         {
             angleVariation = -Mathf.Abs(angleVariation);
+        }
+        if (axeSound.isPlaying && gamePaused.RuntimeValue)
+        {
+            axeSound.Pause();
+        }
+        if (!axeSound.isPlaying && !gamePaused.RuntimeValue && axeSound.time != 0)
+        {
+            axeSound.UnPause();
+        }
+        if(currentAngle == 82 || currentAngle == -82)
+        {
+            axeSound.Play();
         }
     }
 

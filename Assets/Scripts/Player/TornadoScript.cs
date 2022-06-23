@@ -12,10 +12,31 @@ public class TornadoScript : MonoBehaviour
     private Vector3 direction;
     private InformationMessageSource infoMessage;
     List<Collider2D> colliders = new List<Collider2D>();
+    [SerializeField]
+    AudioSource tornadoSound;
+    [SerializeField]
+    BoolValue gamePaused;
+    [SerializeField]
+    FloatValue effectsVolume;
     // Start is called before the first frame update
     void Start()
     {
         Rigidbody2D = GetComponent<Rigidbody2D>();
+        
+    }
+
+    private void Update()
+    {
+        tornadoSound.volume = effectsVolume.RuntimeValue * 1f;
+
+        if (tornadoSound.isPlaying && gamePaused.RuntimeValue)
+        {
+            tornadoSound.Pause();
+        }
+        if (!tornadoSound.isPlaying && !gamePaused.RuntimeValue && tornadoSound.time != 0f)
+        {
+            tornadoSound.UnPause();
+        }
     }
 
     // Update is called once per frame

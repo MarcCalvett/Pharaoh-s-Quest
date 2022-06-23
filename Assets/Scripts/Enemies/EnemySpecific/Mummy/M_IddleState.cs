@@ -5,7 +5,8 @@ using UnityEngine;
 public class M_IddleState : IddleState
 {
     Mummy mummy;
-    private float timeInIddleCtr;    
+    private float timeInIddleCtr;
+    bool quitting;
 
     public M_IddleState(Entity entity, FiniteStateMachine stateMachine, string animBoolName, D_IddleState stateData, Mummy mummy) : base(entity, stateMachine, animBoolName, stateData)
     {
@@ -28,8 +29,9 @@ public class M_IddleState : IddleState
         mummy.Body.GetComponent<Animator>().SetBool("idle", true);
         //mummy.Body.transform.position = new Vector3(0.003f, -0.67f, 0);
 
+        mummy.Head.GetComponent<ToDamageMommy>().susurrosIdle.Play();
         //mummy.Body.GetComponent<Animator>().enabled = true;
-
+        quitting = false;
         timeInIddleCtr = Time.time;
         //timeToTimingAttackCtr = Time.time;
     }
@@ -42,7 +44,8 @@ public class M_IddleState : IddleState
         mummy.LeftHand.GetComponent<Animator>().SetBool("idle", false);
         mummy.RightHand.GetComponent<Animator>().SetBool("idle", false);
         mummy.Body.GetComponent<Animator>().SetBool("idle", false);
-        
+        quitting = true;
+        mummy.Head.GetComponent<ToDamageMommy>().susurrosIdle.Pause();
     }
 
     public override void LogicUpdate()
@@ -58,7 +61,7 @@ public class M_IddleState : IddleState
         }
         else if(Time.time - timeInIddleCtr >= 3f)
         {
-            if (mummy.currentHealth <= 400)
+            if (mummy.currentHealth <= 75) 
             {
                 stateMachine.ChangeState(mummy.combinedAttack);
             }
@@ -68,6 +71,14 @@ public class M_IddleState : IddleState
             }
             
             timeInIddleCtr = Time.time;
+        }
+        if(mummy.Head.GetComponent<ToDamageMommy>().susurrosIdle.isPlaying && mummy.Head.GetComponent<ToDamageMommy>().gamePaused.RuntimeValue)
+        {
+            mummy.Head.GetComponent<ToDamageMommy>().susurrosIdle.Pause();
+        }
+        if (!mummy.Head.GetComponent<ToDamageMommy>().susurrosIdle.isPlaying && !mummy.Head.GetComponent<ToDamageMommy>().gamePaused.RuntimeValue && !quitting)
+        {
+            mummy.Head.GetComponent<ToDamageMommy>().susurrosIdle.UnPause();
         }
     }
 

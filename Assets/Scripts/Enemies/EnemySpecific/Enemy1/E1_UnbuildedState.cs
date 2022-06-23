@@ -24,7 +24,7 @@ public class E1_UnbuildedState : UnbuildedState
         //enemy.rb.constraints = RigidbodyConstraints2D.FreezePositionY;
         enemy.GetComponent<BoxCollider2D>().isTrigger = true;
         enemy.rb.bodyType = RigidbodyType2D.Dynamic;
-        
+        enemy.unbuildedSound.Play();
 
         //Debug.Log("in");
     }
