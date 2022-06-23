@@ -80,7 +80,9 @@
     <Compile Include="Assets\Scripts\Camera\CameraSample.cs" />
     <Compile Include="Assets\Scripts\Camera\CameraScript.cs" />
     <Compile Include="Assets\Scripts\Camera\CameraShake.cs" />
+    <Compile Include="Assets\Scripts\Camera\FinalBossCamera.cs" />
     <Compile Include="Assets\Scripts\Camera\GolemCamera.cs" />
+    <Compile Include="Assets\Scripts\Camera\MenuCamera.cs" />
     <Compile Include="Assets\Scripts\Enemies\EnemySpecific\Enemy1\E1_ChargeState.cs" />
     <Compile Include="Assets\Scripts\Enemies\EnemySpecific\Enemy1\E1_DeadState.cs" />
     <Compile Include="Assets\Scripts\Enemies\EnemySpecific\Enemy1\E1_IdleState.cs" />
@@ -178,13 +180,16 @@
     <Compile Include="Assets\Scripts\Enemies\States\StunState.cs" />
     <Compile Include="Assets\Scripts\Enemies\States\UnbuildedState.cs" />
     <Compile Include="Assets\Scripts\Enemies\StunScript.cs" />
+    <Compile Include="Assets\Scripts\GAMEOVER.cs" />
     <Compile Include="Assets\Scripts\GameInfo\Info.cs" />
     <Compile Include="Assets\Scripts\HUD\GolemHealthBar.cs" />
     <Compile Include="Assets\Scripts\HUD\HealthBar.cs" />
     <Compile Include="Assets\Scripts\HUD\HeartsManager.cs" />
+    <Compile Include="Assets\Scripts\HUD\MummyHealthBar.cs" />
     <Compile Include="Assets\Scripts\HUD\StaminaBar.cs" />
     <Compile Include="Assets\Scripts\Menus\MainMenu.cs" />
     <Compile Include="Assets\Scripts\Menus\PauseMenu.cs" />
+    <Compile Include="Assets\Scripts\Menus\SliderScript.cs" />
     <Compile Include="Assets\Scripts\Objects\ContextClue.cs" />
     <Compile Include="Assets\Scripts\Objects\Interactable.cs" />
     <Compile Include="Assets\Scripts\Objects\ObjectsType\BossDoor.cs" />
@@ -192,6 +197,7 @@
     <Compile Include="Assets\Scripts\Objects\ObjectsType\Swords.cs" />
     <Compile Include="Assets\Scripts\Objects\SignalListener.cs" />
     <Compile Include="Assets\Scripts\Particles\ParticleController.cs" />
+    <Compile Include="Assets\Scripts\Particles\ParticleVolume.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerScript.cs" />
     <Compile Include="Assets\Scripts\Player\TornadoScript.cs" />
     <Compile Include="Assets\Scripts\Projectiles\Projectile.cs" />
@@ -201,6 +207,7 @@
     <Compile Include="Assets\Scripts\Projectiles\ProjectileSpecific\ToxicBomb\ToxicGas.cs" />
     <Compile Include="Assets\Scripts\SceneManager\SceneLoader.cs" />
     <Compile Include="Assets\Scripts\ScriptableObjectsType\BoolValue.cs" />
+    <Compile Include="Assets\Scripts\ScriptableObjectsType\ColorValue.cs" />
     <Compile Include="Assets\Scripts\ScriptableObjectsType\FloatValue.cs" />
     <Compile Include="Assets\Scripts\ScriptableObjectsType\IntValue.cs" />
     <Compile Include="Assets\Scripts\ScriptableObjectsType\PlayerAttackValues.cs" />

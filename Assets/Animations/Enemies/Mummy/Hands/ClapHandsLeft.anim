@@ -602,6 +602,13 @@ AnimationClip:
   m_HasMotionFloatCurves: 0
   m_Events:
   - time: 0
+    functionName: PlayFastDM
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
+  - time: 0.016666668
     functionName: ActivateDamage
     data: 
     objectReferenceParameter: {fileID: 0}
@@ -610,6 +617,41 @@ AnimationClip:
     messageOptions: 0
   - time: 0.05
     functionName: ActivateTrigger
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
+  - time: 0.6333333
+    functionName: PlayArrossegarLent
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
+  - time: 2.5
+    functionName: PauseArrossegarLent
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
+  - time: 2.5833333
+    functionName: PlayArrossegarRapid
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
+  - time: 2.6666667
+    functionName: PlayCopFort
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
+  - time: 2.8333333
+    functionName: PauseArrossegarRapid
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
@@ -624,6 +666,13 @@ AnimationClip:
     messageOptions: 0
   - time: 3.8166666
     functionName: DOntActivateDamage
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
+  - time: 3.85
+    functionName: PlayFastDM
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
